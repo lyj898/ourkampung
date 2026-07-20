@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan Your Party — OurKampung</title>
+<meta name="description" content="Tell us about your child's celebration in a few simple steps. Our Singapore concierge will craft a tailored party plan just for you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/planner.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3l3.6 8.2L28 12l-6 6 1.5 8.5L16 22.5 8.5 26.5 10 18l-6-6 8.4-.8z' fill='%237E8A6E'/%3E%3C/svg%3E">
+</head>
+<body class="planner-page">
+
+<!-- Minimal header -->
+<header class="header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="OurKampung home">
+      <svg class="logo-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 4c2.2 5.6 5.1 8.5 10.7 10.7C25.1 16.9 22.2 19.8 20 25.4 17.8 19.8 14.9 16.9 9.3 14.7 14.9 12.5 17.8 9.6 20 4z" fill="currentColor"/><circle cx="30.5" cy="28" r="3" fill="#B0663F"/><circle cx="10.5" cy="30" r="2.2" fill="#B79A5B"/></svg>
+      <span class="logo-txt">Our<em>Kampung</em></span>
+    </a>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="index.html">← Back to site</a>
+      <a class="btn btn-wa" data-wa="Hi OurKampung, I'd rather chat about my party directly.">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2z"/></svg>
+        Prefer WhatsApp?
+      </a>
+    </div>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu">
+  <a href="index.html">← Back to site</a>
+  <a class="btn btn-wa" data-wa="Hi OurKampung, I'd rather chat about my party directly.">Prefer WhatsApp?</a>
+</div>
+
+<div class="planner-shell">
+  <!-- LEFT RAIL -->
+  <aside class="planner-aside">
+    <span class="kicker">Plan Your Party</span>
+    <h1>Let's craft your child's <em>celebration.</em></h1>
+    <p class="aside-lede">A few gentle questions — no pressure, no pricing to wade through. We'll turn your answers into a tailored plan.</p>
+    <ul class="progress-list" id="progressList">
+      <li data-step="0" class="active"><span class="p-dot">1</span><span class="p-label">Occasion</span></li>
+      <li data-step="1"><span class="p-dot">2</span><span class="p-label">Guest of honour</span></li>
+      <li data-step="2"><span class="p-dot">3</span><span class="p-label">Venue</span></li>
+      <li data-step="3"><span class="p-dot">4</span><span class="p-label">Theme</span></li>
+      <li data-step="4"><span class="p-dot">5</span><span class="p-label">Services</span></li>
+      <li data-step="5"><span class="p-dot">6</span><span class="p-label">Budget</span></li>
+      <li data-step="6"><span class="p-dot">7</span><span class="p-label">Your details</span></li>
+    </ul>
+    <div class="aside-reassure">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+      <span>Your details stay private. We only use them to plan your party and reply to you.</span>
+    </div>
+  </aside>
+
+  <!-- RIGHT MAIN -->
+  <div class="planner-main">
+    <div class="step-topbar">
+      <span class="step-count" id="stepCount">Step 1 of 7</span>
+      <div class="progress-bar"><span id="progressFill"></span></div>
+    </div>
+
+    <form id="plannerForm" novalidate>
+
+    <!-- STEP 0 — Event type -->
+    <div class="pstep active" data-step="0">
+      <h2>What are we celebrating?</h2>
+      <p class="step-sub">Pick the occasion closest to your plans.</p>
+      <div class="opt-grid" data-field="event_type" data-single>
+        <div class="opt" data-value="Kids Birthday"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="o-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 21h16M6 21v-6h12v6M12 9V6M9 6a3 3 0 016 0M4 15a2 2 0 004 0 2 2 0 014 0 2 2 0 004 0 2 2 0 014 0"/></svg></div><strong>Kids Birthday</strong><small>Our specialty</small></div>
+        <div class="opt" data-value="1st Birthday"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="o-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2 2"/></svg></div><strong>1st Birthday</strong><small>A milestone moment</small></div>
+        <div class="opt" data-value="Baby Shower"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="o-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v6M9 6h6M5 21a7 7 0 0114 0z"/></svg></div><strong>Baby Shower</strong><small>Welcoming little ones</small></div>
+        <div class="opt" data-value="Themed Party"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="o-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.4 5.4L20 8l-4 4 1 6-5-2.8L7 18l1-6-4-4 5.6-.6z"/></svg></div><strong>Themed Party</strong><small>Something special</small></div>
+        <div class="opt" data-value="Family Day"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="o-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20a6 6 0 0112 0M14 20a5 5 0 017-4.6"/></svg></div><strong>Family Day</strong><small>Group celebration</small></div>
+        <div class="opt" data-value="Other"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="o-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></div><strong>Something Else</strong><small>Tell us more</small></div>
+      </div>
+      <p class="err-msg" data-err>Please choose an occasion to continue.</p>
+      <div class="pstep-nav">
+        <span></span>
+        <button type="button" class="btn btn-primary btn-lg" data-next>Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+
+    <!-- STEP 1 — Child + pax + date -->
+    <div class="pstep" data-step="1">
+      <h2>About the guest of honour</h2>
+      <p class="step-sub">This helps us tailor the entertainment and setup to the right age group.</p>
+      <div class="field">
+        <label>How old will they be turning? <span class="hint">(the age they're celebrating)</span></label>
+        <div class="stepper" data-stepper="child_age" data-min="0" data-max="16">
+          <button type="button" data-dec>−</button>
+          <span class="val" data-val>5</span>
+          <button type="button" data-inc>+</button>
+        </div>
+      </div>
+      <div class="field">
+        <label>Roughly how many guests? <span class="hint">(kids + adults, a rough estimate is fine)</span></label>
+        <input type="number" name="pax" min="1" placeholder="e.g. 25" inputmode="numeric">
+      </div>
+      <div class="field">
+        <label>Do you have a date in mind? <span class="hint">(optional — we can help you choose)</span></label>
+        <input type="date" name="party_date">
+      </div>
+      <p class="err-msg" data-err>Please add a rough guest count.</p>
+      <div class="pstep-nav">
+        <button type="button" class="btn-back" data-back><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Back</button>
+        <button type="button" class="btn btn-primary btn-lg" data-next>Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+
+    <!-- STEP 2 — Venue -->
+    <div class="pstep" data-step="2">
+      <h2>Where will the party be?</h2>
+      <p class="step-sub">Not sure yet? Choose "Help me find one" and we'll suggest options.</p>
+      <div class="opt-grid" data-field="venue_type" data-single>
+        <div class="opt" data-value="HDB / Function Room"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="o-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 21V8l8-5 8 5v13M9 21v-6h6v6"/></svg></div><strong>HDB / Function Room</strong><small>Void deck or clubhouse</small></div>
+        <div class="opt" data-value="Condo Clubhouse"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="o-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 21v-4h6v4M8 7h.01M12 7h.01M16 7h.01M8 11h.01M12 11h.01M16 11h.01"/></svg></div><strong>Condo Clubhouse</strong><small>Function room or BBQ pit</small></div>
+        <div class="opt" data-value="Landed Home / Garden"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="o-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V9l7-5 7 5v12M10 21v-5h4v5"/></svg></div><strong>Landed / Garden</strong><small>Home celebration</small></div>
+        <div class="opt" data-value="Restaurant / Café"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="o-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3v7a3 3 0 006 0V3M9 3v18M18 3v7M18 10v11"/></svg></div><strong>Restaurant / Café</strong><small>Private dining</small></div>
+        <div class="opt" data-value="Indoor Playground"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="o-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="6" r="2"/><path d="M12 8v6M8 20l4-6 4 6M6 11h12"/></svg></div><strong>Indoor Playground</strong><small>Play venue party</small></div>
+        <div class="opt" data-value="Help me find one"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="o-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div><strong>Help me find one</strong><small>We'll suggest venues</small></div>
+      </div>
+      <p class="err-msg" data-err>Please choose a venue type.</p>
+      <div class="pstep-nav">
+        <button type="button" class="btn-back" data-back><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Back</button>
+        <button type="button" class="btn btn-primary btn-lg" data-next>Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+
+    <!-- STEP 3 — Theme -->
+    <div class="pstep" data-step="3">
+      <h2>What's the vibe or theme?</h2>
+      <p class="step-sub">Pick one you love, or describe your own dream theme below.</p>
+      <div class="opt-grid cols-4" data-field="theme" data-single>
+        <div class="opt" data-value="Safari & Jungle"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><strong>Safari</strong><small>Earthy &amp; wild</small></div>
+        <div class="opt" data-value="Princess & Fairytale"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><strong>Princess</strong><small>Blush &amp; dreamy</small></div>
+        <div class="opt" data-value="Pastel Rainbow"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><strong>Rainbow</strong><small>Soft &amp; joyful</small></div>
+        <div class="opt" data-value="Superhero"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><strong>Superhero</strong><small>Bold &amp; brave</small></div>
+        <div class="opt" data-value="Under the Sea"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><strong>Under the Sea</strong><small>Aqua &amp; coral</small></div>
+        <div class="opt" data-value="Space & Galaxy"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><strong>Space</strong><small>Cosmic &amp; cool</small></div>
+        <div class="opt" data-value="Boho / Neutral"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><strong>Boho</strong><small>Warm neutrals</small></div>
+        <div class="opt" data-value="Undecided"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><strong>Surprise me</strong><small>You decide</small></div>
+      </div>
+      <div class="field" style="margin-top:1.5rem">
+        <label>Or describe your own theme <span class="hint">(optional)</span></label>
+        <input type="text" name="theme_custom" placeholder="e.g. Dinosaurs, Cocomelon, Vintage tea party…">
+      </div>
+      <p class="err-msg" data-err>Please pick a theme or describe your own.</p>
+      <div class="pstep-nav">
+        <button type="button" class="btn-back" data-back><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Back</button>
+        <button type="button" class="btn btn-primary btn-lg" data-next>Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+
+    <!-- STEP 4 — Services (multi) -->
+    <div class="pstep" data-step="4">
+      <h2>What would you like us to handle?</h2>
+      <p class="step-sub">Choose as many as you'd like — or select them all and relax.</p>
+      <div class="opt-grid cols-4" data-field="services" data-multi>
+        <div class="opt" data-value="Balloon & Décor"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><strong>Décor</strong><small>Balloons &amp; styling</small></div>
+        <div class="opt" data-value="Entertainment"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><strong>Entertainment</strong><small>Magic, mascots</small></div>
+        <div class="opt" data-value="Cake"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><strong>Cake</strong><small>Custom &amp; themed</small></div>
+        <div class="opt" data-value="Catering"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><strong>Catering</strong><small>Buffet &amp; snacks</small></div>
+        <div class="opt" data-value="Photography"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><strong>Photography</strong><small>Capture the day</small></div>
+        <div class="opt" data-value="Venue"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><strong>Venue</strong><small>Find a space</small></div>
+        <div class="opt" data-value="Party Favours"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><strong>Party Favours</strong><small>Goodie bags</small></div>
+        <div class="opt" data-value="Rentals"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><strong>Rentals</strong><small>Bouncy, carnival</small></div>
+      </div>
+      <p class="err-msg" data-err>Please choose at least one service.</p>
+      <div class="pstep-nav">
+        <button type="button" class="btn-back" data-back><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Back</button>
+        <button type="button" class="btn btn-primary btn-lg" data-next>Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+
+    <!-- STEP 5 — Budget comfort -->
+    <div class="pstep" data-step="5">
+      <h2>What's your budget comfort?</h2>
+      <p class="step-sub">This stays between us — it simply helps us tailor a plan that fits. No prices shown here.</p>
+      <div class="opt-grid" data-field="budget" data-single>
+        <div class="opt" data-value="Essential"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="o-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M8 6h6a3 3 0 010 6H8m0 0h8"/></svg></div><strong>Essential</strong><small>Keep it simple &amp; sweet</small></div>
+        <div class="opt" data-value="Signature"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="o-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.4 5.4L20 8l-4 4 1 6-5-2.8L7 18l1-6-4-4 5.6-.6z"/></svg></div><strong>Signature</strong><small>Our most popular</small></div>
+        <div class="opt" data-value="Premium"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="o-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l4 10h10l4-10-5 3-4-6-4 6z"/></svg></div><strong>Premium</strong><small>Pull out all the stops</small></div>
+        <div class="opt" data-value="Not sure yet"><div class="o-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="o-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 015 0c0 2-2.5 2-2.5 4M12 17h.01"/></svg></div><strong>Not sure yet</strong><small>Advise me</small></div>
+      </div>
+      <p class="err-msg" data-err>Please choose a comfort level.</p>
+      <div class="pstep-nav">
+        <button type="button" class="btn-back" data-back><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Back</button>
+        <button type="button" class="btn btn-primary btn-lg" data-next>Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+
+    <!-- STEP 6 — Contact + notes -->
+    <div class="pstep" data-step="6">
+      <h2>Where should we send your plan?</h2>
+      <p class="step-sub">We'll reply within one working day — usually much sooner.</p>
+      <div class="field-row">
+        <div class="field"><label>Your name</label><input type="text" name="name" placeholder="e.g. Rachel"></div>
+        <div class="field"><label>WhatsApp / mobile</label><input type="tel" name="phone" placeholder="e.g. 8123 4567" inputmode="tel"></div>
+      </div>
+      <div class="field"><label>Email <span class="hint">(optional)</span></label><input type="email" name="email" placeholder="you@email.com"></div>
+      <div class="field"><label>Anything else we should know? <span class="hint">(optional)</span></label><textarea name="notes" placeholder="Dietary needs, must-have details, special requests…"></textarea></div>
+      <p class="err-msg" data-err>Please add your name and a contact number.</p>
+      <div class="pstep-nav">
+        <button type="button" class="btn-back" data-back><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Back</button>
+        <button type="button" class="btn btn-primary btn-lg" data-next>Review my brief <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+
+    <!-- STEP 7 — Review -->
+    <div class="pstep" data-step="7">
+      <h2>Does everything look right?</h2>
+      <p class="step-sub">Give it a quick check, then send it to our concierge.</p>
+      <div class="review-list" id="reviewList"></div>
+      <div class="pstep-nav">
+        <button type="button" class="btn-back" data-back><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Back</button>
+        <button type="submit" class="btn btn-primary btn-lg">Send my party brief
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="pstep" data-step="8">
+      <div class="success-box">
+        <div class="s-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h2>Your brief is on its way!</h2>
+        <p>Thank you — our concierge is already reviewing your party. To get started even faster, send us your brief on WhatsApp and we'll reply right away.</p>
+        <div class="success-actions">
+          <a class="btn btn-wa btn-lg" id="waSend">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2z"/></svg>
+            Send on WhatsApp
+          </a>
+          <a class="btn btn-ghost btn-lg" href="index.html">Back to home</a>
+        </div>
+      </div>
+    </div>
+
+    </form>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/planner.js"></script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>

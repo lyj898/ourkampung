@@ -251,3 +251,27 @@ tbody tr:hover{background:var(--surface-2)}
   .topstats{display:none}
   .cards{grid-template-columns:1fr}
 }
+
+/* ===== Mobile responsiveness enhancements ===== */
+img{max-width:100%;height:auto}
+.card,.modal-body,.detail-grid dd,.sl-item,.svc-name,.card-name,.readme,.card-diff,.card-notes{overflow-wrap:anywhere}
+@media(max-width:1180px){
+  /* dvh avoids the iOS/Android address-bar 100vh jump */
+  .col-intake,.col-shortlist{height:100dvh}
+}
+@media(max-width:560px){
+  .topbar{padding:0 14px;gap:12px}
+  .tabs{padding:0 14px}
+  .brand-sub{display:none}
+  .brand-name{font-size:19px}
+  /* 16px inputs prevent iOS Safari auto-zoom on focus */
+  input,select,textarea,.search input,.selectmini{font-size:16px}
+  .results-meta{flex-wrap:wrap;gap:8px}
+  .togglepill{padding:10px 14px}
+  .viewtoggle button{padding:9px 13px}
+  .tab{padding:12px 14px}
+  .col{padding:14px}
+  .modal-body{padding:16px}
+  .modal-head{padding:16px 16px 12px}
+  .detail-grid{grid-template-columns:92px 1fr}
+}

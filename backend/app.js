@@ -433,7 +433,7 @@ function copyContact(name){
 }
 function copySummary(){
   const e=state.enquiry;
-  let t='FÊTE — INTERNAL SUPPLIER SHORTLIST\n';
+  let t='BACKEND — INTERNAL SUPPLIER SHORTLIST\n';
   if(e){t+=`\nEnquiry: ${[e.event,e.age&&('age '+e.age),e.pax&&(e.pax+' pax'),e.venue,e.theme].filter(Boolean).join(' · ')}\n`;
     if(e.bmin||e.bmax)t+=`Budget: SGD ${e.bmin||'?'}–${e.bmax||'?'}\n`;
     if(e.notes)t+=`Notes: ${e.notes}\n`;}

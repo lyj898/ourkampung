@@ -1,0 +1,134 @@
+[
+  {
+    "slug": "balloon-decoration-singapore",
+    "name": "Balloon Décor",
+    "titleName": "Balloon Decoration",
+    "image": "assets/service-decor.png",
+    "kicker": "Balloon Décor",
+    "h1": "Balloon décor, <em>styled, not clustered.</em>",
+    "metaDescription": "Looking for balloon decoration in Singapore? OurKampung designs and installs refined balloon garlands, arches and backdrops for kids' parties — delivered and set up.",
+    "intro": "Balloons set the whole mood of a party — done well, they're the centrepiece; done badly, they're clutter. We design refined garlands, arches and backdrop installations in palettes chosen to suit your theme, then deliver, install and remove them so the setup is flawless and you never touch a pump. It's the single most photographed part of most parties, and we treat it that way.",
+    "highlights": [
+      "Custom garlands, arches and full backdrop installations",
+      "Palettes tuned to your theme rather than off-the-shelf primary colours",
+      "Organic, sculpted shapes with tasteful finishing touches",
+      "On-site installation and same-day teardown"
+    ],
+    "faqs": [
+      { "q": "How much does balloon decoration cost in Singapore?", "a": "It depends on the size and complexity of the installation. A simple garland is very affordable; a large backdrop with premium finishes costs more. Share your space and theme and we'll quote to fit your budget." },
+      { "q": "Do you deliver and install, or is it self-collect?", "a": "We deliver, install on site, and return to clear everything afterwards, anywhere in Singapore. You don't lift a finger." },
+      { "q": "Can you match a specific colour or theme?", "a": "Yes — that's the point. We build the palette around your theme and any specific colours you love." }
+    ],
+    "related": ["kids-birthday-cakes-singapore", "party-entertainment-singapore", "unicorn-birthday-party-singapore"]
+  },
+  {
+    "slug": "kids-birthday-cakes-singapore",
+    "name": "Birthday Cakes",
+    "titleName": "Kids Birthday Cakes",
+    "image": "assets/service-cake.png",
+    "kicker": "Cakes & Desserts",
+    "h1": "Birthday cakes, <em>as good as they look.</em>",
+    "metaDescription": "Need a kids' birthday cake in Singapore? OurKampung arranges beautiful custom cakes and dessert tables, matched to your theme and delivered to your party.",
+    "intro": "The cake is the moment everyone gathers for. We work with trusted bakers to arrange custom cakes and dessert tables that match your theme and taste as good as they look — no dry, over-iced letdowns. From a single statement cake to a full dessert spread, we coordinate flavours, design and delivery so it arrives perfect and on time.",
+    "highlights": [
+      "Custom cakes designed around your theme and colours",
+      "Matching dessert tables — cupcakes, cookies, cake pops and more",
+      "Trusted bakers, with flavours and dietary needs accounted for",
+      "Coordinated delivery timed to your party"
+    ],
+    "faqs": [
+      { "q": "Can you accommodate dietary needs like halal or nut-free?", "a": "Yes — tell us your requirements and we'll match you with a baker who caters for them, whether that's halal, eggless, nut-free or other needs." },
+      { "q": "Do you offer a cake plus a smash cake?", "a": "We can arrange both — a main cake for guests and a separate smash cake for first-birthday photos." },
+      { "q": "How far ahead do cakes need to be ordered?", "a": "One to two weeks is ideal for custom designs, though we can sometimes arrange quicker. Let us know your date." }
+    ],
+    "related": ["balloon-decoration-singapore", "party-catering-singapore", "first-birthday-party-singapore"]
+  },
+  {
+    "slug": "party-entertainment-singapore",
+    "name": "Entertainment",
+    "titleName": "Kids Party Entertainment",
+    "image": "assets/service-entertainment.png",
+    "kicker": "Entertainment",
+    "h1": "Entertainment, <em>that actually holds the room.</em>",
+    "metaDescription": "Looking for kids' party entertainment in Singapore? OurKampung books magicians, hosts, mascots and shows — matched to your children's ages and coordinated end to end.",
+    "intro": "Good entertainment is what turns a nice party into a memorable one. We book and coordinate the right act for your children's ages and your space — a magician, a games host, a costumed mascot, a bubble or science show — and brief them properly so the timing fits your run-of-show. No awkward lulls, no over-their-heads acts, just a room full of delighted kids.",
+    "highlights": [
+      "Magicians, hosts, mascots, and bubble or science shows",
+      "Acts matched to the children's ages and your venue",
+      "Proper briefing so entertainment fits your party's timing",
+      "One point of contact — we manage the performer for you"
+    ],
+    "faqs": [
+      { "q": "What entertainment works best for different ages?", "a": "Toddlers love bubbles, mascots and sensory play; older kids enjoy magic, games hosts and science or slime shows. Tell us the age range and we'll recommend the right fit." },
+      { "q": "How long does a typical act run?", "a": "Most performances run 45 minutes to an hour, which suits the attention span of a party crowd. We can adjust to your schedule." },
+      { "q": "Do you coordinate the performer directly?", "a": "Yes — we book, brief and manage the performer so you have a single point of contact and nothing to chase on the day." }
+    ],
+    "related": ["face-painting-singapore", "balloon-decoration-singapore", "superhero-birthday-party-singapore"]
+  },
+  {
+    "slug": "face-painting-singapore",
+    "name": "Face Painting",
+    "titleName": "Party Face Painting",
+    "image": "assets/service-entertainment.png",
+    "kicker": "Face Painting",
+    "h1": "Face painting, <em>a small station of pure magic.</em>",
+    "metaDescription": "Book face painting for a kids' party in Singapore. OurKampung arranges skilled, child-safe face painters matched to your theme and coordinated with your setup.",
+    "intro": "Few things keep children as happily occupied as a face-painting station — and it doubles as a takeaway they'll show off all day. We arrange skilled artists using child-safe, easily-removable paints, and can match designs to your theme so the whole party feels cohesive. It's a low-fuss addition that delivers an outsized amount of delight.",
+    "highlights": [
+      "Skilled artists using child-safe, easily-removed paints",
+      "Designs matched to your party's theme",
+      "A tidy, well-run station that keeps queues moving",
+      "Coordinated with the rest of your setup and timing"
+    ],
+    "faqs": [
+      { "q": "Are the paints safe for children's skin?", "a": "Yes — our artists use professional, hypoallergenic, cosmetic-grade paints that wash off easily with soap and water." },
+      { "q": "How many children can one artist paint?", "a": "A single artist typically manages around 10-15 children per hour depending on design complexity. For larger parties we can arrange more than one." },
+      { "q": "Can the designs match our theme?", "a": "Absolutely — from safari animals to superheroes to unicorns, we'll brief the artist to match your party's theme." }
+    ],
+    "related": ["party-entertainment-singapore", "balloon-decoration-singapore", "safari-jungle-birthday-party-singapore"]
+  },
+  {
+    "slug": "party-catering-singapore",
+    "name": "Catering",
+    "titleName": "Kids Party Catering",
+    "image": "assets/service-cake.png",
+    "kicker": "Catering",
+    "h1": "Catering, <em>for little guests and grown-ups alike.</em>",
+    "metaDescription": "Need catering for a kids' party in Singapore? OurKampung arranges crowd-pleasing, dietary-friendly party food for children and adults — coordinated and delivered.",
+    "intro": "A children's party feeds two very different crowds — picky little eaters and the parents keeping them company. We arrange catering that pleases both: fuss-free, crowd-pleasing bites for the kids and something a little more grown-up for the adults, with dietary needs handled. Delivery and setup are timed to your run-of-show so food is fresh when it's needed.",
+    "highlights": [
+      "Kid-friendly favourites alongside grown-up options",
+      "Grazing tables, bento sets, buffets or finger food",
+      "Dietary needs handled — halal, vegetarian, nut-free and more",
+      "Delivery and setup timed to your party"
+    ],
+    "faqs": [
+      { "q": "Can you cater for both children and adults?", "a": "Yes — we plan a spread that keeps the kids happy and gives the adults something more substantial, all from one coordinated order." },
+      { "q": "Do you handle halal or other dietary requirements?", "a": "We do. Tell us your requirements and we'll match you with caterers who meet them, including halal, vegetarian and allergy-aware options." },
+      { "q": "Is there a minimum guest count?", "a": "It varies by caterer, but we can arrange options for gatherings both small and large. Share your numbers and we'll suggest what fits." }
+    ],
+    "related": ["kids-birthday-cakes-singapore", "balloon-decoration-singapore", "condo-function-room-birthday-party-singapore"]
+  },
+  {
+    "slug": "party-photography-singapore",
+    "name": "Photography",
+    "titleName": "Kids Party Photography",
+    "image": "assets/hero.png",
+    "kicker": "Photography",
+    "h1": "Photography, <em>so you're in the memories too.</em>",
+    "metaDescription": "Book a kids' party photographer in Singapore. OurKampung arranges relaxed, candid party photography so parents can enjoy the day and keep the memories.",
+    "intro": "The parties you host are the ones you have the fewest photos of — because you're too busy running them. We arrange relaxed, unobtrusive photographers who capture the candid moments, the details you styled, and the family portraits you'll actually treasure. You stay present with your child; we make sure the day is beautifully documented.",
+    "highlights": [
+      "Candid, relaxed coverage of the whole celebration",
+      "Detail shots of your setup, cake and styling",
+      "A few gentle family portraits without disrupting the party",
+      "Edited images delivered after the day"
+    ],
+    "faqs": [
+      { "q": "How long does the photographer stay?", "a": "Coverage typically runs one to two hours around the key moments — arrival, cake and activities. We'll advise the right length for your schedule." },
+      { "q": "When do we receive the photos?", "a": "Edited galleries are usually delivered within one to two weeks, depending on the photographer. We'll confirm timing when booking." },
+      { "q": "Can you also capture video?", "a": "We can arrange short highlight video in addition to photography — just let us know when you enquire." }
+    ],
+    "related": ["balloon-decoration-singapore", "first-birthday-party-singapore", "kids-birthday-cakes-singapore"]
+  }
+]

@@ -1,39 +1,52 @@
 <#
-  Generate-ThemePages.ps1
+  Generate-LandingPages.ps1
   --------------------------------------------------------------
-  Programmatic SEO generator for OurKampung theme landing pages.
+  Programmatic SEO generator for the milestone / service / location
+  landing-page clusters. Same model as Generate-ThemePages.ps1:
+  one JSON object per page -> one <slug>.html at the repo root.
 
-  Reads   : data/themes.json   (the content for each theme)
-  Writes  : <slug>.html         (one landing page per theme, at repo root)
-  Rebuilds: sitemap.xml         (core pages + every generated theme page)
+  Reads   : data/milestones.json, data/services.json, data/locations.json
+            (and data/themes.json, for cross-linking + the sitemap)
+  Writes  : <slug>.html  (one per cluster entry)
+  Rebuilds: sitemap.xml   (core + themes + all clusters) -- the complete map
 
   Usage (from anywhere):
-      powershell -ExecutionPolicy Bypass -File scripts/Generate-ThemePages.ps1
+      powershell -ExecutionPolicy Bypass -File scripts/Generate-LandingPages.ps1
 
-  Add a new theme by adding an object to data/themes.json, then re-run.
-  No Node, no build tooling, no deploy change required.
+  Add a page by adding an object to the relevant data/*.json, then re-run.
 #>
 
 $ErrorActionPreference = 'Stop'
-$repo     = Split-Path $PSScriptRoot -Parent
-$dataPath = Join-Path $repo 'data/themes.json'
-$origin   = 'https://ourkampung.com'
-$lastmod  = '2026-08-03'   # bump when you regenerate
+$repo    = Split-Path $PSScriptRoot -Parent
+$origin  = 'https://ourkampung.com'
+$lastmod = '2026-08-03'
 
-$themes = Get-Content $dataPath -Raw -Encoding UTF8 | ConvertFrom-Json
-
-# HTML-escape a bare & (but leave existing entities like &amp; / &mdash; alone).
-# Used for name/titleName in HTML text & attributes; JSON-LD keeps the raw value.
 function Esc([string]$s) {
     if ([string]::IsNullOrEmpty($s)) { return '' }
     return ($s -replace '&(?!amp;|lt;|gt;|quot;|#\d+;|#x[0-9a-fA-F]+;)', '&amp;')
 }
+function Load([string]$name) {
+    $p = Join-Path $repo "data/$name"
+    if (Test-Path $p) { return @(Get-Content $p -Raw -Encoding UTF8 | ConvertFrom-Json) }
+    return @()
+}
 
-# Lookup so related-theme cards can pull each other's name/image.
+# Cluster definitions: data file + the label used for the highlights section
+# + breadcrumb parent (empty crumbUrl => 2-level Home > page).
+$collections = @(
+    @{ file = 'milestones.json'; heading = 'What we take care of';        crumbName = '';         crumbUrl = '' },
+    @{ file = 'services.json';   heading = "What's included";             crumbName = 'Services'; crumbUrl = 'services.html' },
+    @{ file = 'locations.json';  heading = 'How we make it effortless';   crumbName = '';         crumbUrl = '' }
+)
+
+# Global slug -> entry lookup across ALL clusters (incl. themes) so related
+# cards can resolve names/images regardless of which cluster they live in.
+$all = @()
+$all += Load 'themes.json'
+foreach ($c in $collections) { $all += Load $c.file }
 $lookup = @{}
-foreach ($x in $themes) { $lookup[$x.slug] = $x }
+foreach ($x in $all) { if ($x -and $x.slug) { $lookup[$x.slug] = $x } }
 
-# ---- Shared chrome (kept identical to the hand-authored pages) ----
 $ga = @'
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8XGK5F86ZX"></script>
@@ -52,7 +65,7 @@ $header = @'
     <nav aria-label="Primary"><ul class="nav-links">
       <li><a href="birthdays.html">Kids Birthdays</a></li>
       <li><a href="services.html">Services</a></li>
-      <li><a href="themes.html" class="active">Themes</a></li>
+      <li><a href="themes.html">Themes</a></li>
       <li><a href="events.html">Other Events</a></li>
       <li><a href="how-it-works.html">How It Works</a></li>
     </ul></nav>
@@ -83,11 +96,6 @@ $scopedCss = @'
   .th-ideas{list-style:none;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));padding:0;margin-top:2rem}
   .th-ideas li{background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius);padding:1.1rem 1.25rem 1.1rem 2.6rem;box-shadow:var(--shadow-sm);position:relative}
   .th-ideas li::before{content:"";position:absolute;left:1.2rem;top:1.55rem;width:9px;height:9px;border-radius:50%;background:var(--gold)}
-  .th-palette{display:flex;flex-wrap:wrap;gap:1.1rem;justify-content:center;margin-top:2rem}
-  .sw{width:124px;text-align:center}
-  .sw span{display:block;height:78px;border-radius:var(--radius-sm);box-shadow:var(--shadow-sm);border:1px solid var(--border-soft)}
-  .sw small{display:block;margin-top:.55rem;font-weight:600}
-  .sw code{font-size:var(--text-xs);color:var(--faint)}
   .th-faq-wrap{max-width:780px;margin:2rem auto 0}
   .faq{background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius);margin-bottom:.75rem;overflow:hidden}
   .faq summary{cursor:pointer;padding:1.05rem 1.35rem;font-family:var(--font-display);font-size:var(--text-lg);list-style:none;display:flex;justify-content:space-between;gap:1rem}
@@ -98,7 +106,6 @@ $scopedCss = @'
 </style>
 '@
 
-# ---- Per-page template. {{TOKENS}} are literal-replaced below. ----
 $template = @'
 <!DOCTYPE html>
 <html lang="en">
@@ -138,34 +145,24 @@ $template = @'
     <span class="kicker center">{{KICKER}}</span>
     <h1>{{H1}}</h1>
     <p class="th-prose">{{INTRO}}</p>
-    <figure class="th-figure"><img src="{{IMG}}" alt="{{NAME}} birthday party styling by OurKampung Singapore"></figure>
+    <figure class="th-figure"><img src="{{IMG}}" alt="{{NAME}} by OurKampung Singapore"></figure>
   </div>
 </section>
 
 <section class="section" style="padding-top:1rem">
   <div class="wrap">
-    <span class="kicker center">Styling Ideas</span>
-    <h2 style="text-align:center;font-size:var(--text-2xl);margin-top:.4rem">Ways we style a {{NAME_LOWER}} party</h2>
+    <span class="kicker center">The Detail</span>
+    <h2 style="text-align:center;font-size:var(--text-2xl);margin-top:.4rem">{{HL_HEADING}}</h2>
     <ul class="th-ideas">
-{{IDEAS}}
+{{HIGHLIGHTS}}
     </ul>
   </div>
 </section>
 
 <section class="section" style="padding-top:0">
   <div class="wrap">
-    <span class="kicker center">Colour Palette</span>
-    <h2 style="text-align:center;font-size:var(--text-2xl);margin-top:.4rem">A refined {{NAME_LOWER}} palette</h2>
-    <div class="th-palette">
-{{PALETTE}}
-    </div>
-  </div>
-</section>
-
-<section class="section" style="padding-top:0">
-  <div class="wrap">
     <span class="kicker center">Good To Know</span>
-    <h2 style="text-align:center;font-size:var(--text-2xl);margin-top:.4rem">{{NAME}} party FAQs</h2>
+    <h2 style="text-align:center;font-size:var(--text-2xl);margin-top:.4rem">{{NAME}} FAQs</h2>
     <div class="th-faq-wrap">
 {{FAQ}}
     </div>
@@ -174,21 +171,20 @@ $template = @'
 
 <section class="section" style="padding-top:0">
   <div class="wrap"><div class="cta-band reveal">
-    <span class="kicker center">Love This Theme?</span>
-    <h2>Let's plan your <em>{{NAME_LOWER}} party.</em></h2>
-    <p>Tell us your child's age, date and budget &mdash; our Singapore concierge will craft a tailored plan and handle every detail.</p>
+    <span class="kicker center">Ready When You Are</span>
+    <h2>Let's plan your <em>celebration.</em></h2>
+    <p>Tell us the date, the age and your budget &mdash; our Singapore concierge will craft a tailored plan and handle every detail.</p>
     <div class="cta-actions"><a class="btn btn-primary btn-lg" href="plan.html">Plan Your Party</a><a class="btn btn-ghost btn-lg" href="contact.html">Contact Us</a></div>
   </div></div>
 </section>
 
 <section class="section" style="padding-top:0">
   <div class="wrap">
-    <span class="kicker center">More Inspiration</span>
-    <h2 style="text-align:center;font-size:var(--text-2xl);margin-top:.4rem">Related themes</h2>
+    <span class="kicker center">Explore More</span>
+    <h2 style="text-align:center;font-size:var(--text-2xl);margin-top:.4rem">You might also like</h2>
     <div class="theme-grid" style="margin-top:2rem">
 {{RELATED}}
     </div>
-    <p style="text-align:center;margin-top:1.75rem"><a class="btn btn-ghost" href="themes.html">View all themes</a></p>
   </div>
 </section>
 </main>
@@ -197,124 +193,85 @@ $template = @'
 </html>
 '@
 
-$slugs = @()
-foreach ($t in $themes) {
-    $slugs += $t.slug
-    $nameEsc      = Esc $t.name
-    $titleNameEsc = Esc $t.titleName
-    $nameLowerEsc = Esc ($t.name.ToLower())
+$clusterSlugs = @()
 
-    $ideasHtml = ($t.ideas | ForEach-Object { "      <li>$_</li>" }) -join "`n"
+foreach ($c in $collections) {
+    $entries = Load $c.file
+    foreach ($t in $entries) {
+        $clusterSlugs += $t.slug
+        $nameEsc = Esc $t.name
+        $titleNameEsc = Esc $t.titleName
 
-    $palHtml = ($t.palette | ForEach-Object {
-        "      <div class=""sw""><span style=""background:$($_.hex)""></span><small>$($_.name)</small><code>$($_.hex)</code></div>"
-    }) -join "`n"
+        $hlHtml = ($t.highlights | ForEach-Object { "      <li>$_</li>" }) -join "`n"
+        $faqHtml = ($t.faqs | ForEach-Object {
+            "      <details class=""faq""><summary>$($_.q)</summary><div>$($_.a)</div></details>"
+        }) -join "`n"
+        $relHtml = ($t.related | ForEach-Object {
+            $r = $lookup[$_]
+            if ($null -ne $r) {
+                "      <a class=""theme-card reveal"" href=""$($r.slug).html""><img src=""$($r.image)"" alt=""$(Esc $r.titleName)""><div class=""tc-label""><strong>$(Esc $r.name)</strong><span>Learn more</span></div></a>"
+            }
+        }) -join "`n"
 
-    $faqHtml = ($t.faqs | ForEach-Object {
-        "      <details class=""faq""><summary>$($_.q)</summary><div>$($_.a)</div></details>"
-    }) -join "`n"
-
-    $relHtml = ($t.related | ForEach-Object {
-        $r = $lookup[$_]
-        if ($null -ne $r) {
-            "      <a class=""theme-card reveal"" href=""$($r.slug).html""><img src=""$($r.image)"" alt=""$(Esc $r.titleName) styling""><div class=""tc-label""><strong>$(Esc $r.name)</strong><span>View theme</span></div></a>"
+        # --- Structured data ---
+        $service = [ordered]@{
+            '@context' = 'https://schema.org'; '@type' = 'Service'
+            serviceType = $t.titleName
+            name = "$($t.titleName) in Singapore"
+            description = $t.metaDescription
+            areaServed = [ordered]@{ '@type' = 'Country'; name = 'Singapore' }
+            provider = [ordered]@{ '@type' = 'LocalBusiness'; name = 'OurKampung'; url = "$origin/" }
         }
-    }) -join "`n"
+        $faqPage = [ordered]@{
+            '@context' = 'https://schema.org'; '@type' = 'FAQPage'
+            mainEntity = @($t.faqs | ForEach-Object {
+                [ordered]@{ '@type' = 'Question'; name = $_.q
+                    acceptedAnswer = [ordered]@{ '@type' = 'Answer'; text = $_.a } }
+            })
+        }
+        $crumbItems = @([ordered]@{ '@type' = 'ListItem'; position = 1; name = 'Home'; item = "$origin/" })
+        $pos = 2
+        if ($c.crumbUrl) {
+            $crumbItems += [ordered]@{ '@type' = 'ListItem'; position = $pos; name = $c.crumbName; item = "$origin/$($c.crumbUrl)" }
+            $pos++
+        }
+        $crumbItems += [ordered]@{ '@type' = 'ListItem'; position = $pos; name = $t.name; item = "$origin/$($t.slug).html" }
+        $crumb = [ordered]@{ '@context' = 'https://schema.org'; '@type' = 'BreadcrumbList'; itemListElement = $crumbItems }
 
-    # --- Structured data (Service + FAQPage + BreadcrumbList) ---
-    $service = [ordered]@{
-        '@context' = 'https://schema.org'; '@type' = 'Service'
-        serviceType = "$($t.titleName) planning"
-        name = "$($t.titleName) in Singapore"
-        description = $t.metaDescription
-        areaServed = [ordered]@{ '@type' = 'Country'; name = 'Singapore' }
-        provider = [ordered]@{ '@type' = 'LocalBusiness'; name = 'OurKampung'; url = "$origin/" }
-    }
-    $faqPage = [ordered]@{
-        '@context' = 'https://schema.org'; '@type' = 'FAQPage'
-        mainEntity = @($t.faqs | ForEach-Object {
-            [ordered]@{ '@type' = 'Question'; name = $_.q
-                acceptedAnswer = [ordered]@{ '@type' = 'Answer'; text = $_.a } }
-        })
-    }
-    $crumb = [ordered]@{
-        '@context' = 'https://schema.org'; '@type' = 'BreadcrumbList'
-        itemListElement = @(
-            [ordered]@{ '@type' = 'ListItem'; position = 1; name = 'Home';   item = "$origin/" },
-            [ordered]@{ '@type' = 'ListItem'; position = 2; name = 'Themes'; item = "$origin/themes.html" },
-            [ordered]@{ '@type' = 'ListItem'; position = 3; name = $t.name;  item = "$origin/$($t.slug).html" }
-        )
-    }
-    $jsonld = (@($service, $faqPage, $crumb) | ForEach-Object {
-        "<script type=""application/ld+json"">`n" + ($_ | ConvertTo-Json -Depth 12) + "`n</script>"
-    }) -join "`n"
+        $jsonld = (@($service, $faqPage, $crumb) | ForEach-Object {
+            "<script type=""application/ld+json"">`n" + ($_ | ConvertTo-Json -Depth 12) + "`n</script>"
+        }) -join "`n"
 
-    $title = "$titleNameEsc in Singapore &mdash; OurKampung"
+        $title = "$titleNameEsc in Singapore &mdash; OurKampung"
 
-    $html = $template.
-        Replace('{{GA}}',        $ga).
-        Replace('{{HEADER}}',    $header).
-        Replace('{{FOOTER}}',    $footer).
-        Replace('{{CSS}}',       $scopedCss).
-        Replace('{{JSONLD}}',    $jsonld).
-        Replace('{{ORIGIN}}',    $origin).
-        Replace('{{TITLE}}',     $title).
-        Replace('{{DESC}}',      $t.metaDescription).
-        Replace('{{SLUG}}',      $t.slug).
-        Replace('{{IMG}}',       $t.image).
-        Replace('{{KICKER}}',    $t.kicker).
-        Replace('{{H1}}',        $t.h1).
-        Replace('{{NAME_LOWER}}',$nameLowerEsc).
-        Replace('{{NAME}}',      $nameEsc).
-        Replace('{{INTRO}}',     $t.intro).
-        Replace('{{IDEAS}}',     $ideasHtml).
-        Replace('{{PALETTE}}',   $palHtml).
-        Replace('{{FAQ}}',       $faqHtml).
-        Replace('{{RELATED}}',   $relHtml)
+        $html = $template.
+            Replace('{{GA}}',        $ga).
+            Replace('{{HEADER}}',    $header).
+            Replace('{{FOOTER}}',    $footer).
+            Replace('{{CSS}}',       $scopedCss).
+            Replace('{{JSONLD}}',    $jsonld).
+            Replace('{{ORIGIN}}',    $origin).
+            Replace('{{TITLE}}',     $title).
+            Replace('{{DESC}}',      $t.metaDescription).
+            Replace('{{SLUG}}',      $t.slug).
+            Replace('{{IMG}}',       $t.image).
+            Replace('{{KICKER}}',    $t.kicker).
+            Replace('{{H1}}',        $t.h1).
+            Replace('{{HL_HEADING}}',$c.heading).
+            Replace('{{NAME}}',      $nameEsc).
+            Replace('{{INTRO}}',     $t.intro).
+            Replace('{{HIGHLIGHTS}}',$hlHtml).
+            Replace('{{FAQ}}',       $faqHtml).
+            Replace('{{RELATED}}',   $relHtml)
 
-    $outPath = Join-Path $repo "$($t.slug).html"
-    [System.IO.File]::WriteAllText($outPath, $html, (New-Object System.Text.UTF8Encoding($false)))
-    Write-Host "  generated  $($t.slug).html"
-}
-
-# ---- Refresh the theme hub grid in themes.html (between markers) ----
-$taglines = @{
-    'unicorn-birthday-party-singapore'                     = 'Pastel &amp; sparkle'
-    'princess-birthday-party-singapore'                    = 'Whimsical yet refined'
-    'dinosaur-birthday-party-singapore'                    = 'Earthy &amp; adventurous'
-    'mermaid-birthday-party-singapore'                     = 'Dreamy &amp; iridescent'
-    'safari-jungle-birthday-party-singapore'               = 'Playful &amp; natural'
-    'rainbow-birthday-party-singapore'                     = 'Soft &amp; joyful'
-    'superhero-birthday-party-singapore'                   = 'Bold &amp; action-packed'
-    'frozen-winter-wonderland-birthday-party-singapore'    = 'Icy &amp; elegant'
-}
-$delays = @('', ' d1', ' d2', ' d3')
-$i = 0
-$hubCards = ($themes | ForEach-Object {
-    $tag = $taglines[$_.slug]; if (-not $tag) { $tag = 'View theme' }
-    $d = $delays[$i % 4]; $i++
-    "      <a class=""theme-card reveal$d"" href=""$($_.slug).html""><img src=""$($_.image)"" alt=""$(Esc $_.titleName) styling""><div class=""tc-label""><strong>$(Esc $_.name)</strong><span>$tag</span></div></a>"
-}) -join "`n"
-
-$hubPath = Join-Path $repo 'themes.html'
-if (Test-Path $hubPath) {
-    $hub = [System.IO.File]::ReadAllText($hubPath)
-    $startMark = '<!--THEME-CARDS:START-->'
-    $endMark   = '<!--THEME-CARDS:END-->'
-    $s = $hub.IndexOf($startMark)
-    $e = $hub.IndexOf($endMark)
-    if ($s -ge 0 -and $e -gt $s) {
-        $before = $hub.Substring(0, $s + $startMark.Length)
-        $after  = $hub.Substring($e)
-        $hub = $before + "`n" + $hubCards + "`n      " + $after
-        [System.IO.File]::WriteAllText($hubPath, $hub, (New-Object System.Text.UTF8Encoding($false)))
-        Write-Host "  refreshed  themes.html hub grid"
-    } else {
-        Write-Host "  (skipped themes.html: THEME-CARDS markers not found)" -ForegroundColor Yellow
+        $outPath = Join-Path $repo "$($t.slug).html"
+        [System.IO.File]::WriteAllText($outPath, $html, (New-Object System.Text.UTF8Encoding($false)))
+        Write-Host "  generated  $($t.slug).html"
     }
 }
 
-# ---- Rebuild sitemap.xml (core pages + generated theme pages) ----
+# ---- Rebuild the COMPLETE sitemap (core + themes + all clusters) ----
+$themeSlugs = (Load 'themes.json' | ForEach-Object { $_.slug })
 $core = @(
     @{ loc = "$origin/";                 freq = 'weekly';  pri = '1.0' },
     @{ loc = "$origin/birthdays.html";   freq = 'monthly'; pri = '0.8' },
@@ -331,18 +288,11 @@ $sb = [System.Text.StringBuilder]::new()
 foreach ($u in $core) {
     [void]$sb.AppendLine("  <url><loc>$($u.loc)</loc><lastmod>$lastmod</lastmod><changefreq>$($u.freq)</changefreq><priority>$($u.pri)</priority></url>")
 }
-# Include landing-page clusters (milestones/services/locations) so a theme-only
-# run does not drop them from the sitemap.
-$clusterSlugs = @()
-foreach ($cf in 'milestones.json','services.json','locations.json') {
-    $cp = Join-Path $repo "data/$cf"
-    if (Test-Path $cp) { $clusterSlugs += (Get-Content $cp -Raw -Encoding UTF8 | ConvertFrom-Json | ForEach-Object { $_.slug }) }
-}
-foreach ($s in ($slugs + $clusterSlugs)) {
+foreach ($s in ($themeSlugs + $clusterSlugs)) {
     [void]$sb.AppendLine("  <url><loc>$origin/$s.html</loc><lastmod>$lastmod</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>")
 }
 [void]$sb.AppendLine('</urlset>')
 [System.IO.File]::WriteAllText((Join-Path $repo 'sitemap.xml'), $sb.ToString().TrimEnd() + "`n", (New-Object System.Text.UTF8Encoding($false)))
 
 Write-Host ""
-Write-Host "Done. $($slugs.Count) theme pages + sitemap.xml regenerated." -ForegroundColor Green
+Write-Host "Done. $($clusterSlugs.Count) landing pages + complete sitemap ($(($themeSlugs.Count + $clusterSlugs.Count + $core.Count)) URLs)." -ForegroundColor Green

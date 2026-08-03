@@ -1,0 +1,134 @@
+[
+  {
+    "slug": "kids-party-venue-tampines",
+    "name": "Tampines",
+    "titleName": "Kids Party in Tampines",
+    "image": "assets/hero.png",
+    "kicker": "Tampines",
+    "h1": "Kids' parties in Tampines, <em>beautifully handled.</em>",
+    "metaDescription": "Planning a kids' party in Tampines? OurKampung styles and runs children's birthday parties across Tampines — homes, condo function rooms and venues, fully coordinated.",
+    "intro": "We plan and style children's parties right across Tampines — in HDB homes, condo function rooms and local venues. Because we deliver islandwide, distance is never an issue: we bring the setup to you, install it before your guests arrive, and clear everything afterwards. You get a beautifully styled celebration in your own neighbourhood, with none of the running around.",
+    "highlights": [
+      "Styling and setup at Tampines homes, condos and function rooms",
+      "Full delivery, installation and teardown in the area",
+      "Décor, cake, entertainment and catering coordinated together",
+      "One concierge managing every supplier for you"
+    ],
+    "faqs": [
+      { "q": "Do you charge extra to deliver to Tampines?", "a": "Our styling packages include islandwide delivery and setup, so there's no separate travel surcharge for Tampines. We'll confirm everything up front." },
+      { "q": "Can you set up in a condo function room in Tampines?", "a": "Yes — we regularly work in condo function rooms and will coordinate with your management on access, setup timing and any house rules." },
+      { "q": "How early do you arrive to set up?", "a": "We arrive with enough lead time to have everything styled and ready before your first guests, and we return to clear up afterwards." }
+    ],
+    "related": ["kids-party-venue-punggol", "condo-function-room-birthday-party-singapore", "kids-party-at-home-singapore"]
+  },
+  {
+    "slug": "kids-party-venue-punggol",
+    "name": "Punggol",
+    "titleName": "Kids Party in Punggol",
+    "image": "assets/service-decor.png",
+    "kicker": "Punggol",
+    "h1": "Kids' parties in Punggol, <em>effortless from start to finish.</em>",
+    "metaDescription": "Planning a kids' party in Punggol? OurKampung styles and runs children's birthday parties across Punggol — homes, condos and waterfront venues, fully coordinated.",
+    "intro": "From waterfront condos to family homes, we style and run children's parties throughout Punggol. We handle the whole thing islandwide, so you get a beautifully coordinated celebration close to home without lifting a finger — we deliver, set up before guests arrive, and clear it all away when the last balloon has done its job.",
+    "highlights": [
+      "Styling and setup across Punggol homes, condos and venues",
+      "Full delivery, installation and teardown in the area",
+      "Décor, cake, entertainment and catering in one coordinated plan",
+      "A single concierge handling every detail"
+    ],
+    "faqs": [
+      { "q": "Do you cover the Punggol waterfront condos?", "a": "Yes — we regularly set up in Punggol's condo function rooms and will liaise with your management on access and timing." },
+      { "q": "Is there a delivery fee to Punggol?", "a": "Islandwide delivery and setup are included in our styling packages, so there's no separate travel charge for Punggol." },
+      { "q": "Can you do an outdoor setup near the waterway?", "a": "We can, weather permitting — we'll advise on a shaded or wet-weather backup so your celebration is covered either way." }
+    ],
+    "related": ["kids-party-venue-sengkang", "kids-party-venue-tampines", "condo-function-room-birthday-party-singapore"]
+  },
+  {
+    "slug": "kids-party-venue-sengkang",
+    "name": "Sengkang",
+    "titleName": "Kids Party in Sengkang",
+    "image": "assets/theme-rainbow.png",
+    "kicker": "Sengkang",
+    "h1": "Kids' parties in Sengkang, <em>styled and stress-free.</em>",
+    "metaDescription": "Planning a kids' party in Sengkang? OurKampung styles and runs children's birthday parties across Sengkang — homes, condos and function rooms, fully coordinated.",
+    "intro": "We bring beautifully styled children's parties to families across Sengkang — at home, in condo function rooms, or at a local venue. Everything is handled islandwide: we deliver the setup, install it before your guests arrive, and take it all down afterwards, so your only job is to enjoy your child's celebration.",
+    "highlights": [
+      "Styling and setup at Sengkang homes, condos and function rooms",
+      "Full delivery, installation and teardown in the area",
+      "One coordinated plan for décor, cake, entertainment and food",
+      "A single point of contact from first idea to last balloon"
+    ],
+    "faqs": [
+      { "q": "Do you serve all of Sengkang, including Fernvale and Buangkok?", "a": "Yes — we cover the whole Sengkang area and beyond, with islandwide delivery and setup included." },
+      { "q": "Can you work within our condo's function room rules?", "a": "Absolutely — we're used to condo guidelines and will coordinate on access, setup windows and clearing with your management." },
+      { "q": "Is delivery to Sengkang charged separately?", "a": "No — islandwide delivery and setup are part of our styling packages, with no extra travel surcharge." }
+    ],
+    "related": ["kids-party-venue-punggol", "kids-party-venue-tampines", "kids-party-at-home-singapore"]
+  },
+  {
+    "slug": "condo-function-room-birthday-party-singapore",
+    "name": "Condo Function Rooms",
+    "titleName": "Condo Function Room Birthday Party",
+    "image": "assets/trust.png",
+    "kicker": "Condo Function Rooms",
+    "h1": "Condo function room parties, <em>transformed in an afternoon.</em>",
+    "metaDescription": "Hosting a birthday party in a condo function room in Singapore? OurKampung transforms condo function rooms with full styling, setup and teardown — hassle-free.",
+    "intro": "A condo function room is one of the easiest, most affordable places to host a children's party — but a bare room needs styling to feel special. That's exactly what we do: we transform your function room with a complete setup, work within your condo's rules and time windows, and clear everything before your booking ends. All you book is the room; we handle the rest.",
+    "highlights": [
+      "Complete styling of a bare function room, backdrop to tables",
+      "Setup and teardown within your booking window and house rules",
+      "Décor, cake, entertainment and catering coordinated together",
+      "Liaison with your condo management on access and timing"
+    ],
+    "faqs": [
+      { "q": "Can you set up and clear within our function room booking slot?", "a": "Yes — we plan our setup and teardown to fit your booking window, and we'll confirm timings with your management so there are no surprises." },
+      { "q": "Do you work within condo house rules?", "a": "Always. Tell us any restrictions — on adhesives, noise, or timing — and we'll style within them." },
+      { "q": "Is a function room cheaper than a party venue?", "a": "Usually, yes — it's why so many families choose them. You get an affordable space, and our styling makes it feel like a proper party." }
+    ],
+    "related": ["kids-party-venue-tampines", "kids-party-at-home-singapore", "balloon-decoration-singapore"]
+  },
+  {
+    "slug": "kids-party-sentosa-singapore",
+    "name": "Sentosa",
+    "titleName": "Kids Party in Sentosa",
+    "image": "assets/theme-safari.png",
+    "kicker": "Sentosa",
+    "h1": "Kids' parties on Sentosa, <em>a little island escape.</em>",
+    "metaDescription": "Planning a kids' party on Sentosa? OurKampung styles and runs children's parties at Sentosa beaches, resorts and villas — fully coordinated, islandwide delivery.",
+    "intro": "Sentosa makes a wonderful backdrop for a children's celebration — beach clubs, resort spaces and villas that feel like a proper getaway. We style and run parties across the island, coordinating with your venue on access and setup, and handling every supplier so your only job is to enjoy a memorable day by the water.",
+    "highlights": [
+      "Styling for Sentosa beach clubs, resorts and villas",
+      "Coordination with your venue on access and setup",
+      "Weather-smart setups with shade or wet-weather plans",
+      "Décor, cake, entertainment and catering in one plan"
+    ],
+    "faqs": [
+      { "q": "Can you set up at a Sentosa beach club or resort?", "a": "Yes — we regularly work with Sentosa venues and will coordinate directly on delivery access, setup timing and any venue requirements." },
+      { "q": "What about the heat and weather by the beach?", "a": "We plan shaded setups and a wet-weather backup so your celebration is comfortable and covered whatever the day brings." },
+      { "q": "Does delivery to Sentosa cost extra?", "a": "We'll confirm any venue-specific access details up front; our styling packages include islandwide delivery and setup." }
+    ],
+    "related": ["safari-jungle-birthday-party-singapore", "mermaid-birthday-party-singapore", "kids-party-venue-tampines"]
+  },
+  {
+    "slug": "kids-party-at-home-singapore",
+    "name": "At Home",
+    "titleName": "Kids Party at Home",
+    "image": "assets/service-decor.png",
+    "kicker": "At Home",
+    "h1": "Parties at home, <em>the comfiest kind of magic.</em>",
+    "metaDescription": "Hosting a kids' party at home in Singapore? OurKampung styles and runs at-home children's parties in HDB flats and condos — full setup, teardown and coordination.",
+    "intro": "Home is often the loveliest place for a young child's party — familiar, comfortable, and easy for little ones and naps. We make it effortless: we assess your space, style it to feel genuinely special, and coordinate cake, entertainment and food, then clear everything away so your home is left exactly as we found it. All the warmth of home, none of the mess.",
+    "highlights": [
+      "Setups designed to fit HDB flats and condo living spaces",
+      "Space-smart styling that feels special without crowding the room",
+      "Cake, entertainment and catering coordinated together",
+      "Full teardown — your home left just as it was"
+    ],
+    "faqs": [
+      { "q": "Will a full setup fit in an HDB flat?", "a": "Yes — we design setups to suit the space you have, making it feel special without overwhelming the room. Share a photo of your space and we'll plan around it." },
+      { "q": "Do you clean up and remove everything afterwards?", "a": "We do — full teardown is included, and we leave your home exactly as we found it." },
+      { "q": "Can you keep noise and mess manageable for neighbours?", "a": "Of course. We plan tidy, considerate setups and can suggest quieter entertainment options for apartment living." }
+    ],
+    "related": ["condo-function-room-birthday-party-singapore", "first-birthday-party-singapore", "kids-party-venue-sengkang"]
+  }
+]

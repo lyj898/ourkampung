@@ -1,0 +1,226 @@
+[
+  {
+    "slug": "unicorn-birthday-party-singapore",
+    "name": "Unicorn",
+    "titleName": "Unicorn Birthday Party",
+    "image": "assets/theme-rainbow.png",
+    "kicker": "Unicorn Theme",
+    "h1": "Unicorn birthday parties, <em>styled with sparkle &amp; taste.</em>",
+    "metaDescription": "Planning a unicorn birthday party in Singapore? OurKampung styles dreamy, pastel unicorn parties — décor, cake, entertainment and venue, coordinated end to end.",
+    "intro": "A unicorn party doesn't have to mean plastic rainbows and clashing colour. We reimagine it in soft pastels, gilded horns and cloud-like balloon installations — magical for your little one, genuinely beautiful for the grown-ups. From backdrop to cake to party favours, our Singapore concierge coordinates every detail so the day feels effortless.",
+    "ideas": [
+      "Pastel balloon garland with a matte gold unicorn horn centrepiece",
+      "A tiered cake with hand-piped mane detail and edible gold leaf",
+      "Iridescent tableware, star confetti and cloud-shaped place cards",
+      "Make-your-own unicorn headband craft corner for the little guests"
+    ],
+    "palette": [
+      { "name": "Blush", "hex": "#F4C9D6" },
+      { "name": "Lilac Mist", "hex": "#D9C7E8" },
+      { "name": "Sky", "hex": "#BFD8E8" },
+      { "name": "Soft Gold", "hex": "#E4CE96" }
+    ],
+    "faqs": [
+      { "q": "How much does a unicorn birthday party cost in Singapore?", "a": "It depends on guest numbers, venue and how elaborate the décor is. Most of our styled unicorn parties start from a few hundred dollars for décor-only setups and scale up with cake, entertainment and catering. Tell us your budget and we'll tailor a package that fits." },
+      { "q": "Can you do a unicorn party at my condo function room or at home?", "a": "Yes. We regularly style condo function rooms, HDB spaces and homes across Singapore. We handle delivery, setup and teardown so you don't lift a finger." },
+      { "q": "How far in advance should I book?", "a": "We recommend two to four weeks for a fully styled party, though we can often accommodate shorter timelines. Message us as early as you can to secure your preferred date." }
+    ],
+    "related": ["princess-birthday-party-singapore", "rainbow-birthday-party-singapore", "mermaid-birthday-party-singapore"]
+  },
+  {
+    "slug": "princess-birthday-party-singapore",
+    "name": "Princess",
+    "titleName": "Princess Birthday Party",
+    "image": "assets/theme-princess.png",
+    "kicker": "Princess Theme",
+    "h1": "Princess parties, <em>whimsical yet refined.</em>",
+    "metaDescription": "Dreaming of a princess birthday party in Singapore? OurKampung creates elegant fairytale celebrations — blush décor, castle cakes, dress-up and full coordination.",
+    "intro": "Every child deserves their fairytale — styled with restraint so it feels enchanting, not overwhelming. Think blush and champagne tones, tulle-draped backdrops and a castle cake worthy of the photos. Our Singapore concierge brings the whole storybook together, from the crown on arrival to the last slice of cake.",
+    "ideas": [
+      "Blush and champagne balloon arch framing a tulle-draped photo nook",
+      "A castle or tiered cake with delicate hand-painted detail",
+      "Dress-up trolley with capes, crowns and wands for every guest",
+      "A royal tea-party table with florals and vintage-style crockery"
+    ],
+    "palette": [
+      { "name": "Blush", "hex": "#F0C6C6" },
+      { "name": "Champagne", "hex": "#EBD9BC" },
+      { "name": "Rose Gold", "hex": "#D6A48C" },
+      { "name": "Ivory", "hex": "#F7F1E7" }
+    ],
+    "faqs": [
+      { "q": "Do you provide princess dress-up and character appearances?", "a": "Yes — we can arrange dress-up trolleys for the guests and book a professional princess character to host games, storytelling and photos. Let us know which character your child loves." },
+      { "q": "Is a princess party suitable for a 1st birthday?", "a": "Absolutely. For younger celebrations we soften the theme with gentle florals and pastels, keeping it photogenic and calm for the little guest of honour." },
+      { "q": "Can you match a specific princess or film?", "a": "We can style around the colours and motifs of most popular characters while keeping the look tasteful. Tell us your child's favourite and we'll bring it to life." }
+    ],
+    "related": ["unicorn-birthday-party-singapore", "frozen-winter-wonderland-birthday-party-singapore", "rainbow-birthday-party-singapore"]
+  },
+  {
+    "slug": "dinosaur-birthday-party-singapore",
+    "name": "Dinosaur",
+    "titleName": "Dinosaur Birthday Party",
+    "image": "assets/theme-safari.png",
+    "kicker": "Dinosaur Theme",
+    "h1": "Dinosaur parties, <em>prehistoric fun, beautifully done.</em>",
+    "metaDescription": "Roaring for a dinosaur birthday party in Singapore? OurKampung styles adventurous, earthy dino parties — foliage décor, fossil digs, cake and full coordination.",
+    "intro": "Dinosaur parties are pure joy for little explorers — and in our hands they look as good as they are fun. We lean into earthy greens, lush foliage and playful dino details rather than garish plastic, so the setup is adventurous for the kids and easy on the eye for you. Our Singapore team handles the lot, start to finish.",
+    "ideas": [
+      "A jungle foliage balloon installation with friendly dinosaur figures",
+      "A fossil-dig sensory pit and dino-egg treasure hunt for the guests",
+      "A volcano or dino-egg cake with cracked-shell detailing",
+      "Explorer party favours — magnifying glasses and mini dino sets"
+    ],
+    "palette": [
+      { "name": "Fern", "hex": "#7E8A6E" },
+      { "name": "Moss", "hex": "#5F6B50" },
+      { "name": "Clay", "hex": "#B0663F" },
+      { "name": "Sand", "hex": "#E4D3B3" }
+    ],
+    "faqs": [
+      { "q": "What ages is a dinosaur party best for?", "a": "It's a hit from toddlers right up to older kids. We scale the activities — sensory fossil digs for little ones, treasure hunts and games for the bigger explorers." },
+      { "q": "Can you include entertainment like a dinosaur mascot?", "a": "Yes. We can arrange a walkabout dinosaur mascot, a host to run the games, or an interactive science-style show, depending on your budget and space." },
+      { "q": "Do you set up outdoors, like at a park or garden?", "a": "We do — outdoor dino parties look wonderful. We'll advise on weather-safe setups and bring shade or a wet-weather plan where needed." }
+    ],
+    "related": ["safari-jungle-birthday-party-singapore", "superhero-birthday-party-singapore", "unicorn-birthday-party-singapore"]
+  },
+  {
+    "slug": "mermaid-birthday-party-singapore",
+    "name": "Mermaid",
+    "titleName": "Mermaid Birthday Party",
+    "image": "assets/theme-rainbow.png",
+    "kicker": "Mermaid Theme",
+    "h1": "Under-the-sea parties, <em>dreamy and iridescent.</em>",
+    "metaDescription": "Planning a mermaid birthday party in Singapore? OurKampung styles shimmering under-the-sea celebrations — pastel corals, shell details, cake and full coordination.",
+    "intro": "Dive into a mermaid celebration styled in soft aquas, iridescent shells and coral-inspired florals. We keep it dreamy rather than kitsch, with shimmering backdrops and details that photograph beautifully. From the shell-topped cake to the sea-glass favours, our Singapore concierge coordinates every wave of it.",
+    "ideas": [
+      "An iridescent balloon garland with paper corals and hanging shells",
+      "A shell-and-pearl cake in soft ocean gradients",
+      "A sea-glass treasure hunt and DIY shell-necklace craft table",
+      "Aqua tableware with starfish place settings and bubble details"
+    ],
+    "palette": [
+      { "name": "Aqua", "hex": "#B7DCD9" },
+      { "name": "Seafoam", "hex": "#CFE6D8" },
+      { "name": "Coral", "hex": "#E7A98F" },
+      { "name": "Pearl", "hex": "#F2E9DD" }
+    ],
+    "faqs": [
+      { "q": "Can you do a mermaid party for a pool or beachside venue?", "a": "Yes — mermaid themes suit poolside and beach clubs beautifully. We'll style a weather-safe setup and coordinate with your venue on delivery and access." },
+      { "q": "Do you offer mermaid character hosts?", "a": "We can arrange a costumed mermaid host for photos, storytelling and games. Let us know your date and we'll check availability." },
+      { "q": "What's included in a styled mermaid party?", "a": "Typically the backdrop and balloon styling, themed tableware, a custom cake, and optional entertainment and catering — all delivered, set up and cleared by our team." }
+    ],
+    "related": ["unicorn-birthday-party-singapore", "rainbow-birthday-party-singapore", "princess-birthday-party-singapore"]
+  },
+  {
+    "slug": "safari-jungle-birthday-party-singapore",
+    "name": "Safari & Jungle",
+    "titleName": "Safari & Jungle Birthday Party",
+    "image": "assets/theme-safari.png",
+    "kicker": "Safari & Jungle Theme",
+    "h1": "Safari parties, <em>earthy, playful, adventurous.</em>",
+    "metaDescription": "Planning a safari or jungle birthday party in Singapore? OurKampung styles lush, earthy wild-one celebrations — foliage décor, animal details, cake and full coordination.",
+    "intro": "A safari party is our idea of playful done tastefully — lush greenery, warm neutrals and friendly animal touches rather than loud primary colours. It's a favourite for first birthdays (hello, 'Wild One') and older adventurers alike. Our Singapore concierge styles, delivers and runs the whole thing so you can simply enjoy it.",
+    "ideas": [
+      "A foliage-rich balloon installation with plush safari animals",
+      "A 'Wild One' cake with palm-leaf and animal-print detailing",
+      "An explorer craft corner — binoculars, animal masks and face painting",
+      "Warm neutral tableware with jute, timber and greenery accents"
+    ],
+    "palette": [
+      { "name": "Fern", "hex": "#7E8A6E" },
+      { "name": "Khaki", "hex": "#B7A985" },
+      { "name": "Terracotta", "hex": "#B0663F" },
+      { "name": "Cream", "hex": "#F1E8D7" }
+    ],
+    "faqs": [
+      { "q": "Is safari a good theme for a 1st birthday?", "a": "It's one of the most popular — the 'Wild One' spin is perfect for a first birthday, and the earthy palette photographs beautifully. We soften the styling for the littlest guests." },
+      { "q": "Can you add animal entertainment or mascots?", "a": "We can arrange a walkabout animal mascot, an interactive animal show, or a host to run safari-themed games, depending on your space and budget." },
+      { "q": "Do you handle setup and teardown?", "a": "Always. We deliver, set up before guests arrive, and clear everything afterwards — anywhere in Singapore." }
+    ],
+    "related": ["dinosaur-birthday-party-singapore", "unicorn-birthday-party-singapore", "superhero-birthday-party-singapore"]
+  },
+  {
+    "slug": "rainbow-birthday-party-singapore",
+    "name": "Pastel Rainbow",
+    "titleName": "Rainbow Birthday Party",
+    "image": "assets/theme-rainbow.png",
+    "kicker": "Rainbow Theme",
+    "h1": "Rainbow parties, <em>soft, joyful, dreamy.</em>",
+    "metaDescription": "Planning a rainbow birthday party in Singapore? OurKampung styles joyful pastel-rainbow celebrations — colourful balloon arches, cake and full coordination.",
+    "intro": "Rainbow doesn't have to be primary-bright. We style it in soft, sorbet pastels — a joyful gradient that feels fresh and modern. It's endlessly versatile, works for any age, and always brings a smile. Our Singapore concierge pulls together the décor, cake and details into one seamless, colourful celebration.",
+    "ideas": [
+      "A sorbet-pastel balloon arch fading through the full spectrum",
+      "An ombré rainbow cake with a soft buttercream finish",
+      "A colour-sorting play zone and rainbow party favours",
+      "Pastel tableware with cloud and sunshine accents"
+    ],
+    "palette": [
+      { "name": "Peach", "hex": "#F6C9A8" },
+      { "name": "Lemon", "hex": "#F1E1A0" },
+      { "name": "Mint", "hex": "#BFE3C6" },
+      { "name": "Periwinkle", "hex": "#C4CBEA" }
+    ],
+    "faqs": [
+      { "q": "Is a rainbow theme suitable for boys and girls?", "a": "Yes — the pastel rainbow palette is wonderfully gender-neutral and works for any age, which is part of why it's so popular." },
+      { "q": "Can you match the rainbow to specific colours I like?", "a": "Of course. If you'd prefer a warmer or cooler spectrum, or a particular accent colour, we'll tune the palette to your taste." },
+      { "q": "What sizes of party can you handle?", "a": "From intimate home gatherings to larger function-room celebrations. Tell us your guest count and we'll scale the setup to suit." }
+    ],
+    "related": ["unicorn-birthday-party-singapore", "mermaid-birthday-party-singapore", "princess-birthday-party-singapore"]
+  },
+  {
+    "slug": "superhero-birthday-party-singapore",
+    "name": "Superhero",
+    "titleName": "Superhero Birthday Party",
+    "image": "assets/service-entertainment.png",
+    "kicker": "Superhero Theme",
+    "h1": "Superhero parties, <em>bold, fun, action-packed.</em>",
+    "metaDescription": "Planning a superhero birthday party in Singapore? OurKampung styles action-packed hero celebrations — bold décor, capes, games, cake and full coordination.",
+    "intro": "Cue the theme music — a superhero party is all action, styled with a confident, graphic palette that still looks put-together. We balance the bold colours with clean detailing, add a cape-and-mask moment for every guest, and build in games that let the little heroes save the day. Our Singapore concierge runs it end to end.",
+    "ideas": [
+      "A bold comic-style balloon backdrop with a skyline silhouette",
+      "A 'hero academy' obstacle course and training-badge ceremony",
+      "A cape-and-mask station so every guest gets their superpowers",
+      "A comic-panel cake with a dramatic drip finish"
+    ],
+    "palette": [
+      { "name": "Hero Red", "hex": "#C0504D" },
+      { "name": "Sky Blue", "hex": "#5B8BB0" },
+      { "name": "Gold", "hex": "#D9B24C" },
+      { "name": "Ink", "hex": "#2C2A24" }
+    ],
+    "faqs": [
+      { "q": "Can you bring a superhero character or host?", "a": "Yes — we can arrange a costumed hero to lead the training games, do a meet-and-greet and pose for photos. Let us know which hero is the favourite." },
+      { "q": "What activities work well for a superhero party?", "a": "Obstacle courses, 'training' challenges, a badge ceremony and team missions all go down brilliantly. We tailor the difficulty to the age group." },
+      { "q": "Do you have a space requirement for the games?", "a": "A little open floor helps for the active games, but we've run great superhero parties in function rooms and homes. We'll plan the layout around your venue." }
+    ],
+    "related": ["dinosaur-birthday-party-singapore", "safari-jungle-birthday-party-singapore", "rainbow-birthday-party-singapore"]
+  },
+  {
+    "slug": "frozen-winter-wonderland-birthday-party-singapore",
+    "name": "Winter Wonderland",
+    "titleName": "Winter Wonderland Birthday Party",
+    "image": "assets/theme-princess.png",
+    "kicker": "Winter Wonderland Theme",
+    "h1": "Winter wonderland parties, <em>icy, elegant, magical.</em>",
+    "metaDescription": "Planning a frozen winter-wonderland birthday party in Singapore? OurKampung styles icy, elegant celebrations — shimmering décor, snow details, cake and full coordination.",
+    "intro": "A little bit of winter in the tropics — styled in icy blues, silver shimmer and soft white for a look that's magical without tipping into cartoonish. It's a perennial favourite, and in our hands it feels elegant enough for the family photos. Our Singapore concierge coordinates the whole snowy scene, from backdrop to cake.",
+    "ideas": [
+      "An icy-blue and silver balloon installation with hanging snowflakes",
+      "A shimmering snow-queen cake with edible pearls and frost detail",
+      "A 'snow' play moment and a make-your-own snowflake craft table",
+      "Frosted tableware with silver and crystal-look accents"
+    ],
+    "palette": [
+      { "name": "Ice Blue", "hex": "#C6DCE8" },
+      { "name": "Frost", "hex": "#E3EDF2" },
+      { "name": "Silver", "hex": "#C9CBCE" },
+      { "name": "Snow", "hex": "#F7F7F4" }
+    ],
+    "faqs": [
+      { "q": "Can you match a specific winter or ice-queen character?", "a": "We can style around the colours and motifs of the popular ice-queen films while keeping the look refined. Tell us your child's favourite and we'll tailor it." },
+      { "q": "Does a winter theme work indoors in Singapore's climate?", "a": "It's ideal indoors in an air-conditioned function room or home — the icy palette feels especially magical as a contrast to the weather outside." },
+      { "q": "Can you include a snow or bubble effect?", "a": "Yes, we can arrange a foam or bubble 'snow' moment where the venue allows. We'll confirm what's possible with your space." }
+    ],
+    "related": ["princess-birthday-party-singapore", "unicorn-birthday-party-singapore", "mermaid-birthday-party-singapore"]
+  }
+]

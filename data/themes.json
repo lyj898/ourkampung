@@ -222,5 +222,117 @@
       { "q": "Can you include a snow or bubble effect?", "a": "Yes, we can arrange a foam or bubble 'snow' moment where the venue allows. We'll confirm what's possible with your space." }
     ],
     "related": ["princess-birthday-party-singapore", "unicorn-birthday-party-singapore", "mermaid-birthday-party-singapore"]
+  },
+  {
+    "slug": "cocomelon-birthday-party-singapore",
+    "name": "Cocomelon",
+    "titleName": "Cocomelon Birthday Party",
+    "image": "assets/theme-rainbow.png",
+    "kicker": "Cocomelon Theme",
+    "h1": "Cocomelon parties, <em>bright, cheery and toddler-perfect.</em>",
+    "metaDescription": "Planning a Cocomelon birthday party in Singapore? OurKampung styles cheerful parties inspired by your toddler's favourite show — décor, cake and full coordination.",
+    "intro": "A firm favourite with the toddler crowd, we style Cocomelon-inspired parties around the show's bright, happy palette — sunny yellows, watermelon greens and sky blues — without tipping into visual overload. It's playful and instantly recognisable for your little one, and still tidy enough for lovely photos. We coordinate the whole thing, from the balloon backdrop to the cake.",
+    "ideas": [
+      "A cheerful balloon garland in watermelon green, yellow and sky blue",
+      "A number-and-letters play corner nodding to the show's learning theme",
+      "A watermelon-detailed cake with bright buttercream",
+      "Sing-along music and simple games for the little ones"
+    ],
+    "palette": [
+      { "name": "Watermelon", "hex": "#7FB069" },
+      { "name": "Sunny", "hex": "#F2C94C" },
+      { "name": "Sky", "hex": "#8FC1E3" },
+      { "name": "Berry", "hex": "#D64550" }
+    ],
+    "faqs": [
+      { "q": "Is a Cocomelon party good for a 1st or 2nd birthday?", "a": "It's ideal — the show is most loved by toddlers, so it's a popular pick for first and second birthdays. We keep the styling soft and safe for the littlest guests." },
+      { "q": "Do you use official Cocomelon characters?", "a": "We style parties inspired by the show's colours, music and motifs rather than using licensed artwork, which keeps the look tasteful and fully bespoke to you." },
+      { "q": "Can you keep a toddler party calm and manageable?", "a": "Yes — we plan gentle activities, sing-alongs and a flow that works around naps and feeds so the day stays happy, not overwhelming." }
+    ],
+    "related": ["rainbow-birthday-party-singapore", "unicorn-birthday-party-singapore", "first-birthday-party-singapore"]
+  },
+  {
+    "slug": "spiderman-birthday-party-singapore",
+    "name": "Spider-Man",
+    "titleName": "Spiderman Birthday Party",
+    "image": "assets/service-entertainment.png",
+    "kicker": "Spider-Man Theme",
+    "h1": "Spider-Man parties, <em>web-slinging fun, tastefully done.</em>",
+    "metaDescription": "Planning a Spiderman birthday party in Singapore? OurKampung styles action-packed superhero parties inspired by your child's favourite web-slinger — décor, games and full coordination.",
+    "intro": "For the little hero who's obsessed with the friendly neighbourhood web-slinger, we style a bold, comic-inspired party in confident reds and blues — action-packed for the kids, but clean and photogenic for you. We build in hero training games and a cape-and-mask moment, and coordinate the whole day so it swings by without a hitch.",
+    "ideas": [
+      "A bold red-and-blue balloon backdrop with a comic-style skyline",
+      "A 'spider training' obstacle course and web-toss games",
+      "Masks for every guest for the group hero photo",
+      "A comic-panel cake with a dramatic finish"
+    ],
+    "palette": [
+      { "name": "Hero Red", "hex": "#C0392B" },
+      { "name": "Web Blue", "hex": "#2E5A88" },
+      { "name": "Ink", "hex": "#2C2A24" },
+      { "name": "Cloud", "hex": "#EDE7DA" }
+    ],
+    "faqs": [
+      { "q": "Can you bring a superhero host or character?", "a": "Yes — we can arrange a costumed hero to lead the training games and pose for photos. Let us know your date and we'll check availability." },
+      { "q": "Do you use official Spider-Man artwork?", "a": "We style parties inspired by the character's colours and comic-book feel rather than licensed artwork, keeping the look polished and unique to your child." },
+      { "q": "What ages does a Spider-Man party suit?", "a": "It's a hit from around age three upward. We tune the games and activity levels to the age group so everyone can join in." }
+    ],
+    "related": ["superhero-birthday-party-singapore", "dinosaur-birthday-party-singapore", "party-entertainment-singapore"]
+  },
+  {
+    "slug": "paw-patrol-birthday-party-singapore",
+    "name": "Paw Patrol",
+    "titleName": "Paw Patrol Birthday Party",
+    "image": "assets/theme-safari.png",
+    "kicker": "Paw Patrol Theme",
+    "h1": "Rescue-pup parties, <em>adventurous and full of heart.</em>",
+    "metaDescription": "Planning a Paw Patrol birthday party in Singapore? OurKampung styles fun rescue-pup adventures inspired by the show — décor, mission games, cake and full coordination.",
+    "intro": "For the little one who's ready for action, we style rescue-pup parties full of adventure — bright primary tones, playful paw-print details and a 'rescue mission' spirit. It's energetic and instantly recognisable for the kids, and we keep the setup crisp and photogenic. From the mission games to the cake, we run the whole rescue for you.",
+    "ideas": [
+      "A bright balloon backdrop with playful paw-print accents",
+      "A 'rescue mission' obstacle course and badge ceremony",
+      "Pup-ear headbands or badges for every little recruit",
+      "A paw-print or vehicle-themed cake"
+    ],
+    "palette": [
+      { "name": "Rescue Red", "hex": "#D1495B" },
+      { "name": "Sky Blue", "hex": "#5B8BB0" },
+      { "name": "Sunny", "hex": "#F2C14E" },
+      { "name": "Pup Tan", "hex": "#C9A66B" }
+    ],
+    "faqs": [
+      { "q": "What age is a Paw Patrol party best for?", "a": "It's most loved by toddlers and young children, roughly ages two to six. We scale the mission games to suit the group." },
+      { "q": "Do you use official Paw Patrol characters?", "a": "We style parties inspired by the show's colours and rescue-mission theme rather than licensed artwork, so the look stays tasteful and bespoke." },
+      { "q": "Can you add entertainment or a host?", "a": "Yes — we can bring a host to run the rescue missions and games, keeping the little recruits happily occupied." }
+    ],
+    "related": ["safari-jungle-birthday-party-singapore", "dinosaur-birthday-party-singapore", "cars-vehicles-birthday-party-singapore"]
+  },
+  {
+    "slug": "cars-vehicles-birthday-party-singapore",
+    "name": "Cars & Vehicles",
+    "titleName": "Cars & Vehicles Birthday Party",
+    "image": "assets/service-decor.png",
+    "kicker": "Cars & Vehicles Theme",
+    "h1": "Cars &amp; vehicles parties, <em>full speed ahead.</em>",
+    "metaDescription": "Planning a cars or vehicles birthday party in Singapore? OurKampung styles fun transport-themed parties — race tracks, diggers, planes and more, fully coordinated.",
+    "intro": "For the child who loves anything with wheels, we style a transport party built around cars, trucks, diggers and planes. Think a race-track play zone, road-sign details and a garage of activities — energetic for the kids, and styled cleanly so it still photographs beautifully. We coordinate the whole pit crew, from décor to cake.",
+    "ideas": [
+      "A race-track play mat and road-sign styled backdrop",
+      "A construction-and-vehicles sensory or play corner",
+      "Number-plate name tags and a 'garage' activity station",
+      "A car, digger or aeroplane cake"
+    ],
+    "palette": [
+      { "name": "Racing Red", "hex": "#C0392B" },
+      { "name": "Road Grey", "hex": "#6E6E6E" },
+      { "name": "Signal Yellow", "hex": "#E4B93C" },
+      { "name": "Sky", "hex": "#7FA9C9" }
+    ],
+    "faqs": [
+      { "q": "Can the theme cover diggers and planes too, not just cars?", "a": "Absolutely — we can lean into construction vehicles, planes, trains or a mix. Tell us your child's favourite and we'll build around it." },
+      { "q": "Is this theme good for a 2nd or 3rd birthday?", "a": "It's perfect for toddlers and young children who love vehicles. We keep the play zones age-appropriate and safe." },
+      { "q": "Can you include a play or sensory zone?", "a": "Yes — a race-track mat or construction sensory corner is a favourite addition, and we set it all up for you." }
+    ],
+    "related": ["paw-patrol-birthday-party-singapore", "dinosaur-birthday-party-singapore", "superhero-birthday-party-singapore"]
   }
 ]

@@ -4,7 +4,7 @@
 // address, confirm the email it sends you, then copy your random endpoint) and
 // replace the placeholder below with your alias, e.g.
 //   window.OK_FORM_ENDPOINT = 'https://formsubmit.co/ajax/abc123def456';
-window.OK_FORM_ENDPOINT = 'https://formsubmit.co/ajax/YOUR_FORMSUBMIT_ALIAS';
+window.OK_FORM_ENDPOINT = 'https://formsubmit.co/ajax/1aacc4903352135bb0fa38c3987d3abd';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Header scroll state

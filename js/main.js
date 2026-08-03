@@ -1,17 +1,12 @@
 /* ---------- config ---------- */
-window.WA_NUMBER = '6580000000'; // OurKampung WhatsApp (placeholder — update to real number)
-const WA_NUMBER = window.WA_NUMBER;
-function waLink(msg){
-  return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg || "Hi OurKampung, I'd love help planning my child's party.");
-}
+// FormSubmit endpoint. An encrypted alias keeps the destination email OUT of
+// the page source. Create one at https://formsubmit.co (enter the destination
+// address, confirm the email it sends you, then copy your random endpoint) and
+// replace the placeholder below with your alias, e.g.
+//   window.OK_FORM_ENDPOINT = 'https://formsubmit.co/ajax/abc123def456';
+window.OK_FORM_ENDPOINT = 'https://formsubmit.co/ajax/YOUR_FORMSUBMIT_ALIAS';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Wire all WhatsApp links
-  document.querySelectorAll('[data-wa]').forEach(a => {
-    a.href = waLink(a.getAttribute('data-wa'));
-    a.target = '_blank'; a.rel = 'noopener';
-  });
-
   // Header scroll state
   const header = document.querySelector('.header');
   if (header){

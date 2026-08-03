@@ -127,31 +127,47 @@
   }
   function escapeHtml(s){ return s.replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 
-  /* ---- WhatsApp message ---- */
-  function waMessage(){
-    return `Hi OurKampung! Here's my party brief:\n`+
-      `• Occasion: ${data.event_type}\n`+
-      `• Age turning: ${data.child_age}\n`+
-      `• Guests: ${document.querySelector('[name=pax]').value||'TBC'}\n`+
-      `• Date: ${data.party_date||'Flexible'}\n`+
-      `• Venue: ${data.venue_type}\n`+
-      `• Theme: ${themeText()}\n`+
-      `• Services: ${data.services.join(', ')}\n`+
-      `• Budget: ${data.budget}\n`+
-      `• Name: ${data.name}\n`+
-      (data.notes?`• Notes: ${data.notes}\n`:'')+
-      `Looking forward to hearing from you!`;
-  }
-
-  /* ---- submit ---- */
-  form.addEventListener('submit', (e)=>{
+  /* ---- submit (AJAX -> FormSubmit) ---- */
+  form.addEventListener('submit', async (e)=>{
     e.preventDefault();
-    const wa = document.getElementById('waSend');
-    const num = (window.WA_NUMBER)||'6580000000';
-    wa.href = 'https://wa.me/'+num+'?text='+encodeURIComponent(waMessage());
-    wa.target='_blank'; wa.rel='noopener';
-    go(8);
-    // In production, also POST `data` to backend / prefill the internal console here.
+    const submitBtn = steps[7].querySelector('button[type=submit]');
+    const payload = {
+      _subject: 'New party brief - OurKampung',
+      Occasion: data.event_type,
+      'Age turning': data.child_age,
+      Guests: document.querySelector('[name=pax]').value || 'TBC',
+      Date: data.party_date || 'Flexible',
+      Venue: data.venue_type,
+      Theme: themeText(),
+      Services: data.services.join(', ') || '-',
+      Budget: data.budget,
+      Name: data.name,
+      Mobile: data.phone,
+      Email: data.email || '-',
+      Notes: data.notes || '-'
+    };
+    const endpoint = window.OK_FORM_ENDPOINT || '';
+
+    if(submitBtn){ submitBtn.dataset.label = submitBtn.innerHTML; submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+    const finish = (ok)=>{
+      if(submitBtn){ submitBtn.disabled = false; if(submitBtn.dataset.label) submitBtn.innerHTML = submitBtn.dataset.label; }
+      if(ok){ go(8); }
+      else { alert('Sorry - something went wrong sending your brief. Please try again in a moment.'); }
+    };
+
+    // Demo mode: endpoint not configured yet -> show success without delivering.
+    if(!endpoint || /YOUR_FORMSUBMIT_ALIAS/.test(endpoint)){
+      console.warn('[OurKampung] FormSubmit endpoint not set - showing success without delivering. Set window.OK_FORM_ENDPOINT in js/main.js.');
+      finish(true); return;
+    }
+    try {
+      const res = await fetch(endpoint, {
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify(payload)
+      });
+      finish(res.ok);
+    } catch(err){ finish(false); }
   });
 
   updateChrome();

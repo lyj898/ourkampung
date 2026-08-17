@@ -130,5 +130,115 @@
       { "q": "Can you keep noise and mess manageable for neighbours?", "a": "Of course. We plan tidy, considerate setups and can suggest quieter entertainment options for apartment living." }
     ],
     "related": ["condo-function-room-birthday-party-singapore", "first-birthday-party-singapore", "kids-party-venue-sengkang"]
+  },
+  {
+    "slug": "kids-party-venue-ang-mo-kio",
+    "name": "Ang Mo Kio",
+    "titleName": "Kids Party in Ang Mo Kio",
+    "image": "assets/service-cake.png",
+    "kicker": "Ang Mo Kio",
+    "h1": "Kids' parties in Ang Mo Kio, <em>heartland charm, effortlessly styled.</em>",
+    "metaDescription": "Planning a kids' party in Ang Mo Kio? OurKampung styles and runs children's birthday parties across Ang Mo Kio — HDB flats, void decks, condos and function rooms, fully coordinated.",
+    "intro": "Ang Mo Kio is one of Singapore's original heartlands, and we love styling parties here — in the older, larger HDB flats around Teachers' Estate and Yio Chu Kang, in newer condos near AMK Hub, or in a function room close to Bishan-Ang Mo Kio Park. We deliver islandwide, so wherever your flat or venue sits in the estate, we bring the full setup to you, install it before your guests arrive, and clear it all away afterwards.",
+    "highlights": [
+      "Styling and setup across AMK's HDB flats, condos and function rooms",
+      "Comfortable with older, larger flat layouts as well as newer builds",
+      "Full delivery, installation and teardown in the area",
+      "Décor, cake, entertainment and catering coordinated as one plan"
+    ],
+    "faqs": [
+      { "q": "Can you fit a full setup into an older, larger Ang Mo Kio flat?", "a": "Yes — many AMK flats have generous layouts, and we adapt the styling to make the most of the space, whether that's the living room, a corridor void deck booking, or both." },
+      { "q": "Do you cover void deck party bookings in Ang Mo Kio?", "a": "We do. If your block's void deck is booked for the party, we'll style it just as we would a function room, and coordinate timing around your booking slot." },
+      { "q": "Is there an extra delivery charge for Ang Mo Kio?", "a": "No — islandwide delivery and setup are included in our styling packages, so there's no separate travel surcharge for Ang Mo Kio." }
+    ],
+    "related": ["kids-party-venue-bishan", "kids-party-at-home-singapore", "condo-function-room-birthday-party-singapore"]
+  },
+  {
+    "slug": "kids-party-venue-bishan",
+    "name": "Bishan",
+    "titleName": "Kids Party in Bishan",
+    "image": "assets/hero.png",
+    "kicker": "Bishan",
+    "h1": "Kids' parties in Bishan, <em>styled around the park life.</em>",
+    "metaDescription": "Planning a kids' party in Bishan? OurKampung styles and runs children's birthday parties across Bishan — condos, HDB homes and function rooms near Bishan-Ang Mo Kio Park, fully coordinated.",
+    "intro": "Bishan's biggest party asset is its greenery — Bishan-Ang Mo Kio Park is right on the doorstep, and many families here live in condos like Sky Vue and Sky Habitat or HDB blocks a short walk from it. We style parties indoors in condo function rooms and flats, or bring an outdoor-ready setup if you'd rather celebrate closer to the park. Either way, we deliver, install and clear up, islandwide.",
+    "highlights": [
+      "Styling for Bishan condos, HDB homes and function rooms",
+      "Outdoor-ready setups for park-adjacent celebrations",
+      "Full delivery, installation and teardown in the area",
+      "One concierge coordinating décor, cake, entertainment and catering"
+    ],
+    "faqs": [
+      { "q": "Can you set up near Bishan-Ang Mo Kio Park?", "a": "Yes — we can style a park-adjacent celebration with a weather-safe setup, though most families still prefer the comfort of a condo function room or home with the park just a short stroll away afterwards." },
+      { "q": "Do you know the function rooms in Bishan's condos, like Sky Vue or Sky Habitat?", "a": "We regularly work in Bishan's condo function rooms and will liaise with your management on access, setup timing and house rules ahead of the day." },
+      { "q": "What's a realistic budget for a Bishan condo function room party?", "a": "Function room setups typically start from a few hundred dollars for décor and styling alone, scaling up with cake, entertainment and catering — tell us your guest count and budget and we'll tailor a package." }
+    ],
+    "related": ["kids-party-venue-ang-mo-kio", "condo-function-room-birthday-party-singapore", "kids-party-at-home-singapore"]
+  },
+  {
+    "slug": "kids-party-venue-jurong-east",
+    "name": "Jurong East",
+    "titleName": "Kids Party in Jurong East",
+    "image": "assets/trust.png",
+    "kicker": "Jurong East",
+    "h1": "Kids' parties in Jurong East, <em>right in the west's new hub.</em>",
+    "metaDescription": "Planning a kids' party in Jurong East? OurKampung styles and runs children's birthday parties across Jurong East — condos, HDB homes and function rooms near JEM, Westgate and Jurong Lake Gardens, fully coordinated.",
+    "intro": "Jurong East has grown into one of Singapore's liveliest regional hubs — JEM, Westgate and IMM on one side, Jurong Lake Gardens and the Science Centre on the other. We style parties for families across the estate, from condos and HDB flats to function rooms near the lake district, and we deliver the full setup islandwide so distance from the east side is never a factor.",
+    "highlights": [
+      "Styling and setup across Jurong East condos, HDB flats and function rooms",
+      "Familiar with the area's newer developments around the lake district",
+      "Full delivery, installation and teardown, wherever you are in the west",
+      "Décor, cake, entertainment and catering coordinated as one plan"
+    ],
+    "faqs": [
+      { "q": "Do you charge more to travel to Jurong East since it's further west?", "a": "No — our styling packages include islandwide delivery and setup, so there's no extra travel surcharge for Jurong East." },
+      { "q": "Can you set up in a function room near Jurong Lake Gardens?", "a": "Yes — we regularly style function rooms across the Jurong Lake District and will coordinate directly with your venue or condo management on timing and access." },
+      { "q": "Is Jurong East good for an outdoor party, like at the lake gardens?", "a": "It can be lovely — we'll plan a weather-safe setup with shade or a wet-weather backup if you'd like to celebrate near the gardens rather than indoors." }
+    ],
+    "related": ["kids-party-venue-woodlands", "kids-party-at-home-singapore", "condo-function-room-birthday-party-singapore"]
+  },
+  {
+    "slug": "kids-party-venue-woodlands",
+    "name": "Woodlands",
+    "titleName": "Kids Party in Woodlands",
+    "image": "assets/service-decor.png",
+    "kicker": "Woodlands",
+    "h1": "Kids' parties in Woodlands, <em>styled for the north.</em>",
+    "metaDescription": "Planning a kids' party in Woodlands? OurKampung styles and runs children's birthday parties across Woodlands — HDB homes, condos and function rooms near Causeway Point, fully coordinated islandwide.",
+    "intro": "Woodlands is Singapore's gateway north — a mix of established HDB estates, newer BTO blocks and condos, all a short walk from Causeway Point or the Woodlands Waterfront. We style parties throughout the area, and because our delivery is islandwide, being at the northern edge of Singapore makes no difference to the setup, install and teardown you'll get.",
+    "highlights": [
+      "Styling and setup across Woodlands HDB homes, condos and function rooms",
+      "Experience with both established estates and newer BTO developments",
+      "Full delivery, installation and teardown, no matter how far north",
+      "Décor, cake, entertainment and catering handled as one coordinated plan"
+    ],
+    "faqs": [
+      { "q": "Is there a travel surcharge for being so far north, near Woodlands?", "a": "No — islandwide delivery and setup are included in our styling packages, so Woodlands is treated the same as anywhere else in Singapore." },
+      { "q": "Can you style a newer BTO flat in Woodlands?", "a": "Yes — we're used to newer flat layouts and will plan a setup that suits your unit's size and space, from the living room to a corridor or void deck booking." },
+      { "q": "Do you cover parties near Woodlands Waterfront?", "a": "We do — we can style an outdoor-ready setup for the waterfront or a nearby indoor venue, whichever you prefer, with a wet-weather plan in place either way." }
+    ],
+    "related": ["kids-party-venue-jurong-east", "kids-party-at-home-singapore", "condo-function-room-birthday-party-singapore"]
+  },
+  {
+    "slug": "kids-party-venue-pasir-ris",
+    "name": "Pasir Ris",
+    "titleName": "Kids Party in Pasir Ris",
+    "image": "assets/theme-safari.png",
+    "kicker": "Pasir Ris",
+    "h1": "Kids' parties in Pasir Ris, <em>a breath of park and sea air.</em>",
+    "metaDescription": "Planning a kids' party in Pasir Ris? OurKampung styles and runs children's birthday parties across Pasir Ris — homes, condos and function rooms near Pasir Ris Park and the beach, fully coordinated.",
+    "intro": "With Pasir Ris Park and the beach on one side and family estates and condos on the other, Pasir Ris has some of the most relaxed party settings in Singapore. We style celebrations at home, in condo function rooms, or with a park- or beach-adjacent setup if you'd like the sea breeze in the mix — delivered, installed and cleared islandwide, so the location is never a hassle for us.",
+    "highlights": [
+      "Styling and setup across Pasir Ris homes, condos and function rooms",
+      "Weather-smart, park- and beach-adjacent setups on request",
+      "Full delivery, installation and teardown in the area",
+      "Décor, cake, entertainment and catering coordinated as one plan"
+    ],
+    "faqs": [
+      { "q": "Can you set up a party at Pasir Ris Park or near the beach?", "a": "Yes — we can style a park- or beach-adjacent setup with shade and a wet-weather backup, so the sea breeze doesn't get in the way of the celebration." },
+      { "q": "Do you deliver to condos near Downtown East?", "a": "We do — we regularly style condo function rooms in that part of Pasir Ris and will coordinate with your management on access and setup timing." },
+      { "q": "Is there a surcharge for delivery to Pasir Ris?", "a": "No — islandwide delivery and setup are included in our styling packages, with no separate travel charge for Pasir Ris." }
+    ],
+    "related": ["kids-party-venue-tampines", "kids-party-venue-sengkang", "kids-party-at-home-singapore"]
   }
 ]

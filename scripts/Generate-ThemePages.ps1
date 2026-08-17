@@ -291,6 +291,10 @@ $taglines = @{
     'spiderman-birthday-party-singapore'                   = 'Web-slinging fun'
     'paw-patrol-birthday-party-singapore'                  = 'Rescue-ready adventure'
     'cars-vehicles-birthday-party-singapore'               = 'Wheels &amp; motors'
+    'under-the-sea-ocean-birthday-party-singapore'         = 'Deep &amp; playful'
+    'space-astronaut-birthday-party-singapore'             = 'Cosmic &amp; bold'
+    'construction-trucks-birthday-party-singapore'         = 'Dig in &amp; build'
+    'bluey-birthday-party-singapore'                       = 'Backyard &amp; playful'
 }
 $delays = @('', ' d1', ' d2', ' d3')
 $i = 0

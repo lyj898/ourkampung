@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-SG">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,71 +35,123 @@
 <script type="application/ld+json">
 {
     "@context":  "https://schema.org",
-    "@type":  "Service",
-    "serviceType":  "Kids Party in Tampines",
-    "name":  "Kids Party in Tampines in Singapore",
-    "description":  "Planning a kids\u0027 party in Tampines? OurKampung styles and runs children\u0027s birthday parties across Tampines — homes, condo function rooms and venues, fully coordinated.",
-    "areaServed":  {
-                       "@type":  "Country",
-                       "name":  "Singapore"
+    "@graph":  [
+                   {
+                       "@type":  "LocalBusiness",
+                       "@id":  "https://ourkampung.com/#business",
+                       "name":  "OurKampung",
+                       "alternateName":  "OurKampung Singapore",
+                       "url":  "https://ourkampung.com/",
+                       "description":  "Singapore\u0027s all-in-one concierge for children\u0027s birthday parties — décor, entertainment, cakes, venues and more, beautifully coordinated in one place.",
+                       "image":  "https://ourkampung.com/assets/hero.png",
+                       "serviceType":  "Children\u0027s party planning concierge",
+                       "priceRange":  "$$",
+                       "knowsLanguage":  "en-SG",
+                       "areaServed":  {
+                                          "@type":  "Country",
+                                          "name":  "Singapore"
+                                      },
+                       "address":  {
+                                       "@type":  "PostalAddress",
+                                       "addressCountry":  "SG"
+                                   }
                    },
-    "provider":  {
-                     "@type":  "LocalBusiness",
-                     "name":  "OurKampung",
-                     "url":  "https://ourkampung.com/"
-                 }
-}
-</script>
-<script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "FAQPage",
-    "mainEntity":  [
-                       {
-                           "@type":  "Question",
-                           "name":  "Do you charge extra to deliver to Tampines?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "Our styling packages include islandwide delivery and setup, so there\u0027s no separate travel surcharge for Tampines. We\u0027ll confirm everything up front."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "Can you set up in a condo function room in Tampines?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "Yes — we regularly work in condo function rooms and will coordinate with your management on access, setup timing and any house rules."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "How early do you arrive to set up?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "We arrive with enough lead time to have everything styled and ready before your first guests, and we return to clear up afterwards."
-                                              }
-                       }
-                   ]
-}
-</script>
-<script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "BreadcrumbList",
-    "itemListElement":  [
-                            {
-                                "@type":  "ListItem",
-                                "position":  1,
-                                "name":  "Home",
-                                "item":  "https://ourkampung.com/"
-                            },
-                            {
-                                "@type":  "ListItem",
-                                "position":  2,
-                                "name":  "Tampines",
-                                "item":  "https://ourkampung.com/kids-party-venue-tampines.html"
-                            }
-                        ]
+                   {
+                       "@type":  "WebSite",
+                       "@id":  "https://ourkampung.com/#website",
+                       "url":  "https://ourkampung.com/",
+                       "name":  "OurKampung",
+                       "publisher":  {
+                                         "@id":  "https://ourkampung.com/#business"
+                                     },
+                       "inLanguage":  "en-SG"
+                   },
+                   {
+                       "@type":  [
+                                     "WebPage",
+                                     "FAQPage"
+                                 ],
+                       "@id":  "https://ourkampung.com/kids-party-venue-tampines.html#webpage",
+                       "url":  "https://ourkampung.com/kids-party-venue-tampines.html",
+                       "name":  "Kids Party in Tampines in Singapore",
+                       "description":  "Planning a kids\u0027 party in Tampines? OurKampung styles and runs children\u0027s birthday parties across Tampines — homes, condo function rooms and venues, fully coordinated.",
+                       "isPartOf":  {
+                                        "@id":  "https://ourkampung.com/#website"
+                                    },
+                       "about":  {
+                                     "@id":  "https://ourkampung.com/#business"
+                                 },
+                       "primaryImageOfPage":  {
+                                                  "@type":  "ImageObject",
+                                                  "url":  "https://ourkampung.com/assets/hero.png"
+                                              },
+                       "breadcrumb":  {
+                                          "@id":  "https://ourkampung.com/kids-party-venue-tampines.html#breadcrumb"
+                                      },
+                       "inLanguage":  "en-SG",
+                       "mainEntity":  [
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Do you charge extra to deliver to Tampines?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Our styling packages include islandwide delivery and setup, so there\u0027s no separate travel surcharge for Tampines. We\u0027ll confirm everything up front."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Can you set up in a condo function room in Tampines?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes — we regularly work in condo function rooms and will coordinate with your management on access, setup timing and any house rules."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "How early do you arrive to set up?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "We arrive with enough lead time to have everything styled and ready before your first guests, and we return to clear up afterwards."
+                                                                 }
+                                          }
+                                      ]
+                   },
+                   {
+                       "@type":  "Service",
+                       "@id":  "https://ourkampung.com/kids-party-venue-tampines.html#service",
+                       "serviceType":  "Kids Party in Tampines",
+                       "name":  "Kids Party in Tampines in Singapore",
+                       "description":  "Planning a kids\u0027 party in Tampines? OurKampung styles and runs children\u0027s birthday parties across Tampines — homes, condo function rooms and venues, fully coordinated.",
+                       "areaServed":  {
+                                          "@type":  "Place",
+                                          "name":  "Tampines, Singapore"
+                                      },
+                       "provider":  {
+                                        "@id":  "https://ourkampung.com/#business"
+                                    },
+                       "mainEntityOfPage":  {
+                                                "@id":  "https://ourkampung.com/kids-party-venue-tampines.html#webpage"
+                                            }
+                   },
+                   {
+                       "@type":  "BreadcrumbList",
+                       "@id":  "https://ourkampung.com/kids-party-venue-tampines.html#breadcrumb",
+                       "itemListElement":  [
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  1,
+                                                   "name":  "Home",
+                                                   "item":  "https://ourkampung.com/"
+                                               },
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  2,
+                                                   "name":  "Tampines",
+                                                   "item":  "https://ourkampung.com/kids-party-venue-tampines.html"
+                                               }
+                                           ]
+                   }
+               ]
 }
 </script>
 <style>

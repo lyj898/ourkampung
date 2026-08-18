@@ -1,0 +1,20 @@
+{
+  "@type": "LocalBusiness",
+  "@id": "https://ourkampung.com/#business",
+  "name": "OurKampung",
+  "alternateName": "OurKampung Singapore",
+  "url": "https://ourkampung.com/",
+  "description": "Singapore's all-in-one concierge for children's birthday parties \u2014 d\u00e9cor, entertainment, cakes, venues and more, beautifully coordinated in one place.",
+  "image": "https://ourkampung.com/assets/hero.png",
+  "serviceType": "Children's party planning concierge",
+  "priceRange": "$$",
+  "knowsLanguage": "en-SG",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Singapore"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "SG"
+  }
+}

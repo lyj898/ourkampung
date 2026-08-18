@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-SG">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,77 +35,129 @@
 <script type="application/ld+json">
 {
     "@context":  "https://schema.org",
-    "@type":  "Service",
-    "serviceType":  "Dinosaur Birthday Party planning",
-    "name":  "Dinosaur Birthday Party in Singapore",
-    "description":  "Roaring for a dinosaur birthday party in Singapore? OurKampung styles adventurous, earthy dino parties — foliage décor, fossil digs, cake and full coordination.",
-    "areaServed":  {
-                       "@type":  "Country",
-                       "name":  "Singapore"
+    "@graph":  [
+                   {
+                       "@type":  "LocalBusiness",
+                       "@id":  "https://ourkampung.com/#business",
+                       "name":  "OurKampung",
+                       "alternateName":  "OurKampung Singapore",
+                       "url":  "https://ourkampung.com/",
+                       "description":  "Singapore\u0027s all-in-one concierge for children\u0027s birthday parties — décor, entertainment, cakes, venues and more, beautifully coordinated in one place.",
+                       "image":  "https://ourkampung.com/assets/hero.png",
+                       "serviceType":  "Children\u0027s party planning concierge",
+                       "priceRange":  "$$",
+                       "knowsLanguage":  "en-SG",
+                       "areaServed":  {
+                                          "@type":  "Country",
+                                          "name":  "Singapore"
+                                      },
+                       "address":  {
+                                       "@type":  "PostalAddress",
+                                       "addressCountry":  "SG"
+                                   }
                    },
-    "provider":  {
-                     "@type":  "LocalBusiness",
-                     "name":  "OurKampung",
-                     "url":  "https://ourkampung.com/"
-                 }
-}
-</script>
-<script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "FAQPage",
-    "mainEntity":  [
-                       {
-                           "@type":  "Question",
-                           "name":  "What ages is a dinosaur party best for?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "It\u0027s a hit from toddlers right up to older kids. We scale the activities — sensory fossil digs for little ones, treasure hunts and games for the bigger explorers."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "Can you include entertainment like a dinosaur mascot?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "Yes. We can arrange a walkabout dinosaur mascot, a host to run the games, or an interactive science-style show, depending on your budget and space."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "Do you set up outdoors, like at a park or garden?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "We do — outdoor dino parties look wonderful. We\u0027ll advise on weather-safe setups and bring shade or a wet-weather plan where needed."
-                                              }
-                       }
-                   ]
-}
-</script>
-<script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "BreadcrumbList",
-    "itemListElement":  [
-                            {
-                                "@type":  "ListItem",
-                                "position":  1,
-                                "name":  "Home",
-                                "item":  "https://ourkampung.com/"
-                            },
-                            {
-                                "@type":  "ListItem",
-                                "position":  2,
-                                "name":  "Themes",
-                                "item":  "https://ourkampung.com/themes.html"
-                            },
-                            {
-                                "@type":  "ListItem",
-                                "position":  3,
-                                "name":  "Dinosaur",
-                                "item":  "https://ourkampung.com/dinosaur-birthday-party-singapore.html"
-                            }
-                        ]
+                   {
+                       "@type":  "WebSite",
+                       "@id":  "https://ourkampung.com/#website",
+                       "url":  "https://ourkampung.com/",
+                       "name":  "OurKampung",
+                       "publisher":  {
+                                         "@id":  "https://ourkampung.com/#business"
+                                     },
+                       "inLanguage":  "en-SG"
+                   },
+                   {
+                       "@type":  [
+                                     "WebPage",
+                                     "FAQPage"
+                                 ],
+                       "@id":  "https://ourkampung.com/dinosaur-birthday-party-singapore.html#webpage",
+                       "url":  "https://ourkampung.com/dinosaur-birthday-party-singapore.html",
+                       "name":  "Dinosaur Birthday Party in Singapore",
+                       "description":  "Roaring for a dinosaur birthday party in Singapore? OurKampung styles adventurous, earthy dino parties — foliage décor, fossil digs, cake and full coordination.",
+                       "isPartOf":  {
+                                        "@id":  "https://ourkampung.com/#website"
+                                    },
+                       "about":  {
+                                     "@id":  "https://ourkampung.com/#business"
+                                 },
+                       "primaryImageOfPage":  {
+                                                  "@type":  "ImageObject",
+                                                  "url":  "https://ourkampung.com/assets/theme-safari.png"
+                                              },
+                       "breadcrumb":  {
+                                          "@id":  "https://ourkampung.com/dinosaur-birthday-party-singapore.html#breadcrumb"
+                                      },
+                       "inLanguage":  "en-SG",
+                       "mainEntity":  [
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "What ages is a dinosaur party best for?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "It\u0027s a hit from toddlers right up to older kids. We scale the activities — sensory fossil digs for little ones, treasure hunts and games for the bigger explorers."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Can you include entertainment like a dinosaur mascot?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes. We can arrange a walkabout dinosaur mascot, a host to run the games, or an interactive science-style show, depending on your budget and space."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Do you set up outdoors, like at a park or garden?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "We do — outdoor dino parties look wonderful. We\u0027ll advise on weather-safe setups and bring shade or a wet-weather plan where needed."
+                                                                 }
+                                          }
+                                      ]
+                   },
+                   {
+                       "@type":  "Service",
+                       "@id":  "https://ourkampung.com/dinosaur-birthday-party-singapore.html#service",
+                       "serviceType":  "Dinosaur Birthday Party planning",
+                       "name":  "Dinosaur Birthday Party in Singapore",
+                       "description":  "Roaring for a dinosaur birthday party in Singapore? OurKampung styles adventurous, earthy dino parties — foliage décor, fossil digs, cake and full coordination.",
+                       "areaServed":  {
+                                          "@type":  "Country",
+                                          "name":  "Singapore"
+                                      },
+                       "provider":  {
+                                        "@id":  "https://ourkampung.com/#business"
+                                    },
+                       "mainEntityOfPage":  {
+                                                "@id":  "https://ourkampung.com/dinosaur-birthday-party-singapore.html#webpage"
+                                            }
+                   },
+                   {
+                       "@type":  "BreadcrumbList",
+                       "@id":  "https://ourkampung.com/dinosaur-birthday-party-singapore.html#breadcrumb",
+                       "itemListElement":  [
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  1,
+                                                   "name":  "Home",
+                                                   "item":  "https://ourkampung.com/"
+                                               },
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  2,
+                                                   "name":  "Themes",
+                                                   "item":  "https://ourkampung.com/themes.html"
+                                               },
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  3,
+                                                   "name":  "Dinosaur",
+                                                   "item":  "https://ourkampung.com/dinosaur-birthday-party-singapore.html"
+                                               }
+                                           ]
+                   }
+               ]
 }
 </script>
 <style>

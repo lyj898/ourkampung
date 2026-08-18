@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-SG">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,77 +35,129 @@
 <script type="application/ld+json">
 {
     "@context":  "https://schema.org",
-    "@type":  "Service",
-    "serviceType":  "Under the Sea Birthday Party planning",
-    "name":  "Under the Sea Birthday Party in Singapore",
-    "description":  "Planning an under-the-sea or ocean birthday party in Singapore? OurKampung styles playful deep-blue ocean celebrations — sea creatures, coral reefs, cake and full coordination.",
-    "areaServed":  {
-                       "@type":  "Country",
-                       "name":  "Singapore"
+    "@graph":  [
+                   {
+                       "@type":  "LocalBusiness",
+                       "@id":  "https://ourkampung.com/#business",
+                       "name":  "OurKampung",
+                       "alternateName":  "OurKampung Singapore",
+                       "url":  "https://ourkampung.com/",
+                       "description":  "Singapore\u0027s all-in-one concierge for children\u0027s birthday parties — décor, entertainment, cakes, venues and more, beautifully coordinated in one place.",
+                       "image":  "https://ourkampung.com/assets/hero.png",
+                       "serviceType":  "Children\u0027s party planning concierge",
+                       "priceRange":  "$$",
+                       "knowsLanguage":  "en-SG",
+                       "areaServed":  {
+                                          "@type":  "Country",
+                                          "name":  "Singapore"
+                                      },
+                       "address":  {
+                                       "@type":  "PostalAddress",
+                                       "addressCountry":  "SG"
+                                   }
                    },
-    "provider":  {
-                     "@type":  "LocalBusiness",
-                     "name":  "OurKampung",
-                     "url":  "https://ourkampung.com/"
-                 }
-}
-</script>
-<script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "FAQPage",
-    "mainEntity":  [
-                       {
-                           "@type":  "Question",
-                           "name":  "How is this different from a mermaid party?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "A mermaid party leans pastel and fairytale, styled around the mermaid character herself. An under-the-sea party is a broader ocean-explorer world — fish, coral, whales and submarines — in deeper blues and teals, and it works equally well for boys and girls."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "What ages suit an under-the-sea party?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "It\u0027s a favourite from toddlers through to early primary school — we adjust the games and activities, like a gentler treasure hunt for younger guests or a proper pearl-diving challenge for older ones."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "How much does a styled ocean party cost in Singapore?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "Décor-only setups typically start from a few hundred dollars, scaling up with cake, entertainment and catering. Share your guest count and venue and we\u0027ll put together a package to suit."
-                                              }
-                       }
-                   ]
-}
-</script>
-<script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "BreadcrumbList",
-    "itemListElement":  [
-                            {
-                                "@type":  "ListItem",
-                                "position":  1,
-                                "name":  "Home",
-                                "item":  "https://ourkampung.com/"
-                            },
-                            {
-                                "@type":  "ListItem",
-                                "position":  2,
-                                "name":  "Themes",
-                                "item":  "https://ourkampung.com/themes.html"
-                            },
-                            {
-                                "@type":  "ListItem",
-                                "position":  3,
-                                "name":  "Under the Sea",
-                                "item":  "https://ourkampung.com/under-the-sea-ocean-birthday-party-singapore.html"
-                            }
-                        ]
+                   {
+                       "@type":  "WebSite",
+                       "@id":  "https://ourkampung.com/#website",
+                       "url":  "https://ourkampung.com/",
+                       "name":  "OurKampung",
+                       "publisher":  {
+                                         "@id":  "https://ourkampung.com/#business"
+                                     },
+                       "inLanguage":  "en-SG"
+                   },
+                   {
+                       "@type":  [
+                                     "WebPage",
+                                     "FAQPage"
+                                 ],
+                       "@id":  "https://ourkampung.com/under-the-sea-ocean-birthday-party-singapore.html#webpage",
+                       "url":  "https://ourkampung.com/under-the-sea-ocean-birthday-party-singapore.html",
+                       "name":  "Under the Sea Birthday Party in Singapore",
+                       "description":  "Planning an under-the-sea or ocean birthday party in Singapore? OurKampung styles playful deep-blue ocean celebrations — sea creatures, coral reefs, cake and full coordination.",
+                       "isPartOf":  {
+                                        "@id":  "https://ourkampung.com/#website"
+                                    },
+                       "about":  {
+                                     "@id":  "https://ourkampung.com/#business"
+                                 },
+                       "primaryImageOfPage":  {
+                                                  "@type":  "ImageObject",
+                                                  "url":  "https://ourkampung.com/assets/theme-rainbow.png"
+                                              },
+                       "breadcrumb":  {
+                                          "@id":  "https://ourkampung.com/under-the-sea-ocean-birthday-party-singapore.html#breadcrumb"
+                                      },
+                       "inLanguage":  "en-SG",
+                       "mainEntity":  [
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "How is this different from a mermaid party?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "A mermaid party leans pastel and fairytale, styled around the mermaid character herself. An under-the-sea party is a broader ocean-explorer world — fish, coral, whales and submarines — in deeper blues and teals, and it works equally well for boys and girls."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "What ages suit an under-the-sea party?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "It\u0027s a favourite from toddlers through to early primary school — we adjust the games and activities, like a gentler treasure hunt for younger guests or a proper pearl-diving challenge for older ones."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "How much does a styled ocean party cost in Singapore?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Décor-only setups typically start from a few hundred dollars, scaling up with cake, entertainment and catering. Share your guest count and venue and we\u0027ll put together a package to suit."
+                                                                 }
+                                          }
+                                      ]
+                   },
+                   {
+                       "@type":  "Service",
+                       "@id":  "https://ourkampung.com/under-the-sea-ocean-birthday-party-singapore.html#service",
+                       "serviceType":  "Under the Sea Birthday Party planning",
+                       "name":  "Under the Sea Birthday Party in Singapore",
+                       "description":  "Planning an under-the-sea or ocean birthday party in Singapore? OurKampung styles playful deep-blue ocean celebrations — sea creatures, coral reefs, cake and full coordination.",
+                       "areaServed":  {
+                                          "@type":  "Country",
+                                          "name":  "Singapore"
+                                      },
+                       "provider":  {
+                                        "@id":  "https://ourkampung.com/#business"
+                                    },
+                       "mainEntityOfPage":  {
+                                                "@id":  "https://ourkampung.com/under-the-sea-ocean-birthday-party-singapore.html#webpage"
+                                            }
+                   },
+                   {
+                       "@type":  "BreadcrumbList",
+                       "@id":  "https://ourkampung.com/under-the-sea-ocean-birthday-party-singapore.html#breadcrumb",
+                       "itemListElement":  [
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  1,
+                                                   "name":  "Home",
+                                                   "item":  "https://ourkampung.com/"
+                                               },
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  2,
+                                                   "name":  "Themes",
+                                                   "item":  "https://ourkampung.com/themes.html"
+                                               },
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  3,
+                                                   "name":  "Under the Sea",
+                                                   "item":  "https://ourkampung.com/under-the-sea-ocean-birthday-party-singapore.html"
+                                               }
+                                           ]
+                   }
+               ]
 }
 </script>
 <style>

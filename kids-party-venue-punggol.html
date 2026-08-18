@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-SG">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,71 +35,123 @@
 <script type="application/ld+json">
 {
     "@context":  "https://schema.org",
-    "@type":  "Service",
-    "serviceType":  "Kids Party in Punggol",
-    "name":  "Kids Party in Punggol in Singapore",
-    "description":  "Planning a kids\u0027 party in Punggol? OurKampung styles and runs children\u0027s birthday parties across Punggol — homes, condos and waterfront venues, fully coordinated.",
-    "areaServed":  {
-                       "@type":  "Country",
-                       "name":  "Singapore"
+    "@graph":  [
+                   {
+                       "@type":  "LocalBusiness",
+                       "@id":  "https://ourkampung.com/#business",
+                       "name":  "OurKampung",
+                       "alternateName":  "OurKampung Singapore",
+                       "url":  "https://ourkampung.com/",
+                       "description":  "Singapore\u0027s all-in-one concierge for children\u0027s birthday parties — décor, entertainment, cakes, venues and more, beautifully coordinated in one place.",
+                       "image":  "https://ourkampung.com/assets/hero.png",
+                       "serviceType":  "Children\u0027s party planning concierge",
+                       "priceRange":  "$$",
+                       "knowsLanguage":  "en-SG",
+                       "areaServed":  {
+                                          "@type":  "Country",
+                                          "name":  "Singapore"
+                                      },
+                       "address":  {
+                                       "@type":  "PostalAddress",
+                                       "addressCountry":  "SG"
+                                   }
                    },
-    "provider":  {
-                     "@type":  "LocalBusiness",
-                     "name":  "OurKampung",
-                     "url":  "https://ourkampung.com/"
-                 }
-}
-</script>
-<script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "FAQPage",
-    "mainEntity":  [
-                       {
-                           "@type":  "Question",
-                           "name":  "Do you cover the Punggol waterfront condos?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "Yes — we regularly set up in Punggol\u0027s condo function rooms and will liaise with your management on access and timing."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "Is there a delivery fee to Punggol?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "Islandwide delivery and setup are included in our styling packages, so there\u0027s no separate travel charge for Punggol."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "Can you do an outdoor setup near the waterway?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "We can, weather permitting — we\u0027ll advise on a shaded or wet-weather backup so your celebration is covered either way."
-                                              }
-                       }
-                   ]
-}
-</script>
-<script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "BreadcrumbList",
-    "itemListElement":  [
-                            {
-                                "@type":  "ListItem",
-                                "position":  1,
-                                "name":  "Home",
-                                "item":  "https://ourkampung.com/"
-                            },
-                            {
-                                "@type":  "ListItem",
-                                "position":  2,
-                                "name":  "Punggol",
-                                "item":  "https://ourkampung.com/kids-party-venue-punggol.html"
-                            }
-                        ]
+                   {
+                       "@type":  "WebSite",
+                       "@id":  "https://ourkampung.com/#website",
+                       "url":  "https://ourkampung.com/",
+                       "name":  "OurKampung",
+                       "publisher":  {
+                                         "@id":  "https://ourkampung.com/#business"
+                                     },
+                       "inLanguage":  "en-SG"
+                   },
+                   {
+                       "@type":  [
+                                     "WebPage",
+                                     "FAQPage"
+                                 ],
+                       "@id":  "https://ourkampung.com/kids-party-venue-punggol.html#webpage",
+                       "url":  "https://ourkampung.com/kids-party-venue-punggol.html",
+                       "name":  "Kids Party in Punggol in Singapore",
+                       "description":  "Planning a kids\u0027 party in Punggol? OurKampung styles and runs children\u0027s birthday parties across Punggol — homes, condos and waterfront venues, fully coordinated.",
+                       "isPartOf":  {
+                                        "@id":  "https://ourkampung.com/#website"
+                                    },
+                       "about":  {
+                                     "@id":  "https://ourkampung.com/#business"
+                                 },
+                       "primaryImageOfPage":  {
+                                                  "@type":  "ImageObject",
+                                                  "url":  "https://ourkampung.com/assets/service-decor.png"
+                                              },
+                       "breadcrumb":  {
+                                          "@id":  "https://ourkampung.com/kids-party-venue-punggol.html#breadcrumb"
+                                      },
+                       "inLanguage":  "en-SG",
+                       "mainEntity":  [
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Do you cover the Punggol waterfront condos?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes — we regularly set up in Punggol\u0027s condo function rooms and will liaise with your management on access and timing."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Is there a delivery fee to Punggol?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Islandwide delivery and setup are included in our styling packages, so there\u0027s no separate travel charge for Punggol."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Can you do an outdoor setup near the waterway?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "We can, weather permitting — we\u0027ll advise on a shaded or wet-weather backup so your celebration is covered either way."
+                                                                 }
+                                          }
+                                      ]
+                   },
+                   {
+                       "@type":  "Service",
+                       "@id":  "https://ourkampung.com/kids-party-venue-punggol.html#service",
+                       "serviceType":  "Kids Party in Punggol",
+                       "name":  "Kids Party in Punggol in Singapore",
+                       "description":  "Planning a kids\u0027 party in Punggol? OurKampung styles and runs children\u0027s birthday parties across Punggol — homes, condos and waterfront venues, fully coordinated.",
+                       "areaServed":  {
+                                          "@type":  "Place",
+                                          "name":  "Punggol, Singapore"
+                                      },
+                       "provider":  {
+                                        "@id":  "https://ourkampung.com/#business"
+                                    },
+                       "mainEntityOfPage":  {
+                                                "@id":  "https://ourkampung.com/kids-party-venue-punggol.html#webpage"
+                                            }
+                   },
+                   {
+                       "@type":  "BreadcrumbList",
+                       "@id":  "https://ourkampung.com/kids-party-venue-punggol.html#breadcrumb",
+                       "itemListElement":  [
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  1,
+                                                   "name":  "Home",
+                                                   "item":  "https://ourkampung.com/"
+                                               },
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  2,
+                                                   "name":  "Punggol",
+                                                   "item":  "https://ourkampung.com/kids-party-venue-punggol.html"
+                                               }
+                                           ]
+                   }
+               ]
 }
 </script>
 <style>

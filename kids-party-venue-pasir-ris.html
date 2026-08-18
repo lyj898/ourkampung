@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-SG">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,71 +35,123 @@
 <script type="application/ld+json">
 {
     "@context":  "https://schema.org",
-    "@type":  "Service",
-    "serviceType":  "Kids Party in Pasir Ris",
-    "name":  "Kids Party in Pasir Ris in Singapore",
-    "description":  "Planning a kids\u0027 party in Pasir Ris? OurKampung styles and runs children\u0027s birthday parties across Pasir Ris — homes, condos and function rooms near Pasir Ris Park and the beach, fully coordinated.",
-    "areaServed":  {
-                       "@type":  "Country",
-                       "name":  "Singapore"
+    "@graph":  [
+                   {
+                       "@type":  "LocalBusiness",
+                       "@id":  "https://ourkampung.com/#business",
+                       "name":  "OurKampung",
+                       "alternateName":  "OurKampung Singapore",
+                       "url":  "https://ourkampung.com/",
+                       "description":  "Singapore\u0027s all-in-one concierge for children\u0027s birthday parties — décor, entertainment, cakes, venues and more, beautifully coordinated in one place.",
+                       "image":  "https://ourkampung.com/assets/hero.png",
+                       "serviceType":  "Children\u0027s party planning concierge",
+                       "priceRange":  "$$",
+                       "knowsLanguage":  "en-SG",
+                       "areaServed":  {
+                                          "@type":  "Country",
+                                          "name":  "Singapore"
+                                      },
+                       "address":  {
+                                       "@type":  "PostalAddress",
+                                       "addressCountry":  "SG"
+                                   }
                    },
-    "provider":  {
-                     "@type":  "LocalBusiness",
-                     "name":  "OurKampung",
-                     "url":  "https://ourkampung.com/"
-                 }
-}
-</script>
-<script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "FAQPage",
-    "mainEntity":  [
-                       {
-                           "@type":  "Question",
-                           "name":  "Can you set up a party at Pasir Ris Park or near the beach?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "Yes — we can style a park- or beach-adjacent setup with shade and a wet-weather backup, so the sea breeze doesn\u0027t get in the way of the celebration."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "Do you deliver to condos near Downtown East?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "We do — we regularly style condo function rooms in that part of Pasir Ris and will coordinate with your management on access and setup timing."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "Is there a surcharge for delivery to Pasir Ris?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "No — islandwide delivery and setup are included in our styling packages, with no separate travel charge for Pasir Ris."
-                                              }
-                       }
-                   ]
-}
-</script>
-<script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "BreadcrumbList",
-    "itemListElement":  [
-                            {
-                                "@type":  "ListItem",
-                                "position":  1,
-                                "name":  "Home",
-                                "item":  "https://ourkampung.com/"
-                            },
-                            {
-                                "@type":  "ListItem",
-                                "position":  2,
-                                "name":  "Pasir Ris",
-                                "item":  "https://ourkampung.com/kids-party-venue-pasir-ris.html"
-                            }
-                        ]
+                   {
+                       "@type":  "WebSite",
+                       "@id":  "https://ourkampung.com/#website",
+                       "url":  "https://ourkampung.com/",
+                       "name":  "OurKampung",
+                       "publisher":  {
+                                         "@id":  "https://ourkampung.com/#business"
+                                     },
+                       "inLanguage":  "en-SG"
+                   },
+                   {
+                       "@type":  [
+                                     "WebPage",
+                                     "FAQPage"
+                                 ],
+                       "@id":  "https://ourkampung.com/kids-party-venue-pasir-ris.html#webpage",
+                       "url":  "https://ourkampung.com/kids-party-venue-pasir-ris.html",
+                       "name":  "Kids Party in Pasir Ris in Singapore",
+                       "description":  "Planning a kids\u0027 party in Pasir Ris? OurKampung styles and runs children\u0027s birthday parties across Pasir Ris — homes, condos and function rooms near Pasir Ris Park and the beach, fully coordinated.",
+                       "isPartOf":  {
+                                        "@id":  "https://ourkampung.com/#website"
+                                    },
+                       "about":  {
+                                     "@id":  "https://ourkampung.com/#business"
+                                 },
+                       "primaryImageOfPage":  {
+                                                  "@type":  "ImageObject",
+                                                  "url":  "https://ourkampung.com/assets/theme-safari.png"
+                                              },
+                       "breadcrumb":  {
+                                          "@id":  "https://ourkampung.com/kids-party-venue-pasir-ris.html#breadcrumb"
+                                      },
+                       "inLanguage":  "en-SG",
+                       "mainEntity":  [
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Can you set up a party at Pasir Ris Park or near the beach?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes — we can style a park- or beach-adjacent setup with shade and a wet-weather backup, so the sea breeze doesn\u0027t get in the way of the celebration."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Do you deliver to condos near Downtown East?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "We do — we regularly style condo function rooms in that part of Pasir Ris and will coordinate with your management on access and setup timing."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Is there a surcharge for delivery to Pasir Ris?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "No — islandwide delivery and setup are included in our styling packages, with no separate travel charge for Pasir Ris."
+                                                                 }
+                                          }
+                                      ]
+                   },
+                   {
+                       "@type":  "Service",
+                       "@id":  "https://ourkampung.com/kids-party-venue-pasir-ris.html#service",
+                       "serviceType":  "Kids Party in Pasir Ris",
+                       "name":  "Kids Party in Pasir Ris in Singapore",
+                       "description":  "Planning a kids\u0027 party in Pasir Ris? OurKampung styles and runs children\u0027s birthday parties across Pasir Ris — homes, condos and function rooms near Pasir Ris Park and the beach, fully coordinated.",
+                       "areaServed":  {
+                                          "@type":  "Place",
+                                          "name":  "Pasir Ris, Singapore"
+                                      },
+                       "provider":  {
+                                        "@id":  "https://ourkampung.com/#business"
+                                    },
+                       "mainEntityOfPage":  {
+                                                "@id":  "https://ourkampung.com/kids-party-venue-pasir-ris.html#webpage"
+                                            }
+                   },
+                   {
+                       "@type":  "BreadcrumbList",
+                       "@id":  "https://ourkampung.com/kids-party-venue-pasir-ris.html#breadcrumb",
+                       "itemListElement":  [
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  1,
+                                                   "name":  "Home",
+                                                   "item":  "https://ourkampung.com/"
+                                               },
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  2,
+                                                   "name":  "Pasir Ris",
+                                                   "item":  "https://ourkampung.com/kids-party-venue-pasir-ris.html"
+                                               }
+                                           ]
+                   }
+               ]
 }
 </script>
 <style>

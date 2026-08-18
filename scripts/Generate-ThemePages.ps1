@@ -18,6 +18,22 @@ $ErrorActionPreference = 'Stop'
 $repo     = Split-Path $PSScriptRoot -Parent
 $dataPath = Join-Path $repo 'data/themes.json'
 $origin   = 'https://ourkampung.com'
+
+# ---------------- Canonical entity nodes ----------------
+# data/business.json is the single source of truth for the business entity.
+# Every generated page emits it once inside a @graph and links to it by @id, so
+# the whole site resolves to ONE entity instead of repeating standalone stubs.
+$business = Get-Content (Join-Path $repo 'data/business.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+$bizRef   = [ordered]@{ '@id' = "$origin/#business" }
+$siteRef  = [ordered]@{ '@id' = "$origin/#website" }
+$website  = [ordered]@{
+    '@type'    = 'WebSite'
+    '@id'      = "$origin/#website"
+    url        = "$origin/"
+    name       = 'OurKampung'
+    publisher  = $bizRef
+    inLanguage = 'en-SG'
+}
 $lastmod  = '2026-08-03'   # bump when you regenerate
 
 $themes = Get-Content $dataPath -Raw -Encoding UTF8 | ConvertFrom-Json
@@ -101,7 +117,7 @@ $scopedCss = @'
 # ---- Per-page template. {{TOKENS}} are literal-replaced below. ----
 $template = @'
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-SG">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -221,33 +237,48 @@ foreach ($t in $themes) {
         }
     }) -join "`n"
 
-    # --- Structured data (Service + FAQPage + BreadcrumbList) ---
+    # --- Structured data (one @graph per page, linked by @id) ---
+    $canon = "$origin/$($t.slug).html"
     $service = [ordered]@{
-        '@context' = 'https://schema.org'; '@type' = 'Service'
+        '@type' = 'Service'
+        '@id' = "$canon#service"
         serviceType = "$($t.titleName) planning"
         name = "$($t.titleName) in Singapore"
         description = $t.metaDescription
         areaServed = [ordered]@{ '@type' = 'Country'; name = 'Singapore' }
-        provider = [ordered]@{ '@type' = 'LocalBusiness'; name = 'OurKampung'; url = "$origin/" }
+        provider = $bizRef
+        mainEntityOfPage = [ordered]@{ '@id' = "$canon#webpage" }
     }
-    $faqPage = [ordered]@{
-        '@context' = 'https://schema.org'; '@type' = 'FAQPage'
-        mainEntity = @($t.faqs | ForEach-Object {
+    $crumb = [ordered]@{
+        '@type' = 'BreadcrumbList'
+        '@id' = "$canon#breadcrumb"
+        itemListElement = @(
+            [ordered]@{ '@type' = 'ListItem'; position = 1; name = 'Home';   item = "$origin/" },
+            [ordered]@{ '@type' = 'ListItem'; position = 2; name = 'Themes'; item = "$origin/themes.html" },
+            [ordered]@{ '@type' = 'ListItem'; position = 3; name = $t.name;  item = $canon }
+        )
+    }
+    $webPage = [ordered]@{
+        '@type' = $(if ($t.faqs) { @('WebPage','FAQPage') } else { 'WebPage' })
+        '@id' = "$canon#webpage"
+        url = $canon
+        name = "$($t.titleName) in Singapore"
+        description = $t.metaDescription
+        isPartOf = $siteRef
+        about = $bizRef
+        primaryImageOfPage = [ordered]@{ '@type' = 'ImageObject'; url = "$origin/$($t.image)" }
+        breadcrumb = [ordered]@{ '@id' = "$canon#breadcrumb" }
+        inLanguage = 'en-SG'
+    }
+    if ($t.faqs) {
+        $webPage['mainEntity'] = @($t.faqs | ForEach-Object {
             [ordered]@{ '@type' = 'Question'; name = $_.q
                 acceptedAnswer = [ordered]@{ '@type' = 'Answer'; text = $_.a } }
         })
     }
-    $crumb = [ordered]@{
-        '@context' = 'https://schema.org'; '@type' = 'BreadcrumbList'
-        itemListElement = @(
-            [ordered]@{ '@type' = 'ListItem'; position = 1; name = 'Home';   item = "$origin/" },
-            [ordered]@{ '@type' = 'ListItem'; position = 2; name = 'Themes'; item = "$origin/themes.html" },
-            [ordered]@{ '@type' = 'ListItem'; position = 3; name = $t.name;  item = "$origin/$($t.slug).html" }
-        )
-    }
-    $jsonld = (@($service, $faqPage, $crumb) | ForEach-Object {
-        "<script type=""application/ld+json"">`n" + ($_ | ConvertTo-Json -Depth 12) + "`n</script>"
-    }) -join "`n"
+    $jsonld = "<script type=""application/ld+json"">`n" +
+        ([ordered]@{ '@context' = 'https://schema.org'; '@graph' = @($business, $website, $webPage, $service, $crumb) } | ConvertTo-Json -Depth 12) +
+        "`n</script>"
 
     $title = "$titleNameEsc in Singapore &mdash; OurKampung"
 

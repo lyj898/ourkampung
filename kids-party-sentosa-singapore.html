@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-SG">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,71 +35,123 @@
 <script type="application/ld+json">
 {
     "@context":  "https://schema.org",
-    "@type":  "Service",
-    "serviceType":  "Kids Party in Sentosa",
-    "name":  "Kids Party in Sentosa in Singapore",
-    "description":  "Planning a kids\u0027 party on Sentosa? OurKampung styles and runs children\u0027s parties at Sentosa beaches, resorts and villas — fully coordinated, islandwide delivery.",
-    "areaServed":  {
-                       "@type":  "Country",
-                       "name":  "Singapore"
+    "@graph":  [
+                   {
+                       "@type":  "LocalBusiness",
+                       "@id":  "https://ourkampung.com/#business",
+                       "name":  "OurKampung",
+                       "alternateName":  "OurKampung Singapore",
+                       "url":  "https://ourkampung.com/",
+                       "description":  "Singapore\u0027s all-in-one concierge for children\u0027s birthday parties — décor, entertainment, cakes, venues and more, beautifully coordinated in one place.",
+                       "image":  "https://ourkampung.com/assets/hero.png",
+                       "serviceType":  "Children\u0027s party planning concierge",
+                       "priceRange":  "$$",
+                       "knowsLanguage":  "en-SG",
+                       "areaServed":  {
+                                          "@type":  "Country",
+                                          "name":  "Singapore"
+                                      },
+                       "address":  {
+                                       "@type":  "PostalAddress",
+                                       "addressCountry":  "SG"
+                                   }
                    },
-    "provider":  {
-                     "@type":  "LocalBusiness",
-                     "name":  "OurKampung",
-                     "url":  "https://ourkampung.com/"
-                 }
-}
-</script>
-<script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "FAQPage",
-    "mainEntity":  [
-                       {
-                           "@type":  "Question",
-                           "name":  "Can you set up at a Sentosa beach club or resort?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "Yes — we regularly work with Sentosa venues and will coordinate directly on delivery access, setup timing and any venue requirements."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "What about the heat and weather by the beach?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "We plan shaded setups and a wet-weather backup so your celebration is comfortable and covered whatever the day brings."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "Does delivery to Sentosa cost extra?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "We\u0027ll confirm any venue-specific access details up front; our styling packages include islandwide delivery and setup."
-                                              }
-                       }
-                   ]
-}
-</script>
-<script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "BreadcrumbList",
-    "itemListElement":  [
-                            {
-                                "@type":  "ListItem",
-                                "position":  1,
-                                "name":  "Home",
-                                "item":  "https://ourkampung.com/"
-                            },
-                            {
-                                "@type":  "ListItem",
-                                "position":  2,
-                                "name":  "Sentosa",
-                                "item":  "https://ourkampung.com/kids-party-sentosa-singapore.html"
-                            }
-                        ]
+                   {
+                       "@type":  "WebSite",
+                       "@id":  "https://ourkampung.com/#website",
+                       "url":  "https://ourkampung.com/",
+                       "name":  "OurKampung",
+                       "publisher":  {
+                                         "@id":  "https://ourkampung.com/#business"
+                                     },
+                       "inLanguage":  "en-SG"
+                   },
+                   {
+                       "@type":  [
+                                     "WebPage",
+                                     "FAQPage"
+                                 ],
+                       "@id":  "https://ourkampung.com/kids-party-sentosa-singapore.html#webpage",
+                       "url":  "https://ourkampung.com/kids-party-sentosa-singapore.html",
+                       "name":  "Kids Party in Sentosa in Singapore",
+                       "description":  "Planning a kids\u0027 party on Sentosa? OurKampung styles and runs children\u0027s parties at Sentosa beaches, resorts and villas — fully coordinated, islandwide delivery.",
+                       "isPartOf":  {
+                                        "@id":  "https://ourkampung.com/#website"
+                                    },
+                       "about":  {
+                                     "@id":  "https://ourkampung.com/#business"
+                                 },
+                       "primaryImageOfPage":  {
+                                                  "@type":  "ImageObject",
+                                                  "url":  "https://ourkampung.com/assets/theme-safari.png"
+                                              },
+                       "breadcrumb":  {
+                                          "@id":  "https://ourkampung.com/kids-party-sentosa-singapore.html#breadcrumb"
+                                      },
+                       "inLanguage":  "en-SG",
+                       "mainEntity":  [
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Can you set up at a Sentosa beach club or resort?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes — we regularly work with Sentosa venues and will coordinate directly on delivery access, setup timing and any venue requirements."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "What about the heat and weather by the beach?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "We plan shaded setups and a wet-weather backup so your celebration is comfortable and covered whatever the day brings."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Does delivery to Sentosa cost extra?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "We\u0027ll confirm any venue-specific access details up front; our styling packages include islandwide delivery and setup."
+                                                                 }
+                                          }
+                                      ]
+                   },
+                   {
+                       "@type":  "Service",
+                       "@id":  "https://ourkampung.com/kids-party-sentosa-singapore.html#service",
+                       "serviceType":  "Kids Party in Sentosa",
+                       "name":  "Kids Party in Sentosa in Singapore",
+                       "description":  "Planning a kids\u0027 party on Sentosa? OurKampung styles and runs children\u0027s parties at Sentosa beaches, resorts and villas — fully coordinated, islandwide delivery.",
+                       "areaServed":  {
+                                          "@type":  "Place",
+                                          "name":  "Sentosa, Singapore"
+                                      },
+                       "provider":  {
+                                        "@id":  "https://ourkampung.com/#business"
+                                    },
+                       "mainEntityOfPage":  {
+                                                "@id":  "https://ourkampung.com/kids-party-sentosa-singapore.html#webpage"
+                                            }
+                   },
+                   {
+                       "@type":  "BreadcrumbList",
+                       "@id":  "https://ourkampung.com/kids-party-sentosa-singapore.html#breadcrumb",
+                       "itemListElement":  [
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  1,
+                                                   "name":  "Home",
+                                                   "item":  "https://ourkampung.com/"
+                                               },
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  2,
+                                                   "name":  "Sentosa",
+                                                   "item":  "https://ourkampung.com/kids-party-sentosa-singapore.html"
+                                               }
+                                           ]
+                   }
+               ]
 }
 </script>
 <style>

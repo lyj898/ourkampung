@@ -19,6 +19,22 @@
 $ErrorActionPreference = 'Stop'
 $repo    = Split-Path $PSScriptRoot -Parent
 $origin  = 'https://ourkampung.com'
+
+# ---------------- Canonical entity nodes ----------------
+# data/business.json is the single source of truth for the business entity.
+# Every generated page emits it once inside a @graph and links to it by @id, so
+# the whole site resolves to ONE entity instead of repeating standalone stubs.
+$business = Get-Content (Join-Path $repo 'data/business.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+$bizRef   = [ordered]@{ '@id' = "$origin/#business" }
+$siteRef  = [ordered]@{ '@id' = "$origin/#website" }
+$website  = [ordered]@{
+    '@type'    = 'WebSite'
+    '@id'      = "$origin/#website"
+    url        = "$origin/"
+    name       = 'OurKampung'
+    publisher  = $bizRef
+    inLanguage = 'en-SG'
+}
 $lastmod = '2026-08-03'
 
 function Esc([string]$s) {
@@ -108,7 +124,7 @@ $scopedCss = @'
 
 $template = @'
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-SG">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -213,21 +229,24 @@ foreach ($c in $collections) {
             }
         }) -join "`n"
 
-        # --- Structured data ---
+        # --- Structured data (one @graph per page, linked by @id) ---
+        $canon = "$origin/$($t.slug).html"
+        # Location pages assert their actual town via areaServedPlace; entries
+        # that aren't places (e.g. "At Home") fall back to Singapore.
+        $area = $(if ($t.areaServedPlace) {
+            [ordered]@{ '@type' = 'Place'; name = $t.areaServedPlace }
+        } else {
+            [ordered]@{ '@type' = 'Country'; name = 'Singapore' }
+        })
         $service = [ordered]@{
-            '@context' = 'https://schema.org'; '@type' = 'Service'
+            '@type' = 'Service'
+            '@id' = "$canon#service"
             serviceType = $t.titleName
             name = "$($t.titleName) in Singapore"
             description = $t.metaDescription
-            areaServed = [ordered]@{ '@type' = 'Country'; name = 'Singapore' }
-            provider = [ordered]@{ '@type' = 'LocalBusiness'; name = 'OurKampung'; url = "$origin/" }
-        }
-        $faqPage = [ordered]@{
-            '@context' = 'https://schema.org'; '@type' = 'FAQPage'
-            mainEntity = @($t.faqs | ForEach-Object {
-                [ordered]@{ '@type' = 'Question'; name = $_.q
-                    acceptedAnswer = [ordered]@{ '@type' = 'Answer'; text = $_.a } }
-            })
+            areaServed = $area
+            provider = $bizRef
+            mainEntityOfPage = [ordered]@{ '@id' = "$canon#webpage" }
         }
         $crumbItems = @([ordered]@{ '@type' = 'ListItem'; position = 1; name = 'Home'; item = "$origin/" })
         $pos = 2
@@ -235,12 +254,31 @@ foreach ($c in $collections) {
             $crumbItems += [ordered]@{ '@type' = 'ListItem'; position = $pos; name = $c.crumbName; item = "$origin/$($c.crumbUrl)" }
             $pos++
         }
-        $crumbItems += [ordered]@{ '@type' = 'ListItem'; position = $pos; name = $t.name; item = "$origin/$($t.slug).html" }
-        $crumb = [ordered]@{ '@context' = 'https://schema.org'; '@type' = 'BreadcrumbList'; itemListElement = $crumbItems }
+        $crumbItems += [ordered]@{ '@type' = 'ListItem'; position = $pos; name = $t.name; item = $canon }
+        $crumb = [ordered]@{ '@type' = 'BreadcrumbList'; '@id' = "$canon#breadcrumb"; itemListElement = $crumbItems }
 
-        $jsonld = (@($service, $faqPage, $crumb) | ForEach-Object {
-            "<script type=""application/ld+json"">`n" + ($_ | ConvertTo-Json -Depth 12) + "`n</script>"
-        }) -join "`n"
+        $webPage = [ordered]@{
+            '@type' = $(if ($t.faqs) { @('WebPage','FAQPage') } else { 'WebPage' })
+            '@id' = "$canon#webpage"
+            url = $canon
+            name = "$($t.titleName) in Singapore"
+            description = $t.metaDescription
+            isPartOf = $siteRef
+            about = $bizRef
+            primaryImageOfPage = [ordered]@{ '@type' = 'ImageObject'; url = "$origin/$($t.image)" }
+            breadcrumb = [ordered]@{ '@id' = "$canon#breadcrumb" }
+            inLanguage = 'en-SG'
+        }
+        if ($t.faqs) {
+            $webPage['mainEntity'] = @($t.faqs | ForEach-Object {
+                [ordered]@{ '@type' = 'Question'; name = $_.q
+                    acceptedAnswer = [ordered]@{ '@type' = 'Answer'; text = $_.a } }
+            })
+        }
+
+        $jsonld = "<script type=""application/ld+json"">`n" +
+            ([ordered]@{ '@context' = 'https://schema.org'; '@graph' = @($business, $website, $webPage, $service, $crumb) } | ConvertTo-Json -Depth 12) +
+            "`n</script>"
 
         $title = "$titleNameEsc in Singapore &mdash; OurKampung"
 

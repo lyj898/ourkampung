@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-SG">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,77 +35,129 @@
 <script type="application/ld+json">
 {
     "@context":  "https://schema.org",
-    "@type":  "Service",
-    "serviceType":  "Cars \u0026 Vehicles Birthday Party planning",
-    "name":  "Cars \u0026 Vehicles Birthday Party in Singapore",
-    "description":  "Planning a cars or vehicles birthday party in Singapore? OurKampung styles fun transport-themed parties — race tracks, diggers, planes and more, fully coordinated.",
-    "areaServed":  {
-                       "@type":  "Country",
-                       "name":  "Singapore"
+    "@graph":  [
+                   {
+                       "@type":  "LocalBusiness",
+                       "@id":  "https://ourkampung.com/#business",
+                       "name":  "OurKampung",
+                       "alternateName":  "OurKampung Singapore",
+                       "url":  "https://ourkampung.com/",
+                       "description":  "Singapore\u0027s all-in-one concierge for children\u0027s birthday parties — décor, entertainment, cakes, venues and more, beautifully coordinated in one place.",
+                       "image":  "https://ourkampung.com/assets/hero.png",
+                       "serviceType":  "Children\u0027s party planning concierge",
+                       "priceRange":  "$$",
+                       "knowsLanguage":  "en-SG",
+                       "areaServed":  {
+                                          "@type":  "Country",
+                                          "name":  "Singapore"
+                                      },
+                       "address":  {
+                                       "@type":  "PostalAddress",
+                                       "addressCountry":  "SG"
+                                   }
                    },
-    "provider":  {
-                     "@type":  "LocalBusiness",
-                     "name":  "OurKampung",
-                     "url":  "https://ourkampung.com/"
-                 }
-}
-</script>
-<script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "FAQPage",
-    "mainEntity":  [
-                       {
-                           "@type":  "Question",
-                           "name":  "Can the theme cover diggers and planes too, not just cars?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "Absolutely — we can lean into construction vehicles, planes, trains or a mix. Tell us your child\u0027s favourite and we\u0027ll build around it."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "Is this theme good for a 2nd or 3rd birthday?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "It\u0027s perfect for toddlers and young children who love vehicles. We keep the play zones age-appropriate and safe."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "Can you include a play or sensory zone?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "Yes — a race-track mat or construction sensory corner is a favourite addition, and we set it all up for you."
-                                              }
-                       }
-                   ]
-}
-</script>
-<script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "BreadcrumbList",
-    "itemListElement":  [
-                            {
-                                "@type":  "ListItem",
-                                "position":  1,
-                                "name":  "Home",
-                                "item":  "https://ourkampung.com/"
-                            },
-                            {
-                                "@type":  "ListItem",
-                                "position":  2,
-                                "name":  "Themes",
-                                "item":  "https://ourkampung.com/themes.html"
-                            },
-                            {
-                                "@type":  "ListItem",
-                                "position":  3,
-                                "name":  "Cars \u0026 Vehicles",
-                                "item":  "https://ourkampung.com/cars-vehicles-birthday-party-singapore.html"
-                            }
-                        ]
+                   {
+                       "@type":  "WebSite",
+                       "@id":  "https://ourkampung.com/#website",
+                       "url":  "https://ourkampung.com/",
+                       "name":  "OurKampung",
+                       "publisher":  {
+                                         "@id":  "https://ourkampung.com/#business"
+                                     },
+                       "inLanguage":  "en-SG"
+                   },
+                   {
+                       "@type":  [
+                                     "WebPage",
+                                     "FAQPage"
+                                 ],
+                       "@id":  "https://ourkampung.com/cars-vehicles-birthday-party-singapore.html#webpage",
+                       "url":  "https://ourkampung.com/cars-vehicles-birthday-party-singapore.html",
+                       "name":  "Cars \u0026 Vehicles Birthday Party in Singapore",
+                       "description":  "Planning a cars or vehicles birthday party in Singapore? OurKampung styles fun transport-themed parties — race tracks, diggers, planes and more, fully coordinated.",
+                       "isPartOf":  {
+                                        "@id":  "https://ourkampung.com/#website"
+                                    },
+                       "about":  {
+                                     "@id":  "https://ourkampung.com/#business"
+                                 },
+                       "primaryImageOfPage":  {
+                                                  "@type":  "ImageObject",
+                                                  "url":  "https://ourkampung.com/assets/service-decor.png"
+                                              },
+                       "breadcrumb":  {
+                                          "@id":  "https://ourkampung.com/cars-vehicles-birthday-party-singapore.html#breadcrumb"
+                                      },
+                       "inLanguage":  "en-SG",
+                       "mainEntity":  [
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Can the theme cover diggers and planes too, not just cars?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Absolutely — we can lean into construction vehicles, planes, trains or a mix. Tell us your child\u0027s favourite and we\u0027ll build around it."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Is this theme good for a 2nd or 3rd birthday?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "It\u0027s perfect for toddlers and young children who love vehicles. We keep the play zones age-appropriate and safe."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Can you include a play or sensory zone?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes — a race-track mat or construction sensory corner is a favourite addition, and we set it all up for you."
+                                                                 }
+                                          }
+                                      ]
+                   },
+                   {
+                       "@type":  "Service",
+                       "@id":  "https://ourkampung.com/cars-vehicles-birthday-party-singapore.html#service",
+                       "serviceType":  "Cars \u0026 Vehicles Birthday Party planning",
+                       "name":  "Cars \u0026 Vehicles Birthday Party in Singapore",
+                       "description":  "Planning a cars or vehicles birthday party in Singapore? OurKampung styles fun transport-themed parties — race tracks, diggers, planes and more, fully coordinated.",
+                       "areaServed":  {
+                                          "@type":  "Country",
+                                          "name":  "Singapore"
+                                      },
+                       "provider":  {
+                                        "@id":  "https://ourkampung.com/#business"
+                                    },
+                       "mainEntityOfPage":  {
+                                                "@id":  "https://ourkampung.com/cars-vehicles-birthday-party-singapore.html#webpage"
+                                            }
+                   },
+                   {
+                       "@type":  "BreadcrumbList",
+                       "@id":  "https://ourkampung.com/cars-vehicles-birthday-party-singapore.html#breadcrumb",
+                       "itemListElement":  [
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  1,
+                                                   "name":  "Home",
+                                                   "item":  "https://ourkampung.com/"
+                                               },
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  2,
+                                                   "name":  "Themes",
+                                                   "item":  "https://ourkampung.com/themes.html"
+                                               },
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  3,
+                                                   "name":  "Cars \u0026 Vehicles",
+                                                   "item":  "https://ourkampung.com/cars-vehicles-birthday-party-singapore.html"
+                                               }
+                                           ]
+                   }
+               ]
 }
 </script>
 <style>

@@ -12,6 +12,22 @@
 $ErrorActionPreference = 'Stop'
 $repo    = Split-Path $PSScriptRoot -Parent
 $origin  = 'https://ourkampung.com'
+
+# ---------------- Canonical entity nodes ----------------
+# data/business.json is the single source of truth for the business entity.
+# Every generated page emits it once inside a @graph and links to it by @id, so
+# the whole site resolves to ONE entity instead of repeating standalone stubs.
+$business = Get-Content (Join-Path $repo 'data/business.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+$bizRef   = [ordered]@{ '@id' = "$origin/#business" }
+$siteRef  = [ordered]@{ '@id' = "$origin/#website" }
+$website  = [ordered]@{
+    '@type'    = 'WebSite'
+    '@id'      = "$origin/#website"
+    url        = "$origin/"
+    name       = 'OurKampung'
+    publisher  = $bizRef
+    inLanguage = 'en-SG'
+}
 $lastmod = '2026-08-03'
 $months  = @{ '01'='Jan'; '02'='Feb'; '03'='Mar'; '04'='Apr'; '05'='May'; '06'='Jun'; '07'='Jul'; '08'='Aug'; '09'='Sep'; '10'='Oct'; '11'='Nov'; '12'='Dec' }
 
@@ -170,36 +186,52 @@ $faqItems
         }
     }) -join "`n"
 
-    # Structured data: BlogPosting + (FAQPage) + BreadcrumbList
+    # Structured data: one @graph per page, linked by @id
+    # dateModified falls back to datePublished until an article is actually
+    # revised; set "dateModified" in articles.json when editing existing copy.
     $posting = [ordered]@{
-        '@context' = 'https://schema.org'; '@type' = 'BlogPosting'
+        '@type' = 'BlogPosting'
+        '@id' = "$canon#article"
         headline = $a.title
         description = $a.metaDescription
-        image = "$origin/$($a.image)"
+        image = [ordered]@{ '@type' = 'ImageObject'; url = "$origin/$($a.image)" }
         datePublished = $a.datePublished
-        dateModified = $a.datePublished
-        mainEntityOfPage = $canon
-        author = [ordered]@{ '@type' = 'Organization'; name = 'OurKampung'; url = "$origin/" }
-        publisher = [ordered]@{ '@type' = 'Organization'; name = 'OurKampung'; url = "$origin/" }
+        dateModified = $(if ($a.dateModified) { $a.dateModified } else { $a.datePublished })
+        mainEntityOfPage = [ordered]@{ '@id' = "$canon#webpage" }
+        isPartOf = $siteRef
+        author = $bizRef
+        publisher = $bizRef
+        inLanguage = 'en-SG'
     }
-    $ld = @($posting)
-    if ($a.faqs) {
-        $ld += [ordered]@{
-            '@context' = 'https://schema.org'; '@type' = 'FAQPage'
-            mainEntity = @($a.faqs | ForEach-Object {
-                [ordered]@{ '@type' = 'Question'; name = $_.q; acceptedAnswer = [ordered]@{ '@type' = 'Answer'; text = $_.a } }
-            })
-        }
-    }
-    $ld += [ordered]@{
-        '@context' = 'https://schema.org'; '@type' = 'BreadcrumbList'
+    $crumb = [ordered]@{
+        '@type' = 'BreadcrumbList'
+        '@id' = "$canon#breadcrumb"
         itemListElement = @(
             [ordered]@{ '@type' = 'ListItem'; position = 1; name = 'Home'; item = "$origin/" },
             [ordered]@{ '@type' = 'ListItem'; position = 2; name = 'Guides'; item = "$origin/blog.html" },
             [ordered]@{ '@type' = 'ListItem'; position = 3; name = $a.title; item = $canon }
         )
     }
-    $jsonld = ($ld | ForEach-Object { "<script type=""application/ld+json"">`n" + ($_ | ConvertTo-Json -Depth 12) + "`n</script>" }) -join "`n"
+    $webPage = [ordered]@{
+        '@type' = $(if ($a.faqs) { @('WebPage','FAQPage') } else { 'WebPage' })
+        '@id' = "$canon#webpage"
+        url = $canon
+        name = $a.title
+        description = $a.metaDescription
+        isPartOf = $siteRef
+        about = $bizRef
+        primaryImageOfPage = [ordered]@{ '@type' = 'ImageObject'; url = "$origin/$($a.image)" }
+        breadcrumb = [ordered]@{ '@id' = "$canon#breadcrumb" }
+        inLanguage = 'en-SG'
+    }
+    if ($a.faqs) {
+        $webPage['mainEntity'] = @($a.faqs | ForEach-Object {
+            [ordered]@{ '@type' = 'Question'; name = $_.q; acceptedAnswer = [ordered]@{ '@type' = 'Answer'; text = $_.a } }
+        })
+    }
+    $jsonld = "<script type=""application/ld+json"">`n" +
+        ([ordered]@{ '@context' = 'https://schema.org'; '@graph' = @($business, $website, $webPage, $posting, $crumb) } | ConvertTo-Json -Depth 12) +
+        "`n</script>"
 
     $head = $headCommon.
         Replace('{{GA}}', $ga).Replace('{{TITLE}}', "$titleEsc &mdash; OurKampung").
@@ -208,7 +240,7 @@ $faqItems
 
     $html = @"
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-SG">
 <head>
 $head
 $jsonld
@@ -276,12 +308,53 @@ $blogHead = $headCommon.
     Replace('{{CANON}}', "$origin/blog.html").
     Replace('{{OGTYPE}}', 'website').Replace('{{ORIGIN}}', $origin).Replace('{{IMG}}', 'assets/hero.png')
 
+# ---------------- blog.html structured data ----------------
+$blogCanon = "$origin/blog.html"
+$bi = 0
+$blogItems = @($articles | ForEach-Object {
+    $bi++
+    [ordered]@{ '@type' = 'ListItem'; position = $bi; url = "$origin/$($_.slug).html"; name = $_.title }
+})
+$blogGraph = @(
+    $business,
+    $website,
+    [ordered]@{
+        '@type' = 'CollectionPage'
+        '@id' = "$blogCanon#webpage"
+        url = $blogCanon
+        name = 'Party Planning Guides'
+        description = 'Practical guides to planning a kids'' birthday party in Singapore.'
+        isPartOf = $siteRef
+        about = $bizRef
+        breadcrumb = [ordered]@{ '@id' = "$blogCanon#breadcrumb" }
+        inLanguage = 'en-SG'
+        mainEntity = [ordered]@{
+            '@type' = 'ItemList'
+            '@id' = "$blogCanon#list"
+            numberOfItems = $blogItems.Count
+            itemListElement = $blogItems
+        }
+    },
+    [ordered]@{
+        '@type' = 'BreadcrumbList'
+        '@id' = "$blogCanon#breadcrumb"
+        itemListElement = @(
+            [ordered]@{ '@type' = 'ListItem'; position = 1; name = 'Home';   item = "$origin/" },
+            [ordered]@{ '@type' = 'ListItem'; position = 2; name = 'Guides'; item = $blogCanon }
+        )
+    }
+)
+$blogJsonld = "<script type=""application/ld+json"">`n" +
+    ([ordered]@{ '@context' = 'https://schema.org'; '@graph' = $blogGraph } | ConvertTo-Json -Depth 12) +
+    "`n</script>"
+
 $blog = @"
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-SG">
 <head>
 $blogHead
 $articleCss
+$blogJsonld
 </head>
 <body>
 $header

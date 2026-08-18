@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-SG">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,77 +35,129 @@
 <script type="application/ld+json">
 {
     "@context":  "https://schema.org",
-    "@type":  "Service",
-    "serviceType":  "Safari \u0026 Jungle Birthday Party planning",
-    "name":  "Safari \u0026 Jungle Birthday Party in Singapore",
-    "description":  "Planning a safari or jungle birthday party in Singapore? OurKampung styles lush, earthy wild-one celebrations — foliage décor, animal details, cake and full coordination.",
-    "areaServed":  {
-                       "@type":  "Country",
-                       "name":  "Singapore"
+    "@graph":  [
+                   {
+                       "@type":  "LocalBusiness",
+                       "@id":  "https://ourkampung.com/#business",
+                       "name":  "OurKampung",
+                       "alternateName":  "OurKampung Singapore",
+                       "url":  "https://ourkampung.com/",
+                       "description":  "Singapore\u0027s all-in-one concierge for children\u0027s birthday parties — décor, entertainment, cakes, venues and more, beautifully coordinated in one place.",
+                       "image":  "https://ourkampung.com/assets/hero.png",
+                       "serviceType":  "Children\u0027s party planning concierge",
+                       "priceRange":  "$$",
+                       "knowsLanguage":  "en-SG",
+                       "areaServed":  {
+                                          "@type":  "Country",
+                                          "name":  "Singapore"
+                                      },
+                       "address":  {
+                                       "@type":  "PostalAddress",
+                                       "addressCountry":  "SG"
+                                   }
                    },
-    "provider":  {
-                     "@type":  "LocalBusiness",
-                     "name":  "OurKampung",
-                     "url":  "https://ourkampung.com/"
-                 }
-}
-</script>
-<script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "FAQPage",
-    "mainEntity":  [
-                       {
-                           "@type":  "Question",
-                           "name":  "Is safari a good theme for a 1st birthday?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "It\u0027s one of the most popular — the \u0027Wild One\u0027 spin is perfect for a first birthday, and the earthy palette photographs beautifully. We soften the styling for the littlest guests."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "Can you add animal entertainment or mascots?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "We can arrange a walkabout animal mascot, an interactive animal show, or a host to run safari-themed games, depending on your space and budget."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "Do you handle setup and teardown?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "Always. We deliver, set up before guests arrive, and clear everything afterwards — anywhere in Singapore."
-                                              }
-                       }
-                   ]
-}
-</script>
-<script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "BreadcrumbList",
-    "itemListElement":  [
-                            {
-                                "@type":  "ListItem",
-                                "position":  1,
-                                "name":  "Home",
-                                "item":  "https://ourkampung.com/"
-                            },
-                            {
-                                "@type":  "ListItem",
-                                "position":  2,
-                                "name":  "Themes",
-                                "item":  "https://ourkampung.com/themes.html"
-                            },
-                            {
-                                "@type":  "ListItem",
-                                "position":  3,
-                                "name":  "Safari \u0026 Jungle",
-                                "item":  "https://ourkampung.com/safari-jungle-birthday-party-singapore.html"
-                            }
-                        ]
+                   {
+                       "@type":  "WebSite",
+                       "@id":  "https://ourkampung.com/#website",
+                       "url":  "https://ourkampung.com/",
+                       "name":  "OurKampung",
+                       "publisher":  {
+                                         "@id":  "https://ourkampung.com/#business"
+                                     },
+                       "inLanguage":  "en-SG"
+                   },
+                   {
+                       "@type":  [
+                                     "WebPage",
+                                     "FAQPage"
+                                 ],
+                       "@id":  "https://ourkampung.com/safari-jungle-birthday-party-singapore.html#webpage",
+                       "url":  "https://ourkampung.com/safari-jungle-birthday-party-singapore.html",
+                       "name":  "Safari \u0026 Jungle Birthday Party in Singapore",
+                       "description":  "Planning a safari or jungle birthday party in Singapore? OurKampung styles lush, earthy wild-one celebrations — foliage décor, animal details, cake and full coordination.",
+                       "isPartOf":  {
+                                        "@id":  "https://ourkampung.com/#website"
+                                    },
+                       "about":  {
+                                     "@id":  "https://ourkampung.com/#business"
+                                 },
+                       "primaryImageOfPage":  {
+                                                  "@type":  "ImageObject",
+                                                  "url":  "https://ourkampung.com/assets/theme-safari.png"
+                                              },
+                       "breadcrumb":  {
+                                          "@id":  "https://ourkampung.com/safari-jungle-birthday-party-singapore.html#breadcrumb"
+                                      },
+                       "inLanguage":  "en-SG",
+                       "mainEntity":  [
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Is safari a good theme for a 1st birthday?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "It\u0027s one of the most popular — the \u0027Wild One\u0027 spin is perfect for a first birthday, and the earthy palette photographs beautifully. We soften the styling for the littlest guests."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Can you add animal entertainment or mascots?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "We can arrange a walkabout animal mascot, an interactive animal show, or a host to run safari-themed games, depending on your space and budget."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Do you handle setup and teardown?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Always. We deliver, set up before guests arrive, and clear everything afterwards — anywhere in Singapore."
+                                                                 }
+                                          }
+                                      ]
+                   },
+                   {
+                       "@type":  "Service",
+                       "@id":  "https://ourkampung.com/safari-jungle-birthday-party-singapore.html#service",
+                       "serviceType":  "Safari \u0026 Jungle Birthday Party planning",
+                       "name":  "Safari \u0026 Jungle Birthday Party in Singapore",
+                       "description":  "Planning a safari or jungle birthday party in Singapore? OurKampung styles lush, earthy wild-one celebrations — foliage décor, animal details, cake and full coordination.",
+                       "areaServed":  {
+                                          "@type":  "Country",
+                                          "name":  "Singapore"
+                                      },
+                       "provider":  {
+                                        "@id":  "https://ourkampung.com/#business"
+                                    },
+                       "mainEntityOfPage":  {
+                                                "@id":  "https://ourkampung.com/safari-jungle-birthday-party-singapore.html#webpage"
+                                            }
+                   },
+                   {
+                       "@type":  "BreadcrumbList",
+                       "@id":  "https://ourkampung.com/safari-jungle-birthday-party-singapore.html#breadcrumb",
+                       "itemListElement":  [
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  1,
+                                                   "name":  "Home",
+                                                   "item":  "https://ourkampung.com/"
+                                               },
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  2,
+                                                   "name":  "Themes",
+                                                   "item":  "https://ourkampung.com/themes.html"
+                                               },
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  3,
+                                                   "name":  "Safari \u0026 Jungle",
+                                                   "item":  "https://ourkampung.com/safari-jungle-birthday-party-singapore.html"
+                                               }
+                                           ]
+                   }
+               ]
 }
 </script>
 <style>

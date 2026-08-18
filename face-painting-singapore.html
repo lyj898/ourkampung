@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-SG">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,77 +35,129 @@
 <script type="application/ld+json">
 {
     "@context":  "https://schema.org",
-    "@type":  "Service",
-    "serviceType":  "Party Face Painting",
-    "name":  "Party Face Painting in Singapore",
-    "description":  "Book face painting for a kids\u0027 party in Singapore. OurKampung arranges skilled, child-safe face painters matched to your theme and coordinated with your setup.",
-    "areaServed":  {
-                       "@type":  "Country",
-                       "name":  "Singapore"
+    "@graph":  [
+                   {
+                       "@type":  "LocalBusiness",
+                       "@id":  "https://ourkampung.com/#business",
+                       "name":  "OurKampung",
+                       "alternateName":  "OurKampung Singapore",
+                       "url":  "https://ourkampung.com/",
+                       "description":  "Singapore\u0027s all-in-one concierge for children\u0027s birthday parties — décor, entertainment, cakes, venues and more, beautifully coordinated in one place.",
+                       "image":  "https://ourkampung.com/assets/hero.png",
+                       "serviceType":  "Children\u0027s party planning concierge",
+                       "priceRange":  "$$",
+                       "knowsLanguage":  "en-SG",
+                       "areaServed":  {
+                                          "@type":  "Country",
+                                          "name":  "Singapore"
+                                      },
+                       "address":  {
+                                       "@type":  "PostalAddress",
+                                       "addressCountry":  "SG"
+                                   }
                    },
-    "provider":  {
-                     "@type":  "LocalBusiness",
-                     "name":  "OurKampung",
-                     "url":  "https://ourkampung.com/"
-                 }
-}
-</script>
-<script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "FAQPage",
-    "mainEntity":  [
-                       {
-                           "@type":  "Question",
-                           "name":  "Are the paints safe for children\u0027s skin?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "Yes — our artists use professional, hypoallergenic, cosmetic-grade paints that wash off easily with soap and water."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "How many children can one artist paint?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "A single artist typically manages around 10-15 children per hour depending on design complexity. For larger parties we can arrange more than one."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "Can the designs match our theme?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "Absolutely — from safari animals to superheroes to unicorns, we\u0027ll brief the artist to match your party\u0027s theme."
-                                              }
-                       }
-                   ]
-}
-</script>
-<script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "BreadcrumbList",
-    "itemListElement":  [
-                            {
-                                "@type":  "ListItem",
-                                "position":  1,
-                                "name":  "Home",
-                                "item":  "https://ourkampung.com/"
-                            },
-                            {
-                                "@type":  "ListItem",
-                                "position":  2,
-                                "name":  "Services",
-                                "item":  "https://ourkampung.com/services.html"
-                            },
-                            {
-                                "@type":  "ListItem",
-                                "position":  3,
-                                "name":  "Face Painting",
-                                "item":  "https://ourkampung.com/face-painting-singapore.html"
-                            }
-                        ]
+                   {
+                       "@type":  "WebSite",
+                       "@id":  "https://ourkampung.com/#website",
+                       "url":  "https://ourkampung.com/",
+                       "name":  "OurKampung",
+                       "publisher":  {
+                                         "@id":  "https://ourkampung.com/#business"
+                                     },
+                       "inLanguage":  "en-SG"
+                   },
+                   {
+                       "@type":  [
+                                     "WebPage",
+                                     "FAQPage"
+                                 ],
+                       "@id":  "https://ourkampung.com/face-painting-singapore.html#webpage",
+                       "url":  "https://ourkampung.com/face-painting-singapore.html",
+                       "name":  "Party Face Painting in Singapore",
+                       "description":  "Book face painting for a kids\u0027 party in Singapore. OurKampung arranges skilled, child-safe face painters matched to your theme and coordinated with your setup.",
+                       "isPartOf":  {
+                                        "@id":  "https://ourkampung.com/#website"
+                                    },
+                       "about":  {
+                                     "@id":  "https://ourkampung.com/#business"
+                                 },
+                       "primaryImageOfPage":  {
+                                                  "@type":  "ImageObject",
+                                                  "url":  "https://ourkampung.com/assets/service-entertainment.png"
+                                              },
+                       "breadcrumb":  {
+                                          "@id":  "https://ourkampung.com/face-painting-singapore.html#breadcrumb"
+                                      },
+                       "inLanguage":  "en-SG",
+                       "mainEntity":  [
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Are the paints safe for children\u0027s skin?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes — our artists use professional, hypoallergenic, cosmetic-grade paints that wash off easily with soap and water."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "How many children can one artist paint?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "A single artist typically manages around 10-15 children per hour depending on design complexity. For larger parties we can arrange more than one."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Can the designs match our theme?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Absolutely — from safari animals to superheroes to unicorns, we\u0027ll brief the artist to match your party\u0027s theme."
+                                                                 }
+                                          }
+                                      ]
+                   },
+                   {
+                       "@type":  "Service",
+                       "@id":  "https://ourkampung.com/face-painting-singapore.html#service",
+                       "serviceType":  "Party Face Painting",
+                       "name":  "Party Face Painting in Singapore",
+                       "description":  "Book face painting for a kids\u0027 party in Singapore. OurKampung arranges skilled, child-safe face painters matched to your theme and coordinated with your setup.",
+                       "areaServed":  {
+                                          "@type":  "Country",
+                                          "name":  "Singapore"
+                                      },
+                       "provider":  {
+                                        "@id":  "https://ourkampung.com/#business"
+                                    },
+                       "mainEntityOfPage":  {
+                                                "@id":  "https://ourkampung.com/face-painting-singapore.html#webpage"
+                                            }
+                   },
+                   {
+                       "@type":  "BreadcrumbList",
+                       "@id":  "https://ourkampung.com/face-painting-singapore.html#breadcrumb",
+                       "itemListElement":  [
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  1,
+                                                   "name":  "Home",
+                                                   "item":  "https://ourkampung.com/"
+                                               },
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  2,
+                                                   "name":  "Services",
+                                                   "item":  "https://ourkampung.com/services.html"
+                                               },
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  3,
+                                                   "name":  "Face Painting",
+                                                   "item":  "https://ourkampung.com/face-painting-singapore.html"
+                                               }
+                                           ]
+                   }
+               ]
 }
 </script>
 <style>

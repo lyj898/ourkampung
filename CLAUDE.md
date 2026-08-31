@@ -11,10 +11,30 @@ When creating any new page or route, do both of the following **in the same chan
 
 `Generate-LandingPages.ps1` and `Generate-ThemePages.ps1` rebuild `sitemap.xml` from a
 hardcoded core-page list that **omits `blog.html` and every article**. Running either one
-last silently drops those URLs from the sitemap (55 → 47).
+last silently drops `blog.html` plus every article URL from the sitemap.
 
 **Always finish a regeneration run with `Generate-Articles.ps1`** — it is the only generator
 that merges all four data sets into the complete sitemap.
+
+Full-rebuild order:
+
+```
+Generate-LandingPages.ps1 → Generate-ThemePages.ps1 → Generate-Articles.ps1
+        → Generate-Redirects.ps1 → Update-StaticPageSchema.ps1
+```
+
+The last two do not touch `sitemap.xml`, so they are safe to run after it is final.
+
+## Retired URLs
+
+GitHub Pages has no server-side 301. `data/redirects.json` maps a retired slug to its
+replacement, and `Generate-Redirects.ps1` writes a stub for each combining
+`<link rel="canonical">` with an instant `<meta http-equiv="refresh">`.
+
+Stubs are deliberately **absent from `sitemap.xml`** — they exist so a retired URL Google
+already knows resolves to its replacement instead of 404ing, not to be crawled as content.
+They carry no JSON-LD. Never re-add a retired slug to a `data/*.json` content list; add it to
+`redirects.json` instead.
 
 ## Structured data
 
@@ -37,6 +57,7 @@ Ownership:
 | theme pages | `Generate-ThemePages.ps1` |
 | articles + `blog.html` | `Generate-Articles.ps1` |
 | `index.html` + hand-maintained hubs (`services`, `themes`, `events`, `birthdays`, `how-it-works`, `plan`, `contact`) | `Update-StaticPageSchema.ps1` |
+| retired-URL stubs (no schema by design) | `Generate-Redirects.ps1` |
 
 `Update-StaticPageSchema.ps1` reads each page's `<title>`, `<meta name="description">` and
 `og:image` back out of its own `<head>`, so it never invents copy — edit the page, re-run it.
@@ -49,6 +70,10 @@ Data conventions:
   Singapore towns so the page asserts `Place: "<Town>, Singapore"`. Leave it off for
   non-place entries (`At Home`, `Condo Function Rooms`) — they fall back to
   `Country: Singapore`.
+
+  As of 2026-08-31 `locations.json` holds **venue types only** (`At Home`,
+  `Condo Function Rooms`), so nothing currently uses this field. The nine per-town pages were
+  retired — see **Do not re-create per-town pages** below.
 - **`dateModified`** (optional, `articles.json`): falls back to `datePublished`. Set it when
   revising existing article copy so the freshness signal is real.
 - When reading a `data/*.json` list in a new script, use the `Load` helper pattern the other
@@ -60,3 +85,22 @@ Data conventions:
 `telephone`, `sameAs` (Instagram / Facebook / Google Business Profile), `openingHours`,
 `logo` (no logo asset exists — the mark is inline SVG), and `aggregateRating` (only with
 genuine reviews). The footer's Instagram link is still `href="#"`.
+
+## Do not re-create per-town pages
+
+On 2026-08-31 the nine per-town location pages (Tampines, Punggol, Sengkang, Ang Mo Kio,
+Bishan, Jurong East, Woodlands, Pasir Ris, Sentosa) were retired and folded into
+`where-to-have-kids-birthday-party-singapore.html`.
+
+**Why:** Google had de-indexed most of the site. Search Console showed no manual action and no
+security issue, but 48 of 55 pages not indexed — 25 of them never crawled at all — while the
+site stayed technically clean (200s, valid canonicals, no `noindex`, sitemap read successfully).
+That combination is an index-selection/crawl-budget judgment, not a penalty. The nine town
+pages averaged **279 words with 42% vocabulary overlap** between any two: the same boilerplate
+with the town name swapped. The pages that survived indexing were the hubs and the substantive
+articles, which is the signal to follow.
+
+**Therefore:** do not add location-permutation pages, and do not restore these. Genuinely
+local detail belongs as a section inside the venue guide, not as a page per town. The same
+caution applies to adding more near-identical theme pages — 18 exist and only 3 were ever
+indexed.

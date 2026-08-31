@@ -86,11 +86,18 @@ Data conventions:
 `logo` (no logo asset exists — the mark is inline SVG), and `aggregateRating` (only with
 genuine reviews). The footer's Instagram link is still `href="#"`.
 
-## Do not re-create per-town pages
+## Do not re-create permutation pages
 
-On 2026-08-31 the nine per-town location pages (Tampines, Punggol, Sengkang, Ang Mo Kio,
-Bishan, Jurong East, Woodlands, Pasir Ris, Sentosa) were retired and folded into
-`where-to-have-kids-birthday-party-singapore.html`.
+On 2026-08-31, 22 thin pages were retired and folded into the two articles that cover the same
+ground properly:
+
+| Retired | Folded into |
+|---|---|
+| 9 per-town location pages (Tampines, Punggol, Sengkang, Ang Mo Kio, Bishan, Jurong East, Woodlands, Pasir Ris, Sentosa) | `where-to-have-kids-birthday-party-singapore.html` |
+| 13 never-indexed theme pages | `kids-birthday-party-theme-ideas-singapore.html` |
+
+Kept: the 2 genuine venue **types** (`At Home`, `Condo Function Rooms`) and the 3 theme pages
+Google had actually indexed (`unicorn`, `superhero`, `paw-patrol`).
 
 **Why:** Google had de-indexed most of the site. Search Console showed no manual action and no
 security issue, but 48 of 55 pages not indexed — 25 of them never crawled at all — while the
@@ -100,7 +107,13 @@ pages averaged **279 words with 42% vocabulary overlap** between any two: the sa
 with the town name swapped. The pages that survived indexing were the hubs and the substantive
 articles, which is the signal to follow.
 
-**Therefore:** do not add location-permutation pages, and do not restore these. Genuinely
-local detail belongs as a section inside the venue guide, not as a page per town. The same
-caution applies to adding more near-identical theme pages — 18 exist and only 3 were ever
-indexed.
+**Therefore:** do not add location- or theme-permutation pages, and do not restore these.
+Genuinely local detail belongs as a section inside the venue guide, and a new theme belongs as
+an entry in the theme guide — not as a page each. A theme earns its own page only once it has
+real substance behind it (actual photos of that setup, distinct copy, genuine demand), not
+because the template can produce one.
+
+When retiring more pages, follow the same shape: fold the worthwhile content into the article
+that owns the topic, remove the entries from their `data/*.json` list, add them to
+`redirects.json`, then check for **inline** `<a href='…'>` links in other articles' section
+HTML — the `related` arrays are not the only place slugs are referenced.

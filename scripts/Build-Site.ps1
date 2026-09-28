@@ -58,7 +58,11 @@ function Get-Modified($x) {
     return $x.datePublished
 }
 function Short-Hash([string]$rel) {
-    $bytes = [IO.File]::ReadAllBytes((Join-Path $repo $rel))
+    # Hash the text with line endings normalised. git's autocrlf rewrites
+    # LF/CRLF on checkout, and hashing raw bytes made every page's ?v= change
+    # (a diff on all pages, and a needless re-download) when nothing had.
+    $text = [IO.File]::ReadAllText((Join-Path $repo $rel), [Text.Encoding]::UTF8).Replace("`r`n", "`n")
+    $bytes = [Text.Encoding]::UTF8.GetBytes($text)
     $sha = [Security.Cryptography.SHA1]::Create()
     return ((($sha.ComputeHash($bytes)) | ForEach-Object { $_.ToString('x2') }) -join '').Substring(0, 8)
 }

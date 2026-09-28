@@ -1,0 +1,96 @@
+[
+  {
+    "slug": "moving",
+    "name": "Moving house",
+    "navLabel": "Moving",
+    "icon": "truck",
+    "title": "Moving House in Singapore: Checklists and Move-Day Guides",
+    "h1": "Moving house, <em>without the chaos.</em>",
+    "lede": "What to book, in what order, and what catches people out on the day — for HDB flats, condos and landed homes.",
+    "description": "Moving house in Singapore: a week-by-week checklist, what condos and HDB blocks require on move day, and a free planner that dates every task for you.",
+    "blurb": "A week-by-week checklist and the move-day rules condos and HDB blocks actually enforce.",
+    "guides": ["moving-house-checklist-singapore", "condo-hdb-move-day-rules"],
+    "tools": ["moving-planner"],
+    "furtherReading": [
+      { "brand": "junktoclear", "article": "hiring-movers" },
+      { "brand": "junktoclear", "article": "declutter-moving" }
+    ],
+    "getHelp": [
+      { "brand": "hometomoved", "link": "hdb" },
+      { "brand": "hometomoved", "link": "condo" },
+      { "brand": "hometomoved", "link": "packing" }
+    ]
+  },
+  {
+    "slug": "new-home",
+    "name": "Moving into a new home",
+    "navLabel": "New home",
+    "icon": "key",
+    "title": "Moving Into a New Home in Singapore: BTO and Post-Renovation Guides",
+    "h1": "A new home, <em>set up in the right order.</em>",
+    "lede": "From key collection to the first night — inspect, renovate, clean, then move in, and don't let one step undo another.",
+    "description": "Moving into a new BTO or freshly renovated home in Singapore: what to check at key collection, how defects work, and what to do after renovation.",
+    "blurb": "Key collection, defects, renovation and the post-reno clean — in the order that saves you money.",
+    "guides": ["bto-key-collection-to-move-in", "after-renovation-checklist"],
+    "getHelp": [
+      { "brand": "hometoclean", "link": "post-reno" },
+      { "brand": "hometoclean", "link": "move-in" },
+      { "brand": "skillstofix", "link": "handyman" }
+    ]
+  },
+  {
+    "slug": "ending-a-tenancy",
+    "name": "Ending a tenancy",
+    "navLabel": "Tenancy",
+    "icon": "door",
+    "title": "Ending a Tenancy in Singapore: Handover and Deposit Guides",
+    "h1": "Hand back the keys, <em>keep your deposit.</em>",
+    "lede": "What your tenancy agreement usually asks of you at the end, what landlords commonly deduct for, and how to prove the flat's condition.",
+    "description": "Guides for tenants leaving a rental in Singapore: a handover checklist that protects your deposit, and the small repairs worth doing before the final inspection.",
+    "blurb": "The handover checklist that protects your deposit, and the repairs worth doing first.",
+    "guides": ["tenancy-handover-checklist", "handyman-fixes-before-handover"],
+    "getHelp": [
+      { "brand": "hometoclean", "link": "move-out" },
+      { "brand": "skillstofix", "link": "handyman" },
+      { "brand": "junktoclear", "link": "residential" }
+    ]
+  },
+  {
+    "slug": "declutter-and-dispose",
+    "name": "Decluttering and disposal",
+    "navLabel": "Declutter",
+    "icon": "bin",
+    "title": "Decluttering and Disposal in Singapore: What Goes Where",
+    "h1": "Clearing out, <em>the right way.</em>",
+    "lede": "What can be recycled, what needs special handling, and what shouldn't go down the refuse chute.",
+    "description": "Decluttering and disposal in Singapore: where e-waste, batteries and old appliances go, how to wipe your data first, and where to dispose of bulky items.",
+    "blurb": "Where e-waste, batteries and old appliances go — and what never belongs in the refuse chute.",
+    "guides": ["e-waste-singapore"],
+    "furtherReading": [
+      { "brand": "junktoclear", "article": "bulky-items" },
+      { "brand": "junktoclear", "article": "declutter-moving" },
+      { "brand": "junktoclear", "article": "choose-disposal" }
+    ],
+    "getHelp": [
+      { "brand": "junktoclear", "link": "residential" },
+      { "brand": "hometomoved", "link": "move-and-dispose" }
+    ]
+  },
+  {
+    "slug": "repairs-and-upkeep",
+    "name": "Repairs and upkeep",
+    "navLabel": "Repairs",
+    "icon": "wrench",
+    "title": "Home Repairs and Upkeep in Singapore: Aircon and Pest Control Guides",
+    "h1": "Keeping a home <em>in good repair.</em>",
+    "lede": "The maintenance Singapore's heat and humidity demand, and how to tell a DIY job from one that needs a professional.",
+    "description": "Keeping a Singapore home in good repair: how often to service your aircon, what a chemical wash really is, and how to handle pests in HDB flats and condos.",
+    "blurb": "Aircon servicing explained, and pest control — what you can handle and when to call someone.",
+    "guides": ["aircon-servicing-guide", "pest-control-hdb-condo"],
+    "getHelp": [
+      { "brand": "skillstofix", "link": "aircon" },
+      { "brand": "skillstofix", "link": "pest" },
+      { "brand": "skillstofix", "link": "handyman" }
+    ]
+  }
+]

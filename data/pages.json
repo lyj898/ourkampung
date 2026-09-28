@@ -1,0 +1,58 @@
+[
+  {
+    "id": "home",
+    "path": "/",
+    "file": "content/pages/home.html",
+    "title": "OurKampung — The Neighbourhood Guide to Your Singapore Home",
+    "description": "Practical, Singapore-specific guides to moving house, settling into a new BTO, ending a tenancy, clearing out and keeping a home in good repair.",
+    "schemaType": "WebPage",
+    "featured": ["moving-house-checklist-singapore", "tenancy-handover-checklist", "bto-key-collection-to-move-in"]
+  },
+  {
+    "id": "about",
+    "path": "/about/",
+    "file": "content/pages/about.html",
+    "title": "About OurKampung — Who Writes These Guides, and How | OurKampung",
+    "description": "Who writes OurKampung — the team behind JunkToClear, HomeToClean, HomeToMoved and SkillsToFix — how we write, and when we link to our own businesses.",
+    "schemaType": "AboutPage",
+    "crumb": "About",
+    "updated": "2026-09-28"
+  },
+  {
+    "id": "contact",
+    "path": "/contact/",
+    "file": "content/pages/contact.html",
+    "title": "Contact the OurKampung Editors | OurKampung",
+    "description": "Spotted something out of date, or want a topic covered? Get in touch with the OurKampung editors. For bookings, contact the businesses directly.",
+    "schemaType": "ContactPage",
+    "crumb": "Contact",
+    "updated": "2026-09-28",
+    "scripts": ["js/contact.js"]
+  },
+  {
+    "id": "moving-planner",
+    "path": "/tools/moving-planner/",
+    "file": "content/pages/moving-planner.html",
+    "title": "Moving House Planner: Your Dated Checklist for a Singapore Move | OurKampung",
+    "description": "Enter your moving date and home type for a dated, week-by-week checklist for your Singapore move. Free, no sign-up, and it runs in your browser.",
+    "schemaType": "WebPage",
+    "app": true,
+    "cardTitle": "Moving planner",
+    "cardText": "Enter your moving date and get every task from the moving checklist with its own date. Free, no sign-up.",
+    "crumbParents": [{ "name": "Moving house", "url": "/moving/" }],
+    "crumb": "Moving planner",
+    "activeHub": "moving",
+    "updated": "2026-09-28",
+    "scripts": ["js/moving-planner.js"]
+  },
+  {
+    "id": "404",
+    "path": "/404.html",
+    "file": "content/pages/404.html",
+    "title": "Page Not Found | OurKampung",
+    "description": "This page doesn't exist or has moved.",
+    "schema": false,
+    "noindex": true,
+    "sitemap": false
+  }
+]

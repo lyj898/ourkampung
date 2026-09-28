@@ -1,0 +1,23 @@
+{
+  "@type": "Organization",
+  "@id": "https://ourkampung.com/#organization",
+  "name": "OurKampung",
+  "url": "https://ourkampung.com/",
+  "description": "A practical guide to moving, cleaning, clearing and fixing a home in Singapore, written by the team behind JunkToClear, HomeToClean, HomeToMoved and SkillsToFix.",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://ourkampung.com/assets/logo.png",
+    "width": 512,
+    "height": 512
+  },
+  "image": "https://ourkampung.com/assets/og-image.png",
+  "areaServed": { "@type": "Country", "name": "Singapore" },
+  "knowsLanguage": "en-SG",
+  "knowsAbout": [
+    "Moving house in Singapore",
+    "Moving into a new HDB or condo home",
+    "Ending a residential tenancy in Singapore",
+    "Decluttering, recycling and waste disposal",
+    "Home repairs, aircon servicing and pest control"
+  ]
+}

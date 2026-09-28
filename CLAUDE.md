@@ -1,119 +1,134 @@
-# Project Rules
+# Project Rules — OurKampung
 
-## New pages/routes
+ourkampung.com is a **guide-only** site about running a Singapore home: moving, moving into a new
+home, ending a tenancy, decluttering and disposal, repairs and upkeep. It supports four sister
+businesses run by the same team. It takes no bookings and gives no quotes.
 
-When creating any new page or route, do both of the following **in the same change** as the page creation — never defer:
+Until 2026-09-28 this domain was a kids' party-planning site. None of that content remains, and
+old party URLs 404 on purpose (see **History**).
 
-1. **Mobile responsive check** — verify layout at 375px, 768px, and 1024px widths: no horizontal overflow, tap targets sized appropriately, text/images scale correctly.
-2. **Sitemap update** — pages under `scripts/` (`Generate-LandingPages.ps1`, `Generate-ThemePages.ps1`, `Generate-Articles.ps1`) auto-rebuild `sitemap.xml`; re-run the relevant generator instead of hand-editing. For any page added outside those generators, add a `<url>` entry to `sitemap.xml` directly, matching the existing format.
+## Never break analytics or Search Console
 
-## Generator run order
+The user explicitly does not want to set these up again.
 
-`Generate-LandingPages.ps1` and `Generate-ThemePages.ps1` rebuild `sitemap.xml` from a
-hardcoded core-page list that **omits `blog.html` and every article**. Running either one
-last silently drops `blog.html` plus every article URL from the sitemap.
+- **GA4** measurement ID `G-8XGK5F86ZX` must be on every page, including `404.html`.
+- **Search Console** verification tag (`google-site-verification`,
+  token `HjvZuJxCuygLjDF7qlHp54oWb6OJQmloOGrro1TWqGs`) must stay on the homepage. The
+  `sc-domain:ourkampung.com` property is DNS-verified as well, but the tag is a second
+  verification — removing it can un-verify a property.
+- Both values live in `data/site.json`. `scripts/Build-Site.ps1` **refuses to build** if either
+  changes, and checks every output page for the GA4 tag. Change them only deliberately, and update
+  the expected values in the build script in the same commit.
+- Keep `CNAME`, `robots.txt` and the `/sitemap.xml` path unchanged — the sitemap URL is the one
+  submitted in Search Console.
 
-**Always finish a regeneration run with `Generate-Articles.ps1`** — it is the only generator
-that merges all four data sets into the complete sitemap.
+## How the site is built
 
-Full-rebuild order:
+One command builds everything — every page, `sitemap.xml` and `OWNER-INPUT.md`:
 
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/Build-Site.ps1
 ```
-Generate-LandingPages.ps1 → Generate-ThemePages.ps1 → Generate-Articles.ps1
-        → Generate-Redirects.ps1 → Update-StaticPageSchema.ps1
-```
 
-The last two do not touch `sitemap.xml`, so they are safe to run after it is final.
+| Source | Holds |
+|---|---|
+| `data/site.json` | site settings, GA4 ID, verification token, form endpoint |
+| `data/organization.json` | the OurKampung `Organization` node — single source of truth |
+| `data/brands.json` | the four businesses and every deep link to them |
+| `data/sources.json` | official sources guides cite (HDB, ICA, NEA, SP, CEA, ALBA) |
+| `data/hubs.json` | the five life-event hubs |
+| `data/guides.json` | guide metadata, FAQs, related guides, "get help" links |
+| `data/pages.json` | home, about, contact, the moving planner, 404 |
+| `content/{guides,hubs,pages}/*.html` | the copy itself |
 
-## Retired URLs
+**Never hand-edit generated output** — `index.html`, `404.html`, the hub and guide folders,
+`tools/`, `about/`, `contact/`, `sitemap.xml`, `OWNER-INPUT.md`. Edit the source and rebuild.
 
-GitHub Pages has no server-side 301. `data/redirects.json` maps a retired slug to its
-replacement, and `Generate-Redirects.ps1` writes a stub for each combining
-`<link rel="canonical">` with an instant `<meta http-equiv="refresh">`.
+Content files link through tokens, which the build resolves and validates. An unknown token fails
+the build, so a broken internal link cannot ship:
+`{{guide:<slug>}}` `{{hub:<slug>}}` `{{page:<id>}}` `{{src:<key>}}` `{{brand:<id>/<key>}}`.
+Never hard-code an internal path or a sister-site URL in content — add it to the data files.
 
-Stubs are deliberately **absent from `sitemap.xml`** — they exist so a retired URL Google
-already knows resolves to its replacement instead of 404ing, not to be crawled as content.
-They carry no JSON-LD. Never re-add a retired slug to a `data/*.json` content list; add it to
-`redirects.json` instead.
+If the build warns about stale `.html` files, delete them; GitHub Pages will keep serving them.
+
+`_config.yml` stops Jekyll (which GitHub Pages runs on this repo) publishing `CLAUDE.md`,
+`OWNER-INPUT.md`, `content/`, `data/` and `scripts/`. Without it, Jekyll renders `.md` files into
+public web pages — `CLAUDE.md` was live at `/CLAUDE.html` until the 2026-09-28 rebuild. Anything new
+that shouldn't be public must be added to that list.
+
+## New pages
+
+When creating any page, in the same change:
+
+1. **Mobile check** at 375px, 768px and 1024px: no horizontal overflow, tap targets of 44px or
+   more, text and images scaling correctly. The nav collapses at 1024px and below.
+2. **Sitemap** — handled by the build; never hand-edit `sitemap.xml`.
+
+To add a guide: add an entry to `data/guides.json`, add its slug to its hub's `guides` list in
+`data/hubs.json`, write `content/guides/<slug>.html`, rebuild.
+
+## Content rules
+
+**Link routing.** Send each need to the specialist brand, never to two brands for one job:
+
+| Reader needs | Link to |
+|---|---|
+| Moving | HomeToMoved |
+| Cleaning | HomeToClean |
+| Disposal / clearing | JunkToClear |
+| Handyman, aircon, pest control | SkillsToFix |
+
+SkillsToFix's live site also sells cleaning, disposal and transport — ignore that for routing.
+
+- **Contextual links only.** Link a business where the guide covers something it does, mostly in
+  each guide's "Need a hand with this?" box. The footer names the four businesses as disclosure
+  but deliberately doesn't link them sitewide. (See also the cross-site linking rule in the user's
+  global CLAUDE.md.)
+- **Always disclose** that OurKampung is run by the same team. Never publish "best of" lists or
+  rank our own businesses against competitors.
+- **Don't compete with JunkToClear's blog.** It already covers bulky-item disposal, decluttering
+  before a move, hiring movers and choosing a disposal company. Link those as `furtherReading`
+  on a hub rather than writing rival guides.
+- **No permutation pages** — no page per town, per theme, or per service × area. The site was
+  de-indexed in August 2026 for exactly that (see **History**). Local detail belongs as a
+  section inside a guide.
+- **No invented facts.** Don't state prices, durations, deposit amounts or statistics we can't
+  source. Mark the spot with `<!-- OWNER-INPUT: what would help -->` instead; the build strips
+  these and lists them in `OWNER-INPUT.md` for the owner. Never fabricate reviews or ratings.
+- **Cite official sources through `data/sources.json`.** HDB, ICA, SP Group and CEA deep links
+  returned 404 when checked, so those point at agency homepages; NEA's e-waste, dengue and pest
+  control pages and ALBA have stable deep links. Re-check any deep link before adding it.
+- **Hedge what varies.** Tenancy agreements, condo house rules and renovation contracts differ —
+  say "many", "usually", "check yours", rather than stating one rule.
+- Open each guide with a `<div class="answer">` "The short answer" block — the direct-answer
+  pattern AI assistants and search features extract.
 
 ## Structured data
 
-`data/business.json` is the **single source of truth** for the business entity. Do not
-re-declare the business inline anywhere.
+Every page except `404.html` emits exactly one `<script type="application/ld+json">` with a single
+`@graph`. The Organization node is `https://ourkampung.com/#organization` and the site node is
+`#website`; page nodes reference them by `@id`. Per-page ids: `<canonical>#webpage`, `#article`,
+`#breadcrumb`, `#list`, `#app`. Guides are credited to the Organization until a named author
+exists — don't invent one.
 
-Every page emits exactly **one** `<script type="application/ld+json">` containing a single
-`@graph`, in which:
+## PowerShell 5.1 gotchas (the build runs on Windows PowerShell)
 
-- the business node is `https://ourkampung.com/#business` and the site node is `#website`
-- page-level nodes reference them by `@id` (`provider`, `publisher`, `author`, `about`,
-  `isPartOf`) rather than repeating name/url stubs
-- per-page nodes use `<canonical-url>#webpage`, `#service`, `#article`, `#breadcrumb`, `#list`
+- Read `data/*.json` lists through the `Load` helper. A bare `@(Get-Content … | ConvertFrom-Json)`
+  assignment nests the array one level deep; function-output unrolling is what flattens it.
+- `@($genericList)` inside a `[pscustomobject]@{…}` literal throws "Argument types do not match".
+  Use `$list.ToArray()`.
+- `String.Replace` has no (string, char) overload — pass two strings.
+- `$home` is a read-only automatic variable (`$HOME`). Don't use it as a variable name.
 
-Ownership:
+## History
 
-| Pages | Owned by |
-|---|---|
-| services / locations / milestones clusters | `Generate-LandingPages.ps1` |
-| theme pages | `Generate-ThemePages.ps1` |
-| articles + `blog.html` | `Generate-Articles.ps1` |
-| `index.html` + hand-maintained hubs (`services`, `themes`, `events`, `birthdays`, `how-it-works`, `plan`, `contact`) | `Update-StaticPageSchema.ps1` |
-| retired-URL stubs (no schema by design) | `Generate-Redirects.ps1` |
-
-`Update-StaticPageSchema.ps1` reads each page's `<title>`, `<meta name="description">` and
-`og:image` back out of its own `<head>`, so it never invents copy — edit the page, re-run it.
-It is idempotent (strips its own `<!--SCHEMA:START/END-->` block plus any stray JSON-LD before
-writing) and does **not** touch `sitemap.xml`.
-
-Data conventions:
-
-- **`areaServedPlace`** (optional, `locations.json`): set it on entries that are real
-  Singapore towns so the page asserts `Place: "<Town>, Singapore"`. Leave it off for
-  non-place entries (`At Home`, `Condo Function Rooms`) — they fall back to
-  `Country: Singapore`.
-
-  As of 2026-08-31 `locations.json` holds **venue types only** (`At Home`,
-  `Condo Function Rooms`), so nothing currently uses this field. The nine per-town pages were
-  retired — see **Do not re-create per-town pages** below.
-- **`dateModified`** (optional, `articles.json`): falls back to `datePublished`. Set it when
-  revising existing article copy so the freshness signal is real.
-- When reading a `data/*.json` list in a new script, use the `Load` helper pattern the other
-  generators use. A bare `@(Get-Content … | ConvertFrom-Json)` assignment nests the array one
-  level deep in this PowerShell version; function output unrolling is what flattens it.
-
-### Still missing (needs real values, do not invent)
-
-`telephone`, `sameAs` (Instagram / Facebook / Google Business Profile), `openingHours`,
-`logo` (no logo asset exists — the mark is inline SVG), and `aggregateRating` (only with
-genuine reviews). The footer's Instagram link is still `href="#"`.
-
-## Do not re-create permutation pages
-
-On 2026-08-31, 22 thin pages were retired and folded into the two articles that cover the same
-ground properly:
-
-| Retired | Folded into |
-|---|---|
-| 9 per-town location pages (Tampines, Punggol, Sengkang, Ang Mo Kio, Bishan, Jurong East, Woodlands, Pasir Ris, Sentosa) | `where-to-have-kids-birthday-party-singapore.html` |
-| 13 never-indexed theme pages | `kids-birthday-party-theme-ideas-singapore.html` |
-
-Kept: the 2 genuine venue **types** (`At Home`, `Condo Function Rooms`) and the 3 theme pages
-Google had actually indexed (`unicorn`, `superhero`, `paw-patrol`).
-
-**Why:** Google had de-indexed most of the site. Search Console showed no manual action and no
-security issue, but 48 of 55 pages not indexed — 25 of them never crawled at all — while the
-site stayed technically clean (200s, valid canonicals, no `noindex`, sitemap read successfully).
-That combination is an index-selection/crawl-budget judgment, not a penalty. The nine town
-pages averaged **279 words with 42% vocabulary overlap** between any two: the same boilerplate
-with the town name swapped. The pages that survived indexing were the hubs and the substantive
-articles, which is the signal to follow.
-
-**Therefore:** do not add location- or theme-permutation pages, and do not restore these.
-Genuinely local detail belongs as a section inside the venue guide, and a new theme belongs as
-an entry in the theme guide — not as a page each. A theme earns its own page only once it has
-real substance behind it (actual photos of that setup, distinct copy, genuine demand), not
-because the template can produce one.
-
-When retiring more pages, follow the same shape: fold the worthwhile content into the article
-that owns the topic, remove the entries from their `data/*.json` list, add them to
-`redirects.json`, then check for **inline** `<a href='…'>` links in other articles' section
-HTML — the `related` arrays are not the only place slugs are referenced.
+- **Mid-July 2026:** launched as a kids' party-planning site, built from templated
+  programmatic-SEO pages.
+- **August 2026:** Google de-indexed most of it — 48 of 55 pages not indexed, 25 never crawled —
+  with no manual action, no security issue and no technical fault. The per-town and per-theme
+  pages averaged 279–311 words with 42% vocabulary overlap: boilerplate with the noun swapped.
+  Only the hubs and the substantive articles stayed indexed.
+- **2026-09-28:** rebuilt from scratch as this guide. Every party URL was retired. They 404 rather
+  than redirect, because pointing party pages at home-services pages would be an irrelevant
+  redirect, which Google treats as a soft 404. Expect those URLs to show as "Not found (404)" in
+  Search Console for a while — that's intended.

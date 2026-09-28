@@ -1,36 +1,37 @@
-/* ---------- config ---------- */
-// FormSubmit endpoint. An encrypted alias keeps the destination email OUT of
-// the page source. Create one at https://formsubmit.co (enter the destination
-// address, confirm the email it sends you, then copy your random endpoint) and
-// replace the placeholder below with your alias, e.g.
-//   window.OK_FORM_ENDPOINT = 'https://formsubmit.co/ajax/abc123def456';
-window.OK_FORM_ENDPOINT = 'https://formsubmit.co/ajax/1aacc4903352135bb0fa38c3987d3abd';
-
-document.addEventListener('DOMContentLoaded', () => {
-  // Header scroll state
-  const header = document.querySelector('.header');
-  if (header){
-    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 12);
-    window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+/* OurKampung — shared behaviour: header state, mobile menu, reveal on scroll. */
+document.addEventListener('DOMContentLoaded', function () {
+  var header = document.querySelector('.header');
+  if (header) {
+    var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 12); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   }
 
-  // Mobile menu
-  const burger = document.querySelector('.burger');
-  const menu = document.querySelector('.mobile-menu');
-  if (burger && menu){
-    burger.addEventListener('click', () => {
-      const open = menu.classList.toggle('open');
+  var burger = document.querySelector('.burger');
+  var menu = document.getElementById('mobile-menu');
+  if (burger && menu) {
+    var setOpen = function (open) {
+      menu.classList.toggle('open', open);
       burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
       document.body.style.overflow = open ? 'hidden' : '';
+    };
+    burger.addEventListener('click', function () { setOpen(!menu.classList.contains('open')); });
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setOpen(false); });
     });
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      menu.classList.remove('open'); burger.classList.remove('open'); document.body.style.overflow='';
-    }));
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
   }
 
-  // Reveal on scroll
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  items.forEach(function (el) { io.observe(el); });
 });

@@ -1,0 +1,10 @@
+{
+  "hdb":        { "name": "HDB",   "url": "https://www.hdb.gov.sg/" },
+  "ica":        { "name": "ICA",   "url": "https://www.ica.gov.sg/" },
+  "sp":         { "name": "SP Group", "url": "https://www.spgroup.com.sg/" },
+  "cea":        { "name": "CEA",   "url": "https://www.cea.gov.sg/" },
+  "nea-ewaste": { "name": "NEA — e-waste management", "url": "https://www.nea.gov.sg/our-services/waste-management/3r-programmes-and-resources/e-waste-management" },
+  "nea-dengue": { "name": "NEA — dengue", "url": "https://www.nea.gov.sg/dengue-zika" },
+  "nea-pest":   { "name": "NEA — pest control", "url": "https://www.nea.gov.sg/our-services/pest-control" },
+  "alba":       { "name": "ALBA E-Waste", "url": "https://alba-ewaste.sg/" }
+}

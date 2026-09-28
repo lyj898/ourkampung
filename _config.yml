@@ -1,0 +1,14 @@
+# GitHub Pages runs Jekyll on this repo. Nothing here is templated by Jekyll:
+# every page is plain HTML built by scripts/Build-Site.ps1, and HTML files
+# without front matter are copied through untouched.
+#
+# But Jekyll also publishes everything else in the repo, and renders .md files
+# into web pages — so without this list the build's sources, the internal
+# notes and the unstyled content fragments would all be public, indexable URLs.
+exclude:
+  - CLAUDE.md
+  - OWNER-INPUT.md
+  - README.md
+  - content/
+  - data/
+  - scripts/

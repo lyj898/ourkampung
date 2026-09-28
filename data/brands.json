@@ -1,0 +1,57 @@
+[
+  {
+    "id": "hometomoved",
+    "name": "HomeToMoved",
+    "url": "https://hometomoved.com/",
+    "does": "Moving and packing for HDB flats, condos and landed homes",
+    "links": {
+      "home":     { "label": "HomeToMoved",           "url": "https://hometomoved.com/" },
+      "hdb":      { "label": "HDB moving",            "url": "https://hometomoved.com/moving/hdb-moving/" },
+      "condo":    { "label": "Condo moving",          "url": "https://hometomoved.com/moving/condo-moving/" },
+      "landed":   { "label": "Landed home moving",    "url": "https://hometomoved.com/moving/landed-moving/" },
+      "packing":  { "label": "Packing services",      "url": "https://hometomoved.com/moving/packing-services/" },
+      "move-and-dispose": { "label": "Moving with disposal", "url": "https://hometomoved.com/moving/disposal-and-moving/" }
+    }
+  },
+  {
+    "id": "hometoclean",
+    "name": "HomeToClean",
+    "url": "https://hometoclean.com/",
+    "does": "Move-in, move-out, deep and post-renovation cleaning",
+    "links": {
+      "home":      { "label": "HomeToClean",              "url": "https://hometoclean.com/" },
+      "move-out":  { "label": "Move-out cleaning",        "url": "https://hometoclean.com/cleaning/move-out-cleaning/" },
+      "move-in":   { "label": "Move-in cleaning",         "url": "https://hometoclean.com/cleaning/move-in-cleaning/" },
+      "post-reno": { "label": "Post-renovation cleaning", "url": "https://hometoclean.com/cleaning/post-renovation-cleaning/" },
+      "deep":      { "label": "Deep cleaning",            "url": "https://hometoclean.com/cleaning/deep-cleaning/" }
+    }
+  },
+  {
+    "id": "junktoclear",
+    "name": "JunkToClear",
+    "url": "https://junktoclear.com.sg/",
+    "does": "Disposal and clearance of furniture, bulky items and household junk",
+    "links": {
+      "home":        { "label": "JunkToClear",             "url": "https://junktoclear.com.sg/" },
+      "residential": { "label": "Household disposal",      "url": "https://junktoclear.com.sg/services/residential-waste-disposal-singapore/" }
+    },
+    "articles": {
+      "bulky-items":      { "label": "How to easily dispose of bulky items in Singapore",     "url": "https://junktoclear.com.sg/blogs/how-to-easily-dispose-of-bulky-items-singapore/" },
+      "declutter-moving": { "label": "Decluttering before moving",                             "url": "https://junktoclear.com.sg/blogs/decluttering-before-moving-singapore/" },
+      "hiring-movers":    { "label": "A guide to hiring reliable movers in Singapore",         "url": "https://junktoclear.com.sg/blogs/guide-to-hiring-reliable-movers-in-singapore/" },
+      "choose-disposal":  { "label": "How to choose a trustworthy disposal service",          "url": "https://junktoclear.com.sg/blogs/how-to-choose-trustworthy-disposal-services-singapore/" }
+    }
+  },
+  {
+    "id": "skillstofix",
+    "name": "SkillsToFix",
+    "url": "https://skillstofix.com/",
+    "does": "Handyman repairs, aircon servicing and pest control",
+    "links": {
+      "home":     { "label": "SkillsToFix",      "url": "https://skillstofix.com/" },
+      "handyman": { "label": "Handyman repairs", "url": "https://skillstofix.com/services/handyman" },
+      "aircon":   { "label": "Aircon servicing", "url": "https://skillstofix.com/services/aircon-servicing" },
+      "pest":     { "label": "Pest control",     "url": "https://skillstofix.com/services/pest-control" }
+    }
+  }
+]

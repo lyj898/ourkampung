@@ -1,0 +1,35 @@
+<section class="page-hero"><div class="wrap-narrow">
+  <!--CRUMBS-->
+  <h1>Contact the editors</h1>
+  <p class="lede">Spotted something out of date, got a question a guide didn't answer, or want a topic covered? Let us know.</p>
+</div></section>
+
+<section class="section section-tight"><div class="wrap-narrow">
+  <div class="form-card" id="contactCard">
+    <form class="cform" id="contactForm" data-endpoint="{{FORM_ENDPOINT}}" novalidate>
+      <div class="crow">
+        <div class="cfield"><label for="cf-name">Your name</label><input id="cf-name" name="Name" type="text" autocomplete="name" required></div>
+        <div class="cfield"><label for="cf-email">Email</label><input id="cf-email" name="Email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="cfield"><label for="cf-guide">Which guide is this about? <span class="hint">(optional)</span></label><input id="cf-guide" name="Guide" type="text" placeholder="e.g. the tenancy handover checklist"></div>
+      <div class="cfield"><label for="cf-msg">Your message</label><textarea id="cf-msg" name="Message" rows="6" required></textarea></div>
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="honey">
+      <p class="form-err" id="cErr" role="alert" hidden>Please add your name, a valid email address and a message.</p>
+      <button class="btn btn-primary" type="submit">Send message</button>
+      <p class="form-note">We reply by email where a reply is needed.</p>
+    </form>
+    <div class="form-success" id="cSuccess" hidden tabindex="-1">
+      <h2>Thanks — your message is on its way.</h2>
+      <p>We'll reply by email if your message needs one.</p>
+      <a class="btn btn-ghost" href="/">Back to the guides</a>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><strong>Looking for a booking or a quote?</strong> OurKampung doesn't take bookings — please contact the business directly:
+    <a href="{{brand:hometomoved/home}}">HomeToMoved</a> for moving,
+    <a href="{{brand:hometoclean/home}}">HomeToClean</a> for cleaning,
+    <a href="{{brand:junktoclear/home}}">JunkToClear</a> for disposal, and
+    <a href="{{brand:skillstofix/home}}">SkillsToFix</a> for repairs, aircon and pest control.</p>
+  </div>
+</div></section>

@@ -1,0 +1,41 @@
+<section class="page-hero"><div class="wrap-narrow">
+  <!--CRUMBS-->
+  <h1>Moving planner</h1>
+  <p class="lede">Enter your moving date and a few details, and get every task from our moving checklist with its own date. Nothing is sent anywhere — it all runs in your browser.</p>
+</div></section>
+
+<section class="section section-tight"><div class="wrap-narrow">
+  <form class="planner form-card" id="planner" novalidate>
+    <div class="crow">
+      <div class="cfield"><label for="p-date">Moving date</label><input id="p-date" name="date" type="date" required></div>
+      <div class="cfield"><label for="p-from">Moving out of</label>
+        <select id="p-from" name="from">
+          <option value="hdb">An HDB flat</option>
+          <option value="condo">A condo</option>
+          <option value="landed">A landed home</option>
+        </select></div>
+    </div>
+    <div class="crow">
+      <div class="cfield"><label for="p-to">Moving into</label>
+        <select id="p-to" name="to">
+          <option value="hdb">An HDB flat</option>
+          <option value="condo">A condo</option>
+          <option value="landed">A landed home</option>
+        </select></div>
+      <div class="cfield"></div>
+    </div>
+    <fieldset class="checks">
+      <legend>Anything else? <span class="hint">(tick any that apply)</span></legend>
+      <label><input type="checkbox" name="rental"> I'm moving out of a rental</label>
+      <label><input type="checkbox" name="bto"> I'm moving into a new BTO</label>
+      <label><input type="checkbox" name="reno"> The new home is being renovated</label>
+    </fieldset>
+    <p class="form-err" id="pErr" role="alert" hidden>Please choose your moving date.</p>
+    <button class="btn btn-primary" type="submit">Make my checklist</button>
+  </form>
+
+  <div id="planOut" class="plan-out" hidden tabindex="-1"></div>
+  <script type="application/json" id="plannerLinks">{"moving":"{{guide:moving-house-checklist-singapore}}","moveDay":"{{guide:condo-hdb-move-day-rules}}","tenancy":"{{guide:tenancy-handover-checklist}}","fixes":"{{guide:handyman-fixes-before-handover}}","bto":"{{guide:bto-key-collection-to-move-in}}","reno":"{{guide:after-renovation-checklist}}","aircon":"{{guide:aircon-servicing-guide}}","ewaste":"{{guide:e-waste-singapore}}"}</script>
+
+  <p class="form-note">The dates are a guide, worked back from your moving date and based on our <a href="{{guide:moving-house-checklist-singapore}}">week-by-week moving checklist</a>. Condo rules, tenancy agreements and renovation timelines vary, so adjust them for yours.</p>
+</div></section>

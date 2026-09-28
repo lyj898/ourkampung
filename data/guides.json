@@ -1,0 +1,183 @@
+[
+  {
+    "slug": "moving-house-checklist-singapore",
+    "hub": "moving",
+    "title": "Moving House in Singapore: A Week-by-Week Checklist",
+    "description": "A week-by-week checklist for moving house in Singapore — what to book eight weeks out, what to do on the day, and the one legal deadline afterwards.",
+    "dek": "Moves go wrong when the things with long lead times get booked late. Here's what to do in what order, from eight weeks out to the week after.",
+    "datePublished": "2026-09-28",
+    "faqs": [
+      { "q": "How far in advance should I book movers in Singapore?", "a": "Four to six weeks is a sensible minimum. Book earlier if you are moving at the end of a month, on a weekend, or during the June or year-end school holidays, when the most popular slots go first." },
+      { "q": "Do I need to tell the government I have moved?", "a": "Yes. Report your change of address to ICA within 28 days of moving. It is done online, and ICA shares the update with other government agencies." },
+      { "q": "Should I clean the new place before or after the furniture arrives?", "a": "Before, if you possibly can. An empty home can be cleaned properly — inside cabinets, behind where the fridge and wardrobes will stand — in a fraction of the time it takes once everything is in." },
+      { "q": "What should I keep with me instead of letting the movers pack it?", "a": "Anything valuable, irreplaceable or needed on the first night: passports and documents, jewellery, cash, medication, laptops and chargers, keys, and a bag with toiletries and a change of clothes." }
+    ],
+    "related": ["condo-hdb-move-day-rules", "tenancy-handover-checklist"],
+    "getHelp": [
+      { "brand": "hometomoved", "link": "hdb" },
+      { "brand": "hometomoved", "link": "packing" },
+      { "brand": "hometoclean", "link": "move-in" },
+      { "brand": "junktoclear", "link": "residential" }
+    ]
+  },
+  {
+    "slug": "condo-hdb-move-day-rules",
+    "hub": "moving",
+    "title": "Move-Day Rules for Condos and HDB Blocks: Lifts, Deposits and Parking",
+    "description": "What condos and HDB blocks expect on moving day — lift bookings, refundable deposits, permitted hours and lorry parking — and how to protect your deposit.",
+    "dek": "Condos usually need a booking, a deposit and a set time window. HDB blocks are simpler, but have their own traps. Here's what to sort out before the lorry arrives.",
+    "datePublished": "2026-09-28",
+    "faqs": [
+      { "q": "Do I need to book the lift to move into an HDB flat?", "a": "Generally not — HDB blocks don't usually run lift bookings the way condos do. Movers should still pad the lift and avoid holding it for long stretches, and it's worth checking with your town council if your block has unusual access." },
+      { "q": "Can I move on a Sunday in a condo?", "a": "Often not. Many condos restrict moving to weekdays and Saturdays, and some bar public holidays too. Each development's management sets its own rules, so check them before you book movers." },
+      { "q": "How do I get my condo moving deposit back?", "a": "Management usually inspects the lift and common areas after the move and refunds the deposit if there's no damage. Photographing the lift, lobby and corridor before and after the move is the easiest way to avoid a dispute." },
+      { "q": "What if my sofa or wardrobe doesn't fit in the lift?", "a": "Measure large items against the lift interior and doorway before moving day. Movers can often dismantle wardrobes and bed frames; for anything that can't come apart, ask your movers early how they'd handle it rather than finding out on the day." }
+    ],
+    "related": ["moving-house-checklist-singapore", "bto-key-collection-to-move-in"],
+    "getHelp": [
+      { "brand": "hometomoved", "link": "condo" },
+      { "brand": "hometomoved", "link": "hdb" },
+      { "brand": "hometomoved", "link": "landed" }
+    ]
+  },
+  {
+    "slug": "bto-key-collection-to-move-in",
+    "hub": "new-home",
+    "title": "Moving Into Your BTO: From Key Collection to Move-In, in Order",
+    "description": "Inspect and report defects, renovate, clean, then move in: the order that saves BTO owners money, and exactly what to check at key collection.",
+    "dek": "Inspect, renovate, clean, move in. The most expensive BTO mistakes come from doing these out of order — so here's the order, and what to check at each step.",
+    "datePublished": "2026-09-28",
+    "faqs": [
+      { "q": "How long is the defects liability period for a BTO flat?", "a": "BTO flats come with a defects liability period, generally 12 months from key collection, during which you can report defects for HDB to rectify. Check HDB's website for the current terms and how to lodge a report." },
+      { "q": "What should I check at BTO key collection?", "a": "Tap floor and wall tiles for hollow spots, test every switch and power point, run every tap and flush the toilets, check that doors and windows open, close and lock properly, and look for cracks, stains and uneven paint. Photograph anything you find." },
+      { "q": "Should I clean my BTO before or after renovation?", "a": "After. Renovation leaves fine dust on every surface and inside every cabinet, so a proper clean only makes sense once all the contractors have finished." },
+      { "q": "Can I use any contractor to renovate my BTO?", "a": "For HDB flats, use a contractor listed in HDB's Directory of Renovation Contractors, and make sure any works that need a renovation permit have one before they start. HDB's website has the current rules." }
+    ],
+    "related": ["after-renovation-checklist", "moving-house-checklist-singapore"],
+    "getHelp": [
+      { "brand": "hometoclean", "link": "post-reno" },
+      { "brand": "hometoclean", "link": "move-in" },
+      { "brand": "skillstofix", "link": "handyman" },
+      { "brand": "hometomoved", "link": "hdb" }
+    ]
+  },
+  {
+    "slug": "after-renovation-checklist",
+    "hub": "new-home",
+    "title": "After Renovation: What to Clean, Clear and Check Before You Move In",
+    "description": "A post-renovation checklist for Singapore homes: defects to find before the final payment, what to do with leftover debris, and what a proper clean covers.",
+    "dek": "Check first, then clear, then clean. Once the final payment is made, getting a contractor back is much harder — so the order matters.",
+    "datePublished": "2026-09-28",
+    "faqs": [
+      { "q": "When should post-renovation cleaning be done?", "a": "After every trade has finished — carpentry, electrical, painting and any touch-ups — and before furniture and curtains go in. Cleaning while work is still going on means paying to clean twice." },
+      { "q": "Does my contractor have to clear renovation debris?", "a": "It depends on your contract, so check it. Many contractors clear hacking debris and packaging from their own work, but leftover materials, old furniture and your own boxes are usually yours to deal with." },
+      { "q": "What should I check before making final payment to my contractor?", "a": "Walk the whole home with a checklist: hollow or chipped tiles, uneven grout, doors and drawers that don't close properly, patchy paint, leaks under sinks, drains that empty slowly, and any power point that doesn't work." },
+      { "q": "Why keep spare tiles after renovation?", "a": "Tiles get discontinued. If one cracks in a few years, a matching spare saves you retiling a whole section. Keep a few of each type, and note down your paint colour codes too." }
+    ],
+    "related": ["bto-key-collection-to-move-in", "aircon-servicing-guide"],
+    "getHelp": [
+      { "brand": "hometoclean", "link": "post-reno" },
+      { "brand": "junktoclear", "link": "residential" },
+      { "brand": "skillstofix", "link": "handyman" },
+      { "brand": "skillstofix", "link": "aircon" }
+    ]
+  },
+  {
+    "slug": "tenancy-handover-checklist",
+    "hub": "ending-a-tenancy",
+    "title": "Ending a Tenancy in Singapore: The Handover Checklist That Protects Your Deposit",
+    "description": "How to hand back a rental in Singapore without losing your deposit: the tenancy clauses to check, what counts as fair wear and tear, and what to do on handover day.",
+    "dek": "Deposit disputes usually come down to three things: what the agreement says, how the flat compares to move-in, and who has the photos. Here's how to be on the right side of all three.",
+    "datePublished": "2026-09-28",
+    "faqs": [
+      { "q": "Do I have to hire professional cleaners when I move out?", "a": "Only if your tenancy agreement says so — some do, many don't. Either way, the flat has to go back in the condition you received it, fair wear and tear excepted, so a thorough clean is almost always worth it." },
+      { "q": "What counts as fair wear and tear?", "a": "The gradual deterioration that comes from normal living — faded paint, light scuffs, worn grout. Holes in walls, burns, stains, broken fittings and damage from neglect generally don't count." },
+      { "q": "Who pays for aircon servicing in a rental?", "a": "Many Singapore tenancy agreements make the tenant responsible for regular servicing, commonly every three months, and landlords often ask for the receipts. Check your agreement for the exact terms." },
+      { "q": "What can I do if I disagree with a deposit deduction?", "a": "Ask for an itemised list with quotes or receipts, compare it against your move-in photos and inventory, and negotiate in writing. If you still can't agree, the Small Claims Tribunals hear many tenancy disputes — check whether your claim is eligible." }
+    ],
+    "related": ["handyman-fixes-before-handover", "moving-house-checklist-singapore"],
+    "getHelp": [
+      { "brand": "hometoclean", "link": "move-out" },
+      { "brand": "skillstofix", "link": "handyman" },
+      { "brand": "skillstofix", "link": "aircon" },
+      { "brand": "junktoclear", "link": "residential" }
+    ]
+  },
+  {
+    "slug": "handyman-fixes-before-handover",
+    "hub": "ending-a-tenancy",
+    "title": "Handyman Fixes Worth Doing Before You Hand Back a Rental",
+    "description": "The small repairs a Singapore landlord's inspection usually picks up — from nail holes to dripping taps — which to do yourself, and which to leave to a professional.",
+    "dek": "A small repair done now usually costs less than the same repair deducted from your deposit at your landlord's contractor's rates. Here's where to start.",
+    "datePublished": "2026-09-28",
+    "faqs": [
+      { "q": "Should I repaint before handing back a rental?", "a": "Not usually the whole flat — normal fading is wear and tear. Touch up marks and patched holes in the matching colour, and check your agreement first, as some prohibit repainting without the landlord's consent." },
+      { "q": "Who pays for repairs in a rental?", "a": "It depends on the agreement. Many Singapore tenancy agreements make the tenant responsible for minor repairs up to a set amount, with larger repairs falling to the landlord unless the tenant caused the damage." },
+      { "q": "Can I leave wall fixtures I installed, like shelves or a TV bracket?", "a": "Only if the landlord agrees in writing. Otherwise, remove them, then patch and touch up the holes before the inspection." },
+      { "q": "Is electrical work something I can do myself?", "a": "Changing a bulb, yes. Anything beyond that — new points, rewiring, or work at the distribution board — should be done by a licensed electrical worker." }
+    ],
+    "related": ["tenancy-handover-checklist", "aircon-servicing-guide"],
+    "getHelp": [
+      { "brand": "skillstofix", "link": "handyman" },
+      { "brand": "skillstofix", "link": "aircon" },
+      { "brand": "hometoclean", "link": "move-out" }
+    ]
+  },
+  {
+    "slug": "e-waste-singapore",
+    "hub": "declutter-and-dispose",
+    "title": "E-Waste in Singapore: What to Do With Old Phones, Laptops, Batteries and Appliances",
+    "description": "Where e-waste goes in Singapore: collection bins for phones, laptops, batteries and bulbs, retailer take-back for large appliances, and how to wipe your data first.",
+    "dek": "Most household electronics have a free, proper way out of your home. Here's what counts as e-waste, where each kind goes, and what to do before you let it go.",
+    "datePublished": "2026-09-28",
+    "faqs": [
+      { "q": "Can I throw old batteries in the rubbish?", "a": "No. Batteries — especially the lithium-ion batteries in phones, laptops and power banks — belong in an e-waste collection bin, not the general rubbish or the refuse chute, where a damaged battery can start a fire." },
+      { "q": "Is e-waste recycling free in Singapore?", "a": "For most household items, yes. Small items can go into e-waste bins at public locations, and large appliances can usually be taken back by the retailer when you buy a replacement. NEA's website lists the current options." },
+      { "q": "Will the shop take my old fridge or washing machine?", "a": "When you buy a new large appliance, retailers offer to take the old one away when they deliver the new one. Ask when you buy — and if you aren't replacing it, check NEA's website for other collection options." },
+      { "q": "How do I wipe my phone before recycling it?", "a": "Back up what you need, sign out of your accounts — including Find My on an iPhone, which otherwise locks the device — remove the SIM and any memory card, then do a factory reset from the phone's settings." }
+    ],
+    "related": ["tenancy-handover-checklist", "moving-house-checklist-singapore"],
+    "getHelp": [
+      { "brand": "junktoclear", "link": "residential" },
+      { "brand": "hometomoved", "link": "move-and-dispose" }
+    ]
+  },
+  {
+    "slug": "aircon-servicing-guide",
+    "hub": "repairs-and-upkeep",
+    "title": "Aircon Servicing in Singapore: How Often, and What a Chemical Wash Actually Is",
+    "description": "How often to service your aircon in Singapore, what general servicing, chemical wash and chemical overhaul involve, and what a leak or weak cooling means.",
+    "dek": "General servicing, chemical wash, chemical overhaul, gas top-up — four services that are easy to confuse. Here's what each involves, and when you actually need it.",
+    "datePublished": "2026-09-28",
+    "faqs": [
+      { "q": "How often should I service my aircon in Singapore?", "a": "Every three months is the common guideline for units used daily, and it's a standard clause in many tenancy agreements. Units used only occasionally can go longer, but not indefinitely." },
+      { "q": "What is the difference between a chemical wash and a chemical overhaul?", "a": "A chemical wash deep-cleans the coil and parts with a chemical solution while the unit stays mounted. A chemical overhaul goes further: the unit is taken down and fully dismantled so every part can be cleaned. Overhaul is for the worst cases." },
+      { "q": "Does my aircon need a gas top-up?", "a": "Only if there's a leak. Refrigerant circulates in a sealed system and isn't used up, so low gas means something needs repairing — topping up without finding the leak only delays the problem." },
+      { "q": "Why is my aircon leaking water?", "a": "Most often a clogged drainage pipe or a dirty coil, both of which general servicing deals with. If it keeps leaking after a service, the unit may need a chemical wash or a repair." }
+    ],
+    "related": ["pest-control-hdb-condo", "tenancy-handover-checklist"],
+    "getHelp": [
+      { "brand": "skillstofix", "link": "aircon" },
+      { "brand": "skillstofix", "link": "handyman" }
+    ]
+  },
+  {
+    "slug": "pest-control-hdb-condo",
+    "hub": "repairs-and-upkeep",
+    "title": "Pest Control in HDB Flats and Condos: What You Can Handle, and When to Call Someone",
+    "description": "How to deal with cockroaches, ants, bed bugs, termites, rodents and mosquitoes in a Singapore home — what prevention handles, and when you need a professional.",
+    "dek": "Most pests come down to food, water and a way in, so prevention does most of the work. Bed bugs and termites are the exceptions — and mosquitoes are a public-health matter.",
+    "datePublished": "2026-09-28",
+    "faqs": [
+      { "q": "Who is responsible for pests in HDB common areas?", "a": "Your town council looks after common property such as corridors, void decks and bin centres, so report pests there to them. Inside your flat, it's up to you." },
+      { "q": "Can I get rid of bed bugs myself?", "a": "Rarely. Bed bugs hide in seams, joints and cracks and survive most household sprays, so professional treatment — usually with a follow-up visit — is the reliable route. Washing bedding on a hot cycle helps alongside it." },
+      { "q": "How do I know if I have termites?", "a": "Look for thin mud tubes along walls or skirting, timber that sounds hollow when tapped, small piles of discarded wings near windows, and doors or frames that start to sag or stick. Don't disturb them — call a professional." },
+      { "q": "Can I be fined for mosquito breeding at home?", "a": "Yes. NEA inspects homes for mosquito breeding and can take enforcement action if it finds breeding. Clearing stagnant water every week — in vases, pails, plant saucers and roof gutters — is the best prevention." }
+    ],
+    "related": ["aircon-servicing-guide", "handyman-fixes-before-handover"],
+    "getHelp": [
+      { "brand": "skillstofix", "link": "pest" },
+      { "brand": "junktoclear", "link": "residential" }
+    ]
+  }
+]

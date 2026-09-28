@@ -6,5 +6,7 @@
   "nea-ewaste": { "name": "NEA — e-waste management", "url": "https://www.nea.gov.sg/our-services/waste-management/3r-programmes-and-resources/e-waste-management" },
   "nea-dengue": { "name": "NEA — dengue", "url": "https://www.nea.gov.sg/dengue-zika" },
   "nea-pest":   { "name": "NEA — pest control", "url": "https://www.nea.gov.sg/our-services/pest-control" },
-  "alba":       { "name": "ALBA E-Waste", "url": "https://alba-ewaste.sg/" }
+  "alba":       { "name": "ALBA E-Waste", "url": "https://alba-ewaste.sg/" },
+  "cea-renting-hdb":     { "name": "CEA — renting an HDB flat (links the tenancy agreement template)", "url": "https://www.cea.gov.sg/consumers/transacting-on-your-own/renting-an-hdb-flat-or-bedroom/" },
+  "cea-renting-private": { "name": "CEA — renting a private residential property (links the tenancy agreement template)", "url": "https://www.cea.gov.sg/consumers/transacting-on-your-own/renting-or-renting-out-a-private-residential-property/" }
 }

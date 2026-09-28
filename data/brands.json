@@ -53,5 +53,17 @@
       "aircon":   { "label": "Aircon servicing", "url": "https://skillstofix.com/services/aircon-servicing" },
       "pest":     { "label": "Pest control",     "url": "https://skillstofix.com/services/pest-control" }
     }
+  },
+  {
+    "id": "relocado",
+    "name": "Relocado",
+    "url": "https://relocado.asia/",
+    "does": "Guides to moving into and out of Singapore",
+    "links": {
+      "home":              { "label": "Relocado",                     "url": "https://relocado.asia/" },
+      "diplomatic-clause": { "label": "The diplomatic clause",         "url": "https://relocado.asia/leaving-singapore/diplomatic-clause/" },
+      "leaving-checklist": { "label": "Leaving Singapore checklist",   "url": "https://relocado.asia/leaving-singapore/checklist/" },
+      "leaving-planner":   { "label": "Leaving Singapore planner",     "url": "https://relocado.asia/leaving-singapore/planner/" }
+    }
   }
 ]

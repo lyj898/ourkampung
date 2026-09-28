@@ -34,7 +34,7 @@ powershell -ExecutionPolicy Bypass -File scripts/Build-Site.ps1
 |---|---|
 | `data/site.json` | site settings, GA4 ID, verification token, form endpoint |
 | `data/organization.json` | the OurKampung `Organization` node — single source of truth |
-| `data/brands.json` | the four businesses and every deep link to them |
+| `data/brands.json` | the four businesses (`"core": true`), Relocado, and every deep link to them |
 | `data/sources.json` | official sources guides cite (HDB, ICA, NEA, SP, CEA, ALBA) |
 | `data/hubs.json` | the five life-event hubs |
 | `data/guides.json` | guide metadata, FAQs, related guides, "get help" links |
@@ -46,7 +46,9 @@ powershell -ExecutionPolicy Bypass -File scripts/Build-Site.ps1
 
 Content files link through tokens, which the build resolves and validates. An unknown token fails
 the build, so a broken internal link cannot ship:
-`{{guide:<slug>}}` `{{hub:<slug>}}` `{{page:<id>}}` `{{src:<key>}}` `{{brand:<id>/<key>}}`.
+`{{guide:<slug>}}` `{{hub:<slug>}}` `{{page:<id>}}` `{{src:<key>}}` `{{brand:<id>/<key>}}`,
+plus `{{illo:<name>}}` (an illustration `<img>`) and `{{icon:<name>}}` (an icon from `$icons` in the
+build script).
 Never hard-code an internal path or a sister-site URL in content — add it to the data files.
 
 If the build warns about stale `.html` files, delete them; GitHub Pages will keep serving them.
@@ -66,6 +68,31 @@ When creating any page, in the same change:
 
 To add a guide: add an entry to `data/guides.json`, add its slug to its hub's `guides` list in
 `data/hubs.json`, write `content/guides/<slug>.html`, rebuild.
+
+## Design
+
+Warm and neighbourly rather than editorial: flat illustrations of HDB estates, a pastel colour per
+hub, and short copy on every page except the guides themselves.
+
+- **Illustrations** live in `assets/illo/*.svg`: `hero` (the estate scene on the homepage and About),
+  one per hub named after its slug, `planner`, and `skyline` (the footer strip, used from CSS). They
+  are hand-written flat SVG in the site palette — no stock images, no photos of people. Each root
+  `<svg>` needs `width` and `height`, which the build copies onto the `<img>` so nothing shifts as it
+  loads. `{{illo:<name>}}` adds the cache-busting hash.
+- **The hero's ground is `--surface-alt`** (`#EFE8DB`), so the scene stands on the section below it.
+  Change one and you must change the other.
+- **Hub colours** are CSS classes `.hub-<slug>` setting `--hub-tint`, `--hub-soft` and `--hub-deep`.
+  Guide and hub pages carry the class on `<body>`; tiles and cards carry their own. Each business
+  keeps one colour and one icon everywhere (`$brandHue` and `$brandIcon` in the build script).
+  `--hub-deep` is text-safe on `--hub-tint`; check contrast before adding a colour.
+- **"At a glance" tiles** (`glance` in `data/guides.json`) sit at the top of each guide's short
+  answer. `type` is `facts` or `steps`. Every tile must restate something the short answer already
+  says — never a new number or claim.
+- **Keep the guide bodies long.** "Less wordy" applies to the homepage, hubs and page chrome. The
+  guides' depth is what separates them from the thin pages that got the site de-indexed; make them
+  scannable (glance tiles, checklist rows, TOC chips) rather than shorter.
+- **Hub pages** open with a "Where to start" list — `<ol class="steps">` in `content/hubs/`, three
+  items of a sentence or two each.
 
 ## Content rules
 

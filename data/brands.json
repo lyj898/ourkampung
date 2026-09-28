@@ -1,6 +1,7 @@
 [
   {
     "id": "hometomoved",
+    "core": true,
     "name": "HomeToMoved",
     "url": "https://hometomoved.com/",
     "does": "Moving and packing for HDB flats, condos and landed homes",
@@ -15,6 +16,7 @@
   },
   {
     "id": "hometoclean",
+    "core": true,
     "name": "HomeToClean",
     "url": "https://hometoclean.com/",
     "does": "Move-in, move-out, deep and post-renovation cleaning",
@@ -28,6 +30,7 @@
   },
   {
     "id": "junktoclear",
+    "core": true,
     "name": "JunkToClear",
     "url": "https://junktoclear.com.sg/",
     "does": "Disposal and clearance of furniture, bulky items and household junk",
@@ -44,6 +47,7 @@
   },
   {
     "id": "skillstofix",
+    "core": true,
     "name": "SkillsToFix",
     "url": "https://skillstofix.com/",
     "does": "Handyman repairs, aircon servicing and pest control",

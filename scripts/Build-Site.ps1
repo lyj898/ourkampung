@@ -20,6 +20,8 @@
   unknown token fails the build, so a broken internal link cannot ship:
     {{guide:<slug>}}  {{hub:<slug>}}  {{page:<id>}}  {{src:<key>}}
     {{brand:<brandId>/<linkKey>}}
+    {{illo:<name>}}   an <img> of assets/illo/<name>.svg, sized and cache-busted
+    {{icon:<name>}}   an inline icon from the $icons table below
 
   <!-- OWNER-INPUT: ... --> comments mark where first-hand material from the
   businesses would strengthen a page. They are stripped from the output and
@@ -140,6 +142,8 @@ $tokenEval = [System.Text.RegularExpressions.MatchEvaluator] {
             $bits = $key.Split('/')
             if ($bits.Count -eq 2) { $l = Brand-Link $bits[0] $bits[1]; if ($l) { $out = $l.url } }
         }
+        'illo'  { $out = Illo-Img $key ($key -eq 'hero') }
+        'icon'  { if ($icons.ContainsKey($key)) { $out = $icons[$key] } }
     }
     if ($null -eq $out) {
         $script:tokenErrors.Add("$($script:tokenWhere): {{${kind}:$key}}")
@@ -150,7 +154,29 @@ $tokenEval = [System.Text.RegularExpressions.MatchEvaluator] {
 function Resolve-Tokens([string]$html, [string]$where) {
     $script:tokenWhere = $where
     $html = $html.Replace('{{FORM_ENDPOINT}}', $site.formEndpoint)
-    return [regex]::Replace($html, '\{\{(guide|hub|page|src|brand):([a-z0-9\-/]+)\}\}', $tokenEval)
+    return [regex]::Replace($html, '\{\{(guide|hub|page|src|brand|illo|icon):([a-z0-9\-/]+)\}\}', $tokenEval)
+}
+
+# ------------------------------------------------------- illustrations ---
+# Flat SVG scenes in assets/illo/. Each root <svg> carries width and height, so
+# the <img> reserves its space before it loads (no layout shift).
+$illoAlt = @{
+    hero = 'Neighbours carrying a sofa out to a moving lorry between HDB blocks, while others chat at the void deck'
+}
+$script:illoCache = @{}
+function Illo-Img([string]$name, [bool]$eager) {
+    $rel = "assets/illo/$name.svg"
+    if (-not (Test-Path (Join-Path $repo $rel))) { return $null }
+    if (-not $script:illoCache.ContainsKey($name)) {
+        $svg = [IO.File]::ReadAllText((Join-Path $repo $rel), [Text.Encoding]::UTF8)
+        $m = [regex]::Match($svg, '<svg[^>]*\swidth="(\d+)"[^>]*\sheight="(\d+)"')
+        if (-not $m.Success) { throw "$rel needs width and height on its <svg> root." }
+        $script:illoCache[$name] = @{ w = $m.Groups[1].Value; h = $m.Groups[2].Value; v = (Short-Hash $rel) }
+    }
+    $i = $script:illoCache[$name]
+    $load = if ($eager) { ' fetchpriority="high"' } else { ' loading="lazy"' }
+    $alt = if ($illoAlt.ContainsKey($name)) { Esc $illoAlt[$name] } else { '' }
+    return "<img class=""illo"" src=""/$rel`?v=$($i.v)"" alt=""$alt"" width=""$($i.w)"" height=""$($i.h)"" decoding=""async""$load>"
 }
 
 # --------------------------------------------------------- owner input ---
@@ -201,7 +227,38 @@ $icons = @{
     bin     = $svgOpen + '<path d="M4 7h16"/><path d="M9.5 7V4.5h5V7"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v5.5M14 11v5.5"/></svg>'
     wrench  = $svgOpen + '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3.5 17.5 6.5 20.5l5.8-5.8a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.3-.6-.6-2.3z"/></svg>'
     planner = $svgOpen + '<rect x="3" y="4.5" width="18" height="16.5" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/><path d="M8.5 15l2.2 2.2 4.8-4.8"/></svg>'
+    calendar  = $svgOpen + '<rect x="3" y="4.5" width="18" height="16.5" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/><path d="M7.5 13.5h2M11 13.5h2M14.5 13.5h2M7.5 17h2M11 17h2"/></svg>'
+    clock     = $svgOpen + '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>'
+    id        = $svgOpen + '<rect x="2.5" y="5" width="19" height="14" rx="2"/><circle cx="8.5" cy="10.8" r="2.2"/><path d="M5.3 16c.6-1.5 1.8-2.3 3.2-2.3s2.6.8 3.2 2.3M14.5 10h4M14.5 13.5h3"/></svg>'
+    building  = $svgOpen + '<path d="M5 21V3.5h9V21M14 8.5h5V21M3 21h18"/><path d="M8 7h3M8 10.5h3M8 14h3M16.5 12h.5M16.5 15.5h.5"/></svg>'
+    home      = $svgOpen + '<path d="M3 11l9-7 9 7"/><path d="M5.5 9.5V21h13V9.5"/><path d="M10 21v-6h4v6"/></svg>'
+    camera    = $svgOpen + '<path d="M3 8.5h4l1.8-3h6.4l1.8 3h4V19H3z"/><circle cx="12" cy="13.3" r="3.4"/></svg>'
+    search    = $svgOpen + '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.4 15.4L21 21"/></svg>'
+    roller    = $svgOpen + '<rect x="3" y="3.5" width="14" height="6" rx="1.5"/><path d="M17 6.5h3v5h-9v3"/><rect x="9.5" y="14.5" width="3" height="7" rx="1"/></svg>'
+    sparkle   = $svgOpen + '<path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 14.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg>'
+    box       = $svgOpen + '<path d="M3.5 7.5L12 3.5l8.5 4v9L12 20.5l-8.5-4z"/><path d="M3.5 7.5L12 11.5l8.5-4M12 11.5v9"/></svg>'
+    clipboard = $svgOpen + '<rect x="5" y="4.5" width="14" height="17" rx="2"/><path d="M9 4.5V3h6v1.5"/><path d="M8.5 11l1.6 1.6 3.2-3.2M8.5 16.5h7"/></svg>'
+    image     = $svgOpen + '<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="M21 15.5l-5-5-8.5 9.5"/></svg>'
+    bolt      = $svgOpen + '<path d="M13 2.5L5 13.5h6l-1 8 8-11h-6z"/></svg>'
+    phone     = $svgOpen + '<rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.3h2"/></svg>'
+    fridge    = $svgOpen + '<rect x="5.5" y="2.5" width="13" height="19" rx="2"/><path d="M5.5 10h13M8.5 5.5v2M8.5 13v3"/></svg>'
+    ban       = $svgOpen + '<circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>'
+    shield    = $svgOpen + '<path d="M12 3l7.5 3v5.5c0 4.5-3.2 8-7.5 9.5-4.3-1.5-7.5-5-7.5-9.5V6z"/><path d="M9 12l2.2 2.2 4-4.2"/></svg>'
+    drop      = $svgOpen + '<path d="M12 3c3.5 4.5 6 7.9 6 11a6 6 0 0 1-12 0c0-3.1 2.5-6.5 6-11z"/></svg>'
+    gauge     = $svgOpen + '<path d="M4.3 17.5a8.5 8.5 0 1 1 15.4 0"/><path d="M12 13.5l4-4"/><circle cx="12" cy="13.8" r="1.2"/></svg>'
+    bug       = $svgOpen + '<rect x="7.5" y="8" width="9" height="12" rx="4.5"/><path d="M12 8v12M9 8a3 3 0 0 1 6 0M3.5 11.5h4M16.5 11.5h4M3.5 16h4M16.5 16h4M5 5.5l2.5 2.5M19 5.5L16.5 8"/></svg>'
+    ruler     = $svgOpen + '<path d="M3 16.5L16.5 3 21 7.5 7.5 21z"/><path d="M7 12.5l2 2M10 9.5l2 2M13 6.5l2 2"/></svg>'
+    heart     = $svgOpen + '<path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z"/></svg>'
+    pin       = $svgOpen + '<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>'
+    book      = $svgOpen + '<path d="M4 19.5V5a2 2 0 0 1 2-2h14v14H6a2 2 0 0 0-2 2.5zM4 19.5A2 2 0 0 0 6 21.5h14V17"/></svg>'
+    scale     = $svgOpen + '<path d="M12 3.5v17M7.5 20.5h9M5 7h14M5 7l-2.5 6a2.5 2.5 0 0 0 5 0zM19 7l-2.5 6a2.5 2.5 0 0 0 5 0z"/></svg>'
+    plane     = $svgOpen + '<path d="M10.5 13.5L3 11l1.5-2 8 1 4.5-5c1-1 2.8-1.3 3.4-.6.6.6.4 2.4-.6 3.4l-5 4.5 1 8-2 1.5-2.5-7.5-3.5 3v2.5L7 21l-1-3-3-1 1.2-1.3h2.5z"/></svg>'
+    arrow     = $svgOpen + '<path d="M5 12h14M13 6l6 6-6 6"/></svg>'
+    mail      = $svgOpen + '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>'
 }
+# Each business keeps one icon and one colour everywhere it appears.
+$brandIcon = @{ hometomoved = 'truck'; hometoclean = 'sparkle'; junktoclear = 'bin'; skillstofix = 'wrench'; relocado = 'plane' }
+$brandHue  = @{ hometomoved = 'moving'; hometoclean = 'new-home'; junktoclear = 'declutter-and-dispose'; skillstofix = 'repairs-and-upkeep'; relocado = 'moving' }
 
 $gaSnippet = @"
 <!-- Google tag (gtag.js) -->
@@ -363,15 +420,44 @@ function Page-Node([string]$type, [string]$canon, [string]$name, [string]$desc, 
 
 # ---------------------------------------------------------- components ---
 $script:readMins = @{}
+function Short-Title($g) {
+    if ($g.PSObject.Properties['shortTitle'] -and $g.shortTitle) { return $g.shortTitle }
+    return $g.title
+}
 function Guide-Card($g, [bool]$showHub) {
     $hub = $hubBySlug[$g.hub]
     $hubLine = if ($showHub) { "<span class=""gc-hub"">$(Esc $hub.name)</span>" } else { '' }
-    return "<a class=""guide-card reveal"" href=""$(GuideUrl $g)"">$hubLine<h3>$(Esc $g.title)</h3><p>$(Esc $g.description)</p><span class=""gc-meta"">$($script:readMins[$g.slug]) min read</span></a>"
+    return "<a class=""guide-card hub-$($hub.slug) reveal"" href=""$(GuideUrl $g)""><span class=""gc-top""><span class=""gc-icon"">$($icons[$hub.icon])</span>$hubLine</span><h3>$(Esc $g.title)</h3><p>$(Esc $g.description)</p><span class=""gc-meta"">$($script:readMins[$g.slug]) min read $($icons.arrow)</span></a>"
 }
 function Hub-Card($h) {
-    $n = @($h.guides).Count
-    $label = if ($n -eq 1) { '1 guide' } else { "$n guides" }
-    return "<a class=""hub-card reveal"" href=""/$($h.slug)/""><span class=""hub-icon"">$($icons[$h.icon])</span><h3>$(Esc $h.name)</h3><p>$(Esc $h.blurb)</p><span class=""hub-count"">$label</span></a>"
+    # A tile per life event: its illustration, then a direct link to each of its
+    # guides (and tools), so the homepage links every guide by name.
+    $links = @(foreach ($s in @($h.guides)) {
+        $gg = $guideBySlug[$s]
+        "<li><a href=""$(GuideUrl $gg)"">$(Esc (Short-Title $gg))</a></li>"
+    })
+    foreach ($tid in @($h.tools | Where-Object { $_ })) {
+        $t = $pageById[$tid]
+        $links += "<li class=""ht-tool""><a href=""$($t.path)"">$($icons.planner)$(Esc $t.cardTitle)</a></li>"
+    }
+    return "<article class=""hub-tile hub-$($h.slug) reveal""><a class=""ht-art"" href=""/$($h.slug)/"" tabindex=""-1"" aria-hidden=""true"">$(Illo-Img $h.slug $false)</a><div class=""ht-body""><h3><a href=""/$($h.slug)/"">$(Esc $h.name)</a></h3><p>$(Esc $h.blurb)</p><ul class=""ht-links"">$($links -join '')</ul></div></article>"
+}
+function Brand-Icon([string]$id) {
+    $ic = if ($brandIcon.ContainsKey($id)) { $icons[$brandIcon[$id]] } else { $icons.arrow }
+    return "<span class=""gh-icon"">$ic</span>"
+}
+function Brand-Hue([string]$id) { if ($brandHue.ContainsKey($id)) { return "hub-$($brandHue[$id])" } return '' }
+function Glance-Html($g) {
+    # "At a glance" tiles for the short answer. Every item restates something
+    # the guide's own short answer says -- never a new claim.
+    if (-not ($g.PSObject.Properties['glance'] -and $g.glance)) { return '' }
+    $gl = $g.glance
+    $tag = if ($gl.type -eq 'steps') { 'ol' } else { 'ul' }
+    $lis = foreach ($it in @($gl.items)) {
+        if (-not $icons.ContainsKey($it.icon)) { throw "Guide '$($g.slug)' glance uses unknown icon '$($it.icon)'." }
+        "<li><span class=""gl-icon"">$($icons[$it.icon])</span><strong>$(Esc $it.big)</strong><span class=""gl-txt"">$(Esc $it.small)</span></li>"
+    }
+    return "<$tag class=""glance glance-$($gl.type)"">$($lis -join '')</$tag>"
 }
 function GetHelp-Html($items) {
     $items = @($items | Where-Object { $_ })
@@ -380,7 +466,7 @@ function GetHelp-Html($items) {
         $l = Brand-Link $it.brand $it.link
         if (-not $l) { throw "Unknown brand link '$($it.brand)/$($it.link)'." }
         $b = $brandById[$it.brand]
-        "<li><a href=""$($l.url)""><strong>$(Esc $l.label)</strong><span>$(Esc $b.name) &middot; $(Esc $b.does)</span></a></li>"
+        "<li class=""$(Brand-Hue $b.id)""><a href=""$($l.url)"">$(Brand-Icon $b.id)<span class=""gh-txt""><strong>$(Esc $l.label)</strong><span>$(Esc $b.name) &middot; $(Esc $b.does)</span></span></a></li>"
     }
     return @"
 <aside class="gethelp" aria-labelledby="gethelp-h">
@@ -463,18 +549,29 @@ foreach ($g in $guides) {
     }
     $faqHtml = if ($hasFaqs) { Faq-Html $g.faqs } else { '' }
 
+    $body = $pr.body.Trim()
+    $glance = Glance-Html $g
+    if ($glance) {
+        $rx = [regex]'<div class="answer">\s*<h2[^>]*>.*?</h2>'
+        if (-not $rx.IsMatch($body)) { throw "Guide '$($g.slug)' has a glance but no short-answer block." }
+        $body = $rx.Replace($body, [System.Text.RegularExpressions.MatchEvaluator] { param($m) $m.Value + "`n" + $glance }, 1)
+    }
+
     $main = @"
 <article class="guide">
-  <header class="guide-head"><div class="wrap-narrow">
-    $(Crumbs-Html $crumbs)
-    <h1>$(Esc $g.title)</h1>
-    <p class="dek">$(Esc $g.dek)</p>
-    <p class="meta"><span>$dateLabel <time datetime="$mod">$(Pretty $mod)</time></span><span>$($script:readMins[$g.slug]) min read</span><span>By the OurKampung team</span></p>
+  <header class="guide-head"><div class="wrap-narrow head-grid">
+    <div class="head-text">
+      $(Crumbs-Html $crumbs)
+      <h1>$(Esc $g.title)</h1>
+      <p class="dek">$(Esc $g.dek)</p>
+      <p class="meta"><span>$dateLabel <time datetime="$mod">$(Pretty $mod)</time></span><span>$($script:readMins[$g.slug]) min read</span><span>By the OurKampung team</span></p>
+    </div>
+    <div class="head-art">$(Illo-Img $hub.slug $true)</div>
   </div></header>
   <div class="wrap-narrow guide-body">
     $tocHtml
     <div class="prose">
-$($pr.body.Trim())
+$body
     </div>
     $faqHtml
     $(GetHelp-Html $g.getHelp)
@@ -500,7 +597,7 @@ $($pr.body.Trim())
 
     Out-Page $path (Render-Page ([pscustomobject]@{
         path = $path; title = "$($g.title) | OurKampung"; description = $g.description; ogType = 'article'
-        articleMeta = $articleMeta; jsonld = $jsonld; main = $main; bodyClass = 'page-guide'; activeHub = $hub.slug
+        articleMeta = $articleMeta; jsonld = $jsonld; main = $main; bodyClass = "page-guide hub-$($hub.slug)"; activeHub = $hub.slug
         verify = $false; noindex = $false; scripts = @()
     }))
     Add-Sitemap $path $mod
@@ -522,23 +619,26 @@ foreach ($h in $hubs) {
     foreach ($tid in @($h.tools | Where-Object { $_ })) {
         $t = $pageById[$tid]
         if (-not $t) { throw "Hub '$($h.slug)' lists unknown tool '$tid'." }
-        $toolHtml += "<a class=""tool-card reveal"" href=""$($t.path)""><span class=""hub-icon"">$($icons.planner)</span><span><strong>$(Esc $t.cardTitle)</strong><span>$(Esc $t.cardText)</span></span></a>"
+        $toolHtml += "<a class=""tool-card reveal"" href=""$($t.path)"">$(Illo-Img 'planner' $false)<span><strong>$(Esc $t.cardTitle)</strong><span>$(Esc $t.cardText)</span></span></a>"
     }
     if ($toolHtml) { $toolHtml = "<section class=""section section-tight""><div class=""wrap-narrow"">$toolHtml</div></section>" }
 
     $main = @"
-<section class="page-hero"><div class="wrap-narrow">
-  $(Crumbs-Html $crumbs)
-  <span class="hub-icon lg">$($icons[$h.icon])</span>
-  <h1>$($h.h1)</h1>
-  <p class="lede">$(Esc $h.lede)</p>
+<section class="page-hero hub-hero"><div class="wrap-narrow head-grid">
+  <div class="head-text">
+    $(Crumbs-Html $crumbs)
+    <h1>$($h.h1)</h1>
+    <p class="lede">$(Esc $h.lede)</p>
+  </div>
+  <div class="head-art">$(Illo-Img $h.slug $true)</div>
 </div></section>
-<section class="section section-tight"><div class="wrap-narrow prose hub-intro">
+<section class="section section-tight"><div class="wrap-narrow">
+  <h2 class="sec-title sm">Where to start</h2>
 $($intro.Trim())
 </div></section>
-<section class="section section-tight"><div class="wrap">
-  <h2 class="sec-title">Guides in this section</h2>
-  <div class="card-grid">$cards</div>
+<section class="section section-tight"><div class="wrap-narrow">
+  <h2 class="sec-title sm">Guides in this section</h2>
+  <div class="card-grid two">$cards</div>
 </div></section>
 $toolHtml
 <section class="section section-tight"><div class="wrap-narrow">
@@ -554,7 +654,7 @@ $toolHtml
 
     Out-Page $path (Render-Page ([pscustomobject]@{
         path = $path; title = "$($h.title) | OurKampung"; description = $h.description; ogType = 'website'
-        jsonld = $jsonld; main = $main; bodyClass = 'page-hub'; activeHub = $h.slug; verify = $false; noindex = $false; scripts = @()
+        jsonld = $jsonld; main = $main; bodyClass = "page-hub hub-$($h.slug)"; activeHub = $h.slug; verify = $false; noindex = $false; scripts = @()
     }))
     Add-Sitemap $path $lastmod
 }
@@ -562,6 +662,9 @@ $toolHtml
 # ------------------------------------------------------- static pages ---
 $allGuideCards = ($guides | ForEach-Object { Guide-Card $_ $true }) -join ''
 $hubCards = ($hubs | ForEach-Object { Hub-Card $_ }) -join ''
+$brandTiles = ($brands | Where-Object { $_.PSObject.Properties['core'] -and $_.core } | ForEach-Object {
+    "<li class=""brand-tile $(Brand-Hue $_.id)"">$(Brand-Icon $_.id)<strong>$(Esc $_.name)</strong><span>$(Esc $_.does)</span></li>"
+}) -join ''
 $siteLastmod = ($guides | ForEach-Object { Get-Modified $_ } | Sort-Object -Descending | Select-Object -First 1)
 
 foreach ($p in $pages) {
@@ -570,7 +673,7 @@ foreach ($p in $pages) {
     $html = ReadText $p.file
     $html = Take-OwnerNotes $html "Page: $($p.title)" $path
     $html = Resolve-Tokens $html $p.file
-    $html = $html.Replace('<!--HUBS-->', $hubCards).Replace('<!--ALLGUIDES-->', $allGuideCards)
+    $html = $html.Replace('<!--HUBS-->', $hubCards).Replace('<!--ALLGUIDES-->', $allGuideCards).Replace('<!--BRANDS-->', $brandTiles)
     if ($p.PSObject.Properties['featured']) {
         $feat = ($p.featured | ForEach-Object {
             if (-not $guideBySlug.ContainsKey($_)) { throw "Page '$($p.id)' features unknown guide '$_'." }
@@ -606,7 +709,7 @@ foreach ($p in $pages) {
 
     Out-Page $path (Render-Page ([pscustomobject]@{
         path = $path; title = $p.title; description = $p.description; ogType = 'website'
-        jsonld = $jsonld; main = $html; bodyClass = "page-$($p.id)"; activeHub = $active
+        jsonld = $jsonld; main = $html; bodyClass = $(if ($active) { "page-$($p.id) hub-$active" } else { "page-$($p.id)" }); activeHub = $active
         verify = $isHome; noindex = $noindex; scripts = @($p.scripts)
     }))
     if (-not ($p.PSObject.Properties['sitemap'] -and $p.sitemap -eq $false)) {

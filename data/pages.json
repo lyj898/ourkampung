@@ -5,8 +5,7 @@
     "file": "content/pages/home.html",
     "title": "OurKampung — The Neighbourhood Guide to Your Singapore Home",
     "description": "Practical, Singapore-specific guides to moving house, settling into a new BTO, ending a tenancy, clearing out and keeping a home in good repair.",
-    "schemaType": "WebPage",
-    "featured": ["moving-house-checklist-singapore", "tenancy-handover-checklist", "bto-key-collection-to-move-in"]
+    "schemaType": "WebPage"
   },
   {
     "id": "about",

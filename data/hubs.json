@@ -8,7 +8,7 @@
     "h1": "Moving house, <em>without the chaos.</em>",
     "lede": "What to book, in what order, and what catches people out on the day — for HDB flats, condos and landed homes.",
     "description": "Moving house in Singapore: a week-by-week checklist, what condos and HDB blocks require on move day, and a free planner that dates every task for you.",
-    "blurb": "A week-by-week checklist and the move-day rules condos and HDB blocks actually enforce.",
+    "blurb": "What to book, and when, so the day goes smoothly.",
     "guides": ["moving-house-checklist-singapore", "condo-hdb-move-day-rules"],
     "tools": ["moving-planner"],
     "furtherReading": [
@@ -30,7 +30,7 @@
     "h1": "A new home, <em>set up in the right order.</em>",
     "lede": "From key collection to the first night — inspect, renovate, clean, then move in, and don't let one step undo another.",
     "description": "Moving into a new BTO or freshly renovated home in Singapore: what to check at key collection, how defects work, and what to do after renovation.",
-    "blurb": "Key collection, defects, renovation and the post-reno clean — in the order that saves you money.",
+    "blurb": "Key collection to first night, in the right order.",
     "guides": ["bto-key-collection-to-move-in", "after-renovation-checklist"],
     "getHelp": [
       { "brand": "hometoclean", "link": "post-reno" },
@@ -47,7 +47,7 @@
     "h1": "Hand back the keys, <em>keep your deposit.</em>",
     "lede": "What your tenancy agreement usually asks of you at the end, what landlords commonly deduct for, and how to prove the flat's condition.",
     "description": "Guides for tenants leaving a rental in Singapore: a handover checklist that protects your deposit, and the small repairs worth doing before the final inspection.",
-    "blurb": "The handover checklist that protects your deposit, and the repairs worth doing first.",
+    "blurb": "Hand back the keys and keep your deposit.",
     "guides": ["tenancy-handover-checklist", "handyman-fixes-before-handover"],
     "getHelp": [
       { "brand": "hometoclean", "link": "move-out" },
@@ -64,7 +64,7 @@
     "h1": "Clearing out, <em>the right way.</em>",
     "lede": "What can be recycled, what needs special handling, and what shouldn't go down the refuse chute.",
     "description": "Decluttering and disposal in Singapore: where e-waste, batteries and old appliances go, how to wipe your data first, and where to dispose of bulky items.",
-    "blurb": "Where e-waste, batteries and old appliances go — and what never belongs in the refuse chute.",
+    "blurb": "What goes where, and what never goes down the chute.",
     "guides": ["e-waste-singapore"],
     "furtherReading": [
       { "brand": "junktoclear", "article": "bulky-items" },
@@ -85,7 +85,7 @@
     "h1": "Keeping a home <em>in good repair.</em>",
     "lede": "The maintenance Singapore's heat and humidity demand, and how to tell a DIY job from one that needs a professional.",
     "description": "Keeping a Singapore home in good repair: how often to service your aircon, what a chemical wash really is, and how to handle pests in HDB flats and condos.",
-    "blurb": "Aircon servicing explained, and pest control — what you can handle and when to call someone.",
+    "blurb": "Aircon, pests and the upkeep our climate demands.",
     "guides": ["aircon-servicing-guide", "pest-control-hdb-condo"],
     "getHelp": [
       { "brand": "skillstofix", "link": "aircon" },

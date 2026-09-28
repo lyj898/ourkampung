@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460">
+  <defs>
+    <pattern id="winA" width="50" height="30" patternUnits="userSpaceOnUse" x="92" y="132"><rect width="26" height="16" rx="2" fill="#A9C1CB"/><rect y="16" width="26" height="3" fill="#E3CFAA"/></pattern>
+    <pattern id="corB" width="40" height="30" patternUnits="userSpaceOnUse" x="385" y="84"><rect width="40" height="17" fill="#B7CCAE"/><rect x="9" y="3" width="11" height="14" rx="1.5" fill="#8FA886"/><rect x="25" y="4" width="9" height="7" rx="1" fill="#E9F0E4"/><rect y="17" width="40" height="13" fill="#D3E3CC"/></pattern>
+    <pattern id="winC" width="48" height="30" patternUnits="userSpaceOnUse" x="902" y="150"><rect width="24" height="16" rx="2" fill="#A9C1CB"/><rect y="16" width="24" height="3" fill="#E4B495"/></pattern>
+    <pattern id="winD" width="36" height="26" patternUnits="userSpaceOnUse" x="590" y="182"><rect width="18" height="12" rx="2" fill="#B9CCD7"/></pattern>
+    <path id="tee" d="M-7 0h14l5 4-3 4-3-2v11h-12v-11l-3 2-3-4z"/>
+  </defs>
+
+  <!-- sky -->
+  <circle cx="1000" cy="98" r="48" fill="#F2D28B"/>
+  <path d="M120 70h70a16 16 0 0 0 0-32 24 24 0 0 0-44-6 18 18 0 0 0-26 38z" fill="#FFFFFF" opacity=".75"/>
+  <path d="M690 92h84a15 15 0 0 0 0-30 22 22 0 0 0-40-8 17 17 0 0 0-44 38z" fill="#FFFFFF" opacity=".75"/>
+  <path d="M820 58q7-7 14 0q7-7 14 0M852 40q5-5 10 0q5-5 10 0" fill="none" stroke="#655F55" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- back block (blue) -->
+  <rect x="575" y="166" width="300" height="234" fill="#D6E3EA"/>
+  <rect x="575" y="166" width="300" height="8" fill="#B9CCD7"/>
+  <rect x="590" y="182" width="270" height="170" fill="url(#winD)"/>
+
+  <!-- rain tree behind the lorry -->
+  <rect x="634" y="250" width="12" height="150" fill="#8A6A4F"/>
+  <ellipse cx="596" cy="258" rx="54" ry="26" fill="#7E9468"/>
+  <ellipse cx="690" cy="252" rx="58" ry="28" fill="#7E9468"/>
+  <ellipse cx="640" cy="236" rx="86" ry="36" fill="#8FA476"/>
+
+  <!-- block A (cream, void deck) -->
+  <rect x="180" y="84" width="60" height="26" fill="#E3CFAA"/>
+  <rect x="192" y="74" width="36" height="12" rx="2" fill="#D9C39B"/>
+  <rect x="70" y="110" width="260" height="235" fill="#F1E2C4"/>
+  <rect x="66" y="104" width="268" height="12" rx="2" fill="#D9926A"/>
+  <rect x="92" y="132" width="226" height="196" fill="url(#winA)"/>
+  <rect x="142" y="162" width="26" height="16" rx="2" fill="#F2D28B"/>
+  <rect x="242" y="222" width="26" height="16" rx="2" fill="#F2D28B"/>
+  <rect x="192" y="282" width="26" height="16" rx="2" fill="#F2D28B"/>
+  <rect x="70" y="338" width="260" height="10" fill="#E3CFAA"/>
+  <rect x="70" y="348" width="260" height="50" fill="#DCC7A0"/>
+  <rect x="76" y="348" width="12" height="50" fill="#F1E2C4"/>
+  <rect x="148" y="348" width="12" height="50" fill="#F1E2C4"/>
+  <rect x="250" y="348" width="12" height="50" fill="#F1E2C4"/>
+  <rect x="318" y="348" width="12" height="50" fill="#F1E2C4"/>
+
+  <!-- laundry poles off block A -->
+  <g stroke="#8A6A4F" stroke-width="2.5" stroke-linecap="round">
+    <path d="M330 150h44M330 210h44M330 270h44"/>
+  </g>
+  <use href="#tee" x="344" y="152" fill="#E39C8A"/>
+  <use href="#tee" x="364" y="152" fill="#6F93A8"/>
+  <use href="#tee" x="348" y="212" fill="#E3B448"/>
+  <rect x="360" y="212" width="10" height="18" rx="1.5" fill="#FBF8F1"/>
+  <use href="#tee" x="346" y="272" fill="#7E8A6E"/>
+  <use href="#tee" x="366" y="272" fill="#C9764B"/>
+
+  <!-- block B (mint, corridor side) -->
+  <rect x="440" y="44" width="70" height="26" fill="#BCD0B3"/>
+  <rect x="385" y="70" width="175" height="330" fill="#D3E3CC"/>
+  <rect x="381" y="64" width="183" height="12" rx="2" fill="#E3B448"/>
+  <rect x="385" y="84" width="175" height="262" fill="url(#corB)"/>
+  <rect x="385" y="346" width="175" height="54" fill="#C8DABF"/>
+  <rect x="440" y="352" width="66" height="48" rx="3" fill="#9CB391"/>
+  <rect x="446" y="358" width="54" height="42" rx="2" fill="#B6C9AC"/>
+
+  <!-- block C (peach, void deck) -->
+  <rect x="960" y="106" width="70" height="26" fill="#E4B495"/>
+  <rect x="880" y="130" width="240" height="218" fill="#F3CDB3"/>
+  <rect x="876" y="124" width="248" height="12" rx="2" fill="#7E8A6E"/>
+  <rect x="902" y="150" width="216" height="166" fill="url(#winC)"/>
+  <rect x="950" y="180" width="24" height="16" rx="2" fill="#F2D28B"/>
+  <rect x="1046" y="270" width="24" height="16" rx="2" fill="#F2D28B"/>
+  <rect x="880" y="340" width="240" height="10" fill="#E4B495"/>
+  <rect x="880" y="350" width="240" height="48" fill="#DDAA89"/>
+  <rect x="886" y="350" width="12" height="48" fill="#F3CDB3"/>
+  <rect x="970" y="350" width="12" height="48" fill="#F3CDB3"/>
+  <rect x="1044" y="350" width="12" height="48" fill="#F3CDB3"/>
+  <rect x="1108" y="350" width="12" height="48" fill="#F3CDB3"/>
+
+  <!-- laundry poles off block C -->
+  <g stroke="#8A6A4F" stroke-width="2.5" stroke-linecap="round">
+    <path d="M880 176h-40M880 236h-40"/>
+  </g>
+  <use href="#tee" x="866" y="178" fill="#6F93A8"/>
+  <use href="#tee" x="848" y="178" fill="#FBF8F1"/>
+  <rect x="858" y="238" width="10" height="20" rx="1.5" fill="#E39C8A"/>
+  <use href="#tee" x="850" y="238" fill="#E3B448"/>
+
+  <!-- side trees -->
+  <rect x="26" y="300" width="10" height="100" fill="#8A6A4F"/>
+  <ellipse cx="58" cy="306" rx="40" ry="24" fill="#7E9468"/>
+  <ellipse cx="24" cy="282" rx="56" ry="36" fill="#8FA476"/>
+  <rect x="1164" y="296" width="10" height="104" fill="#8A6A4F"/>
+  <ellipse cx="1140" cy="300" rx="36" ry="22" fill="#7E9468"/>
+  <ellipse cx="1172" cy="276" rx="58" ry="34" fill="#8FA476"/>
+
+  <!-- ground -->
+  <rect x="0" y="398" width="1200" height="62" fill="#EFE8DB"/>
+
+  <!-- void deck A: birdcage, stone table, two neighbours -->
+  <path d="M112 348v8" stroke="#8A6A4F" stroke-width="1.5"/>
+  <path d="M102 376v-10a10 10 0 0 1 20 0v10z" fill="none" stroke="#8A6A4F" stroke-width="1.6"/>
+  <path d="M107 376v-14M112 376v-18M117 376v-14" stroke="#8A6A4F" stroke-width="1"/>
+  <rect x="100" y="375" width="24" height="3" rx="1" fill="#8A6A4F"/>
+  <circle cx="112" cy="369" r="3.2" fill="#E3B448"/>
+  <rect x="198" y="372" width="14" height="26" fill="#BDB3A0"/>
+  <ellipse cx="205" cy="372" rx="27" ry="6" fill="#CFC6B5"/>
+  <rect x="196" y="362" width="7" height="8" rx="1.5" fill="#FBF8F1"/>
+  <rect x="208" y="364" width="6" height="6" rx="1.5" fill="#C9764B"/>
+  <g transform="translate(172 398)">
+    <rect x="-8" y="-14" width="16" height="14" rx="3" fill="#BDB3A0"/>
+    <rect x="-4" y="-24" width="22" height="9" rx="4" fill="#3E4A5C"/>
+    <rect x="12" y="-24" width="7" height="24" rx="3" fill="#3E4A5C"/>
+    <rect x="-10" y="-54" width="20" height="34" rx="9" fill="#FBF8F1"/>
+    <path d="M4 -45l14 8" stroke="#A86F4C" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="0" cy="-64" r="9.5" fill="#A86F4C"/>
+    <path d="M-9.5 -65a9.5 9.5 0 0 1 19 0z" fill="#BDB5A6"/>
+  </g>
+  <g transform="translate(238 398) scale(-1 1)">
+    <rect x="-8" y="-14" width="16" height="14" rx="3" fill="#BDB3A0"/>
+    <rect x="-4" y="-24" width="22" height="9" rx="4" fill="#6F93A8"/>
+    <rect x="12" y="-24" width="7" height="24" rx="3" fill="#6F93A8"/>
+    <rect x="-10" y="-54" width="20" height="34" rx="9" fill="#E39C8A"/>
+    <path d="M4 -45l14 8" stroke="#F0C8A0" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="0" cy="-64" r="9.5" fill="#F0C8A0"/>
+    <path d="M-10 -63a10 10 0 0 1 20 0c0 4-3 6-3 6v-6h-14v6s-3-2-3-6z" fill="#2C2A24"/>
+  </g>
+  <ellipse cx="300" cy="392" rx="12" ry="8" fill="#9DAE86"/>
+  <rect x="292" y="390" width="16" height="10" rx="2" fill="#C9764B"/>
+
+  <!-- two neighbours carrying a sofa out of block B -->
+  <rect x="416" y="378" width="5" height="10" fill="#7C4124"/>
+  <rect x="519" y="378" width="5" height="10" fill="#7C4124"/>
+  <rect x="426" y="344" width="88" height="22" rx="7" fill="#B5663D"/>
+  <rect x="420" y="360" width="100" height="20" rx="6" fill="#C9764B"/>
+  <rect x="412" y="352" width="16" height="28" rx="7" fill="#B5663D"/>
+  <rect x="512" y="352" width="16" height="28" rx="7" fill="#B5663D"/>
+  <g transform="translate(398 400)">
+    <rect x="-8" y="-30" width="6" height="30" rx="3" fill="#4A463D"/>
+    <rect x="2" y="-30" width="6" height="30" rx="3" fill="#4A463D"/>
+    <rect x="-11" y="-64" width="22" height="38" rx="9" fill="#6F93A8"/>
+    <path d="M6 -52l12 16" stroke="#D9A07A" stroke-width="5.5" stroke-linecap="round"/>
+    <circle cx="0" cy="-75" r="10" fill="#D9A07A"/>
+    <path d="M-10 -76a10 10 0 0 1 20 0z" fill="#2C2A24"/>
+  </g>
+  <g transform="translate(542 400) scale(-1 1)">
+    <rect x="-8" y="-30" width="6" height="30" rx="3" fill="#3E4A5C"/>
+    <rect x="2" y="-30" width="6" height="30" rx="3" fill="#3E4A5C"/>
+    <rect x="-11" y="-64" width="22" height="38" rx="9" fill="#E3B448"/>
+    <path d="M6 -52l12 16" stroke="#7A4E34" stroke-width="5.5" stroke-linecap="round"/>
+    <circle cx="0" cy="-75" r="10" fill="#7A4E34"/>
+    <path d="M-10 -76a10 10 0 0 1 20 0z" fill="#2C2A24"/>
+  </g>
+
+  <!-- boxes waiting by the lorry -->
+  <rect x="562" y="370" width="32" height="28" rx="2" fill="#D9A86C"/>
+  <rect x="562" y="381" width="32" height="4" fill="#C4935A"/>
+  <rect x="566" y="346" width="26" height="24" rx="2" fill="#E2B67E"/>
+  <rect x="566" y="355" width="26" height="4" fill="#C4935A"/>
+
+  <!-- lorry -->
+  <rect x="600" y="298" width="170" height="82" rx="4" fill="#FBF8F1" stroke="#E1D8C7" stroke-width="2"/>
+  <rect x="600" y="352" width="170" height="8" fill="#96502D"/>
+  <path d="M634 304v44M668 304v44M702 304v44M736 304v44" stroke="#ECE4D5" stroke-width="3"/>
+  <path d="M772 328h42l28 28v26h-70z" fill="#566247"/>
+  <path d="M780 336h30l20 20h-50z" fill="#C4D5DC"/>
+  <rect x="598" y="378" width="248" height="8" rx="2" fill="#4A463D"/>
+  <rect x="836" y="366" width="10" height="8" rx="2" fill="#F2D28B"/>
+  <circle cx="640" cy="388" r="13" fill="#2C2A24"/><circle cx="640" cy="388" r="5.5" fill="#A8A090"/>
+  <circle cx="808" cy="388" r="13" fill="#2C2A24"/><circle cx="808" cy="388" r="5.5" fill="#A8A090"/>
+
+  <!-- mover with a box, heading for block C -->
+  <g transform="translate(878 400)">
+    <rect x="-8" y="-30" width="6" height="30" rx="3" fill="#3E4A5C"/>
+    <rect x="2" y="-30" width="6" height="30" rx="3" fill="#3E4A5C"/>
+    <rect x="-11" y="-64" width="22" height="38" rx="9" fill="#7E8A6E"/>
+    <circle cx="0" cy="-75" r="10" fill="#C68B63"/>
+    <path d="M-11 -76a11 10 0 0 1 22 0h4v3h-26z" fill="#96502D"/>
+    <rect x="4" y="-60" width="26" height="22" rx="2" fill="#D9A86C"/>
+    <rect x="4" y="-51" width="26" height="4" fill="#C4935A"/>
+    <path d="M4 -50h10" stroke="#C68B63" stroke-width="5.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- void deck C: a wave, a kid with a ball, the block cat -->
+  <g transform="translate(1008 398)">
+    <rect x="-8" y="-30" width="6" height="30" rx="3" fill="#4A463D"/>
+    <rect x="2" y="-30" width="6" height="30" rx="3" fill="#4A463D"/>
+    <rect x="-11" y="-64" width="22" height="38" rx="9" fill="#C9764B"/>
+    <path d="M8 -58l10 -18" stroke="#F0C8A0" stroke-width="5.5" stroke-linecap="round"/>
+    <path d="M-8 -54l-5 16" stroke="#F0C8A0" stroke-width="5.5" stroke-linecap="round"/>
+    <circle cx="0" cy="-75" r="10" fill="#F0C8A0"/>
+    <path d="M-10 -74a10 10 0 0 1 20 0v8c-3-2-3-7-3-9h-14c0 2 0 7-3 9z" fill="#5C3B28"/>
+  </g>
+  <g transform="translate(944 400) scale(.72)">
+    <rect x="-8" y="-30" width="6" height="30" rx="3" fill="#6F93A8"/>
+    <rect x="2" y="-30" width="6" height="30" rx="3" fill="#6F93A8"/>
+    <rect x="-11" y="-62" width="22" height="36" rx="9" fill="#E3B448"/>
+    <path d="M8 -52l8 12M-8 -52l-8 12" stroke="#A86F4C" stroke-width="5.5" stroke-linecap="round"/>
+    <circle cx="0" cy="-74" r="11" fill="#A86F4C"/>
+    <path d="M-11 -75a11 11 0 0 1 22 0z" fill="#2C2A24"/>
+  </g>
+  <circle cx="922" cy="392" r="7" fill="#FBF8F1" stroke="#C9764B" stroke-width="2"/>
+  <g transform="translate(1076 398)">
+    <path d="M14 -6c10 0 14-10 8-16" fill="none" stroke="#D9A441" stroke-width="4" stroke-linecap="round"/>
+    <ellipse cx="6" cy="-9" rx="12" ry="9" fill="#D9A441"/>
+    <circle cx="-5" cy="-21" r="7.5" fill="#D9A441"/>
+    <path d="M-11 -25l1-8 5 5zM1 -25l-1-8-5 5z" fill="#D9A441"/>
+    <circle cx="-7.5" cy="-21.5" r="1.1" fill="#2C2A24"/><circle cx="-2.5" cy="-21.5" r="1.1" fill="#2C2A24"/>
+  </g>
+
+  <!-- shrubs -->
+  <ellipse cx="350" cy="396" rx="24" ry="13" fill="#9DAE86"/>
+  <ellipse cx="366" cy="398" rx="16" ry="9" fill="#8FA476"/>
+  <ellipse cx="860" cy="398" rx="14" ry="8" fill="#9DAE86"/>
+  <ellipse cx="1140" cy="396" rx="26" ry="13" fill="#9DAE86"/>
+  <ellipse cx="1120" cy="398" rx="14" ry="8" fill="#8FA476"/>
+  <ellipse cx="46" cy="396" rx="28" ry="13" fill="#9DAE86"/>
+</svg>

@@ -105,7 +105,7 @@ hub, and short copy on every page except the guides themselves.
 |---|---|
 | Moving | HomeToMoved |
 | Cleaning | HomeToClean |
-| Disposal / clearing | JunkToClear |
+| Disposal / clearing | Junk to Clear |
 | Handyman, aircon, pest control | SkillsToFix |
 
 SkillsToFix's live site also sells cleaning, disposal and transport — ignore that for routing.
@@ -116,7 +116,7 @@ SkillsToFix's live site also sells cleaning, disposal and transport — ignore t
   global CLAUDE.md.)
 - **Always disclose** that OurKampung is run by the same team. Never publish "best of" lists or
   rank our own businesses against competitors.
-- **Don't compete with JunkToClear's blog.** It already covers bulky-item disposal, decluttering
+- **Don't compete with Junk to Clear's blog.** It already covers bulky-item disposal, decluttering
   before a move, hiring movers and choosing a disposal company. Link those as `furtherReading`
   on a hub rather than writing rival guides.
 - **No permutation pages** — no page per town, per theme, or per service × area. The site was

@@ -31,11 +31,11 @@
   {
     "id": "junktoclear",
     "core": true,
-    "name": "JunkToClear",
+    "name": "Junk to Clear",
     "url": "https://junktoclear.com.sg/",
     "does": "Disposal and clearance of furniture, bulky items and household junk",
     "links": {
-      "home":        { "label": "JunkToClear",             "url": "https://junktoclear.com.sg/" },
+      "home":        { "label": "Junk to Clear",             "url": "https://junktoclear.com.sg/" },
       "residential": { "label": "Household disposal",      "url": "https://junktoclear.com.sg/services/residential-waste-disposal-singapore/" }
     },
     "articles": {

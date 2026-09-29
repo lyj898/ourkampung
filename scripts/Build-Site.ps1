@@ -309,7 +309,7 @@ $footer = @"
     <div><h2 class="fh">Guides</h2><ul>$hubLinks</ul></div>
     <div><h2 class="fh">OurKampung</h2><ul><li><a href="/about/">About &amp; how we work</a></li><li><a href="/tools/moving-planner/">Moving planner</a></li><li><a href="/contact/">Contact the editors</a></li></ul></div>
   </div>
-  <p class="footer-disclose">OurKampung is written by the team behind JunkToClear, HomeToClean, HomeToMoved and SkillsToFix. We link to them only where a guide covers something they do. <a href="/about/">How we work</a>.</p>
+  <p class="footer-disclose">OurKampung is written by the team behind Junk to Clear, HomeToClean, HomeToMoved and SkillsToFix. We link to them only where a guide covers something they do. <a href="/about/">How we work</a>.</p>
   <div class="footer-bottom"><p>&copy; $year OurKampung &middot; ourkampung.com</p></div>
 </div></footer>
 "@

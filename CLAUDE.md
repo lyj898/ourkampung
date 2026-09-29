@@ -4,6 +4,9 @@ ourkampung.com is a **guide-only** site about running a Singapore home: moving, 
 home, ending a tenancy, decluttering and disposal, repairs and upkeep. It supports four sister
 businesses run by the same team. It takes no bookings and gives no quotes.
 
+Shared rules for the whole JTC family of sites (lanes, link rules, brand facts, shared facts). They win
+over anything below: @../jtc-family/PORTFOLIO.md
+
 Until 2026-09-28 this domain was a kids' party-planning site. None of that content remains, and
 old party URLs 404 on purpose (see **History**).
 

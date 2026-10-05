@@ -260,11 +260,11 @@ $icons = @{
 # Each family site keeps one icon and one colour everywhere it appears.
 $brandIcon = @{
     hometomoved = 'truck'; hometoclean = 'sparkle'; junktoclear = 'bin'; pesttoclear = 'bug'
-    aircontocool = 'snowflake'; brokentofixed = 'wrench'; swyftclear = 'key'; relocado = 'plane'
+    aircontocool = 'snowflake'; brokentofixed = 'wrench'; swyftclear = 'key'; relocado = 'plane'; spacetoreno = 'roller'
 }
 $brandHue = @{
     hometomoved = 'moving'; hometoclean = 'new-home'; junktoclear = 'declutter-and-dispose'; pesttoclear = 'ending-a-tenancy'
-    aircontocool = 'moving'; brokentofixed = 'repairs-and-upkeep'; swyftclear = 'declutter-and-dispose'; relocado = 'new-home'
+    aircontocool = 'moving'; brokentofixed = 'repairs-and-upkeep'; swyftclear = 'declutter-and-dispose'; relocado = 'new-home'; spacetoreno = 'ending-a-tenancy'
 }
 # The family sites OurKampung fronts as their mother site ("sister" in
 # data/brands.json), in footer order. Links to them from the footer, the

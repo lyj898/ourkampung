@@ -111,5 +111,17 @@
       "leaving-checklist": { "label": "Leaving Singapore checklist",   "url": "https://relocado.asia/leaving-singapore/checklist/" },
       "leaving-planner":   { "label": "Leaving Singapore planner",     "url": "https://relocado.asia/leaving-singapore/planner/" }
     }
+  },
+  {
+    "id": "spacetoreno",
+    "name": "SpaceToReno",
+    "url": "https://spacetoreno.com/",
+    "does": "Guides to renovating a home in Singapore",
+    "sister": { "order": 8, "kind": "guide", "when": "Renovating a home, from planning to the end of the works." },
+    "links": {
+      "home":                   { "label": "SpaceToReno",                                     "url": "https://spacetoreno.com/" },
+      "designer-or-contractor": { "label": "Interior designer or contractor? How to choose", "url": "https://spacetoreno.com/hiring/interior-designer-or-contractor/" },
+      "what-needs-approval":    { "label": "Which renovation works need approval",           "url": "https://spacetoreno.com/rules-and-permits/what-needs-approval/" }
+    }
   }
 ]

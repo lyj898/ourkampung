@@ -1,10 +1,10 @@
 [
   {
     "id": "hometomoved",
-    "core": true,
     "name": "HomeToMoved",
     "url": "https://hometomoved.com/",
     "does": "Moving and packing for HDB flats, condos and landed homes",
+    "sister": { "order": 1, "kind": "service", "when": "Moving within Singapore: an HDB flat, a condo or a landed home." },
     "links": {
       "home":     { "label": "HomeToMoved",           "url": "https://hometomoved.com/" },
       "hdb":      { "label": "HDB moving",            "url": "https://hometomoved.com/moving/hdb-moving/" },
@@ -16,10 +16,10 @@
   },
   {
     "id": "hometoclean",
-    "core": true,
     "name": "HomeToClean",
     "url": "https://hometoclean.com/",
     "does": "Move-in, move-out, deep and post-renovation cleaning",
+    "sister": { "order": 2, "kind": "service", "when": "Cleaning before you move in, after you move out, or after renovation." },
     "links": {
       "home":      { "label": "HomeToClean",              "url": "https://hometoclean.com/" },
       "move-out":  { "label": "Move-out cleaning",        "url": "https://hometoclean.com/cleaning/move-out-cleaning/" },
@@ -30,7 +30,6 @@
   },
   {
     "id": "junktoclear",
-    "core": true,
     "name": "Junk to Clear",
     "url": "https://junktoclear.com.sg/",
     "does": "Disposal and clearance of furniture, bulky items and household junk",
@@ -47,7 +46,6 @@
   },
   {
     "id": "skillstofix",
-    "core": true,
     "name": "SkillsToFix",
     "url": "https://skillstofix.com/",
     "does": "Handyman repairs, aircon servicing and pest control",
@@ -59,10 +57,54 @@
     }
   },
   {
+    "id": "pesttoclear",
+    "name": "PestToClear",
+    "url": "https://pesttoclear.com/",
+    "does": "Pest control, through a partner pest-control firm",
+    "sister": { "order": 3, "kind": "service", "when": "Cockroaches, termites, bed bugs, rodents, ants or mosquitoes." },
+    "links": {
+      "home": { "label": "PestToClear",  "url": "https://pesttoclear.com/" },
+      "pest": { "label": "Pest control", "url": "https://pesttoclear.com/pest-control/" }
+    }
+  },
+  {
+    "id": "aircontocool",
+    "name": "AirconToCool",
+    "url": "https://aircontocool.com/",
+    "does": "Aircon servicing, chemical washes and repairs, through a partner aircon firm",
+    "sister": { "order": 4, "kind": "service", "when": "Aircon servicing, chemical washes, gas top-ups and repairs." },
+    "links": {
+      "home":   { "label": "AirconToCool",     "url": "https://aircontocool.com/" },
+      "aircon": { "label": "Aircon servicing", "url": "https://aircontocool.com/aircon-servicing/" }
+    }
+  },
+  {
+    "id": "brokentofixed",
+    "name": "BrokenToFixed",
+    "url": "https://brokentofixed.com/",
+    "does": "Handyman jobs and small repairs, through a partner handyman",
+    "sister": { "order": 5, "kind": "service", "when": "Handyman jobs: furniture assembly, wall mounting, doors and locks, taps, sealant and small repairs." },
+    "links": {
+      "home":     { "label": "BrokenToFixed",    "url": "https://brokentofixed.com/" },
+      "handyman": { "label": "Handyman repairs", "url": "https://brokentofixed.com/handyman/" }
+    }
+  },
+  {
+    "id": "swyftclear",
+    "name": "SwyftClear",
+    "url": "https://swyftclear.com/",
+    "does": "Guides for a property you're responsible for but don't live in",
+    "sister": { "order": 6, "kind": "guide", "when": "A property you're responsible for but don't live in: an inherited home, a rental between tenants, a condo you manage, business premises." },
+    "links": {
+      "home": { "label": "SwyftClear", "url": "https://swyftclear.com/" }
+    }
+  },
+  {
     "id": "relocado",
     "name": "Relocado",
     "url": "https://relocado.asia/",
     "does": "Guides to moving into and out of Singapore",
+    "sister": { "order": 7, "kind": "guide", "when": "Moving out of Singapore, or into it: if you're getting on a plane." },
     "links": {
       "home":              { "label": "Relocado",                     "url": "https://relocado.asia/" },
       "diplomatic-clause": { "label": "The diplomatic clause",         "url": "https://relocado.asia/leaving-singapore/diplomatic-clause/" },

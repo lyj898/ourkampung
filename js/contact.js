@@ -39,9 +39,20 @@
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
-        _subject: 'Message for the OurKampung editors',
+        _subject: 'OurKampung: message for the editors (' + location.pathname + ')',
         Name: name, Email: email, Guide: guide || '-', Message: msg
       })
-    }).then(function (r) { finish(r.ok); }).catch(function () { finish(false); });
+    }).then(function (r) {
+      // FormSubmit can answer HTTP 200 with success "false", so read the body.
+      return r.json().catch(function () { return {}; }).then(function (d) {
+        var ok = r.ok && (d.success === true || d.success === 'true');
+        // Counted only once FormSubmit confirms delivery (enhanced measurement's
+        // form_submit fires on every attempt). Editor messages aren't leads:
+        // OurKampung takes no enquiries, so keep this out of the family's
+        // generate_lead counts and don't make it a key event.
+        if (ok && typeof window.gtag === 'function') window.gtag('event', 'editor_message', { form_name: 'editors_contact' });
+        finish(ok);
+      });
+    }).catch(function () { finish(false); });
   });
 })();

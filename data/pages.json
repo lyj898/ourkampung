@@ -12,10 +12,20 @@
     "path": "/about/",
     "file": "content/pages/about.html",
     "title": "About OurKampung — Who Writes These Guides, and How | OurKampung",
-    "description": "Who writes OurKampung — the team behind Junk to Clear, HomeToClean, HomeToMoved and SkillsToFix — how we write, and when we link to our own businesses.",
+    "description": "Who writes OurKampung — the team behind Junk to Clear and its sister sites — how we write, and when we link to our own sites.",
     "schemaType": "AboutPage",
     "crumb": "About",
     "updated": "2026-09-28"
+  },
+  {
+    "id": "our-sites",
+    "path": "/our-sites/",
+    "file": "content/pages/our-sites.html",
+    "title": "Our Sites: OurKampung and Its Sister Sites | OurKampung",
+    "description": "OurKampung and its sister sites, all run by one team: which one to use for moving, cleaning, pests, aircon, handyman jobs, property and relocation.",
+    "schemaType": "WebPage",
+    "crumb": "Our sites",
+    "updated": "2026-10-05"
   },
   {
     "id": "contact",

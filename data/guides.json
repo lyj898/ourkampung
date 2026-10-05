@@ -76,7 +76,7 @@
     "getHelp": [
       { "brand": "hometoclean", "link": "post-reno" },
       { "brand": "hometoclean", "link": "move-in" },
-      { "brand": "skillstofix", "link": "handyman" },
+      { "brand": "brokentofixed", "link": "handyman" },
       { "brand": "hometomoved", "link": "hdb" }
     ]
   },
@@ -103,8 +103,8 @@
     "getHelp": [
       { "brand": "hometoclean", "link": "post-reno" },
       { "brand": "junktoclear", "link": "residential" },
-      { "brand": "skillstofix", "link": "handyman" },
-      { "brand": "skillstofix", "link": "aircon" }
+      { "brand": "brokentofixed", "link": "handyman" },
+      { "brand": "aircontocool", "link": "aircon" }
     ]
   },
   {
@@ -130,8 +130,8 @@
     "related": ["handyman-fixes-before-handover", "moving-house-checklist-singapore"],
     "getHelp": [
       { "brand": "hometoclean", "link": "move-out" },
-      { "brand": "skillstofix", "link": "handyman" },
-      { "brand": "skillstofix", "link": "aircon" },
+      { "brand": "brokentofixed", "link": "handyman" },
+      { "brand": "aircontocool", "link": "aircon" },
       { "brand": "junktoclear", "link": "residential" }
     ]
   },
@@ -156,8 +156,8 @@
     ],
     "related": ["tenancy-handover-checklist", "aircon-servicing-guide"],
     "getHelp": [
-      { "brand": "skillstofix", "link": "handyman" },
-      { "brand": "skillstofix", "link": "aircon" },
+      { "brand": "brokentofixed", "link": "handyman" },
+      { "brand": "aircontocool", "link": "aircon" },
       { "brand": "hometoclean", "link": "move-out" }
     ]
   },
@@ -208,8 +208,8 @@
     ],
     "related": ["pest-control-hdb-condo", "tenancy-handover-checklist"],
     "getHelp": [
-      { "brand": "skillstofix", "link": "aircon" },
-      { "brand": "skillstofix", "link": "handyman" }
+      { "brand": "aircontocool", "link": "aircon" },
+      { "brand": "brokentofixed", "link": "handyman" }
     ]
   },
   {
@@ -233,7 +233,7 @@
     ],
     "related": ["aircon-servicing-guide", "handyman-fixes-before-handover"],
     "getHelp": [
-      { "brand": "skillstofix", "link": "pest" },
+      { "brand": "pesttoclear", "link": "pest" },
       { "brand": "junktoclear", "link": "residential" }
     ]
   }

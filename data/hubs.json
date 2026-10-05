@@ -35,7 +35,7 @@
     "getHelp": [
       { "brand": "hometoclean", "link": "post-reno" },
       { "brand": "hometoclean", "link": "move-in" },
-      { "brand": "skillstofix", "link": "handyman" }
+      { "brand": "brokentofixed", "link": "handyman" }
     ]
   },
   {
@@ -51,7 +51,7 @@
     "guides": ["tenancy-handover-checklist", "handyman-fixes-before-handover"],
     "getHelp": [
       { "brand": "hometoclean", "link": "move-out" },
-      { "brand": "skillstofix", "link": "handyman" },
+      { "brand": "brokentofixed", "link": "handyman" },
       { "brand": "junktoclear", "link": "residential" }
     ]
   },
@@ -88,9 +88,9 @@
     "blurb": "Aircon, pests and the upkeep our climate demands.",
     "guides": ["aircon-servicing-guide", "pest-control-hdb-condo"],
     "getHelp": [
-      { "brand": "skillstofix", "link": "aircon" },
-      { "brand": "skillstofix", "link": "pest" },
-      { "brand": "skillstofix", "link": "handyman" }
+      { "brand": "aircontocool", "link": "aircon" },
+      { "brand": "pesttoclear", "link": "pest" },
+      { "brand": "brokentofixed", "link": "handyman" }
     ]
   }
 ]

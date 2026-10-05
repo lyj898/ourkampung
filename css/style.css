@@ -261,6 +261,23 @@ h1 em, h2 em { font-style: italic; color: var(--terra-deep); }
 .brand-tile strong { font-family: var(--font-display); font-size: 1.2rem; font-weight: 500; }
 .brand-tile span:last-child { font-size: var(--text-sm); color: var(--muted); }
 
+/* Sister-site tiles (home, /our-sites/): each one links out, nofollow */
+.sister-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; list-style: none; }
+.sister-grid.row5 { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+.sister-tile a {
+  display: flex; flex-direction: column; gap: .3rem; height: 100%; padding: 1.2rem 1.25rem 1.3rem;
+  background: var(--surface); color: var(--ink); text-decoration: none;
+  border: 1px solid var(--border-soft); border-radius: var(--radius);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+.sister-tile a:hover { color: var(--ink); transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--hub-deep); }
+.sister-tile .gh-icon { margin-bottom: .45rem; }
+.st-kind { font-size: var(--text-xs); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--hub-deep); }
+.sister-tile strong { font-family: var(--font-display); font-size: 1.22rem; font-weight: 500; }
+.sister-tile:not(.is-here) strong::after { content: " \2197"; font-family: var(--font-body); font-size: .9rem; color: var(--hub-deep); }
+.st-when { font-size: var(--text-sm); line-height: 1.45; color: var(--muted); }
+.sister-tile.is-here a { background: var(--sage-tint); border-style: dashed; }
+
 /* Numbered "where to start" steps on hub pages */
 .steps { display: grid; gap: .7rem; list-style: none; counter-reset: step; }
 .steps li { position: relative; padding: 1rem 1.2rem 1rem 3.7rem; background: var(--surface); border: 1px solid var(--border-soft); border-radius: var(--radius); counter-increment: step; }
@@ -270,6 +287,8 @@ h1 em, h2 em { font-style: italic; color: var(--terra-deep); }
   font: 700 .9rem/1.85rem var(--font-body); text-align: center;
 }
 .steps a { text-underline-offset: 2px; }
+.steps-plain li { padding-left: 1.2rem; }
+.steps-plain li::before { display: none; }
 
 /* ============================================================
    GUIDE PAGES
@@ -445,7 +464,7 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--s
 .footer .brand { color: #F1ECE2; }
 .footer .brand .logo-mark { color: #C8D1BB; }
 .footer .logo-txt em { color: #E8B596; }
-.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2rem; }
 .footer-about p { max-width: 32ch; margin-top: .85rem; font-size: var(--text-sm); color: #CFC8BB; }
 .fh { margin-bottom: .85rem; font-family: var(--font-body); font-size: var(--text-xs); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #A89F90; }
 .footer ul { display: grid; gap: .5rem; list-style: none; font-size: var(--text-sm); }
@@ -469,6 +488,9 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--s
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
+  /* Touch-sized footer links (44px) where the nav is collapsed too. */
+  .footer ul { gap: 0; }
+  .footer ul a { display: inline-flex; align-items: center; min-height: 44px; }
   .nav-links, .nav-cta { display: none; }
   .burger { display: flex; }
   .mobile-menu { display: flex; }

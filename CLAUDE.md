@@ -1,8 +1,10 @@
 # Project Rules — OurKampung
 
 ourkampung.com is a **guide-only** site about running a Singapore home: moving, moving into a new
-home, ending a tenancy, decluttering and disposal, repairs and upkeep. It supports four sister
-businesses run by the same team. It takes no bookings and gives no quotes.
+home, ending a tenancy, decluttering and disposal, repairs and upkeep. Since the 5 Oct 2026 family
+revamp (`../jtc-family/briefs/family-revamp.md`) it is also the **mother site** of the family: the front
+door to its sister sites, all run by the team behind Junk to Clear. It takes no bookings and gives no
+quotes; its form is "Contact the editors" and sends GA4 `editor_message`, never `generate_lead`.
 
 Shared rules for the whole JTC family of sites (lanes, link rules, brand facts, shared facts). They win
 over anything below: @../jtc-family/PORTFOLIO.md
@@ -37,7 +39,7 @@ powershell -ExecutionPolicy Bypass -File scripts/Build-Site.ps1
 |---|---|
 | `data/site.json` | site settings, GA4 ID, verification token, form endpoint |
 | `data/organization.json` | the OurKampung `Organization` node — single source of truth |
-| `data/brands.json` | the four businesses (`"core": true`), Relocado, and every deep link to them |
+| `data/brands.json` | Junk to Clear and the sister sites (`"sister"`: footer order, service or guide, when to use it), and every deep link to them |
 | `data/sources.json` | official sources guides cite (HDB, ICA, NEA, SP, CEA, ALBA) |
 | `data/hubs.json` | the five life-event hubs |
 | `data/guides.json` | guide metadata, FAQs, related guides, "get help" links |
@@ -85,7 +87,7 @@ hub, and short copy on every page except the guides themselves.
 - **The hero's ground is `--surface-alt`** (`#EFE8DB`), so the scene stands on the section below it.
   Change one and you must change the other.
 - **Hub colours** are CSS classes `.hub-<slug>` setting `--hub-tint`, `--hub-soft` and `--hub-deep`.
-  Guide and hub pages carry the class on `<body>`; tiles and cards carry their own. Each business
+  Guide and hub pages carry the class on `<body>`; tiles and cards carry their own. Each family site
   keeps one colour and one icon everywhere (`$brandHue` and `$brandIcon` in the build script).
   `--hub-deep` is text-safe on `--hub-tint`; check contrast before adding a colour.
 - **"At a glance" tiles** (`glance` in `data/guides.json`) sit at the top of each guide's short
@@ -103,17 +105,25 @@ hub, and short copy on every page except the guides themselves.
 
 | Reader needs | Link to |
 |---|---|
-| Moving | HomeToMoved |
+| Moving within Singapore | HomeToMoved |
 | Cleaning | HomeToClean |
 | Disposal / clearing | Junk to Clear |
-| Handyman, aircon, pest control | SkillsToFix |
+| Pest control | PestToClear |
+| Aircon | AirconToCool |
+| Handyman jobs | BrokenToFixed |
+| Renovation questions | SpaceToReno, named as a sister guide (add it once it's live) |
 
-SkillsToFix's live site also sells cleaning, disposal and transport — ignore that for routing.
+Don't link SkillsToFix: it's Junk to Clear's cross-sell site, and the family links its own pest,
+aircon and handyman sites instead (5 Oct 2026). PORTFOLIO.md's link table wins if this one drifts.
 
-- **Contextual links only.** Link a business where the guide covers something it does, mostly in
-  each guide's "Need a hand with this?" box. The footer names the four businesses as disclosure
-  but deliberately doesn't link them sitewide. (See also the cross-site linking rule in the user's
-  global CLAUDE.md.)
+- **Contextual links in the guides.** Link a family site where the guide covers something it does,
+  mostly in each guide's "Need a hand with this?" box. (See also the cross-site linking rule in the
+  user's global CLAUDE.md.)
+- **Family links, the one sitewide exception.** The footer's "Sister sites" column, the homepage's
+  "Sister sites" tiles and `/our-sites/` link every family site, generated from `"sister"` in
+  `data/brands.json`. They use the site name as link text and `rel="nofollow"` — they're for readers,
+  not rankings. Never `noreferrer` anywhere: it hides the visit from the sister site's GA4, and the
+  build fails on it.
 - **Always disclose** that OurKampung is run by the same team. Never publish "best of" lists or
   rank our own businesses against competitors.
 - **Don't compete with Junk to Clear's blog.** It already covers bulky-item disposal, decluttering

@@ -255,10 +255,22 @@ $icons = @{
     plane     = $svgOpen + '<path d="M10.5 13.5L3 11l1.5-2 8 1 4.5-5c1-1 2.8-1.3 3.4-.6.6.6.4 2.4-.6 3.4l-5 4.5 1 8-2 1.5-2.5-7.5-3.5 3v2.5L7 21l-1-3-3-1 1.2-1.3h2.5z"/></svg>'
     arrow     = $svgOpen + '<path d="M5 12h14M13 6l6 6-6 6"/></svg>'
     mail      = $svgOpen + '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>'
+    snowflake = $svgOpen + '<path d="M12 2.5v19M3.8 7.2l16.4 9.6M3.8 16.8l16.4-9.6"/><path d="M9.5 4.5L12 7l2.5-2.5M9.5 19.5L12 17l2.5 2.5"/></svg>'
 }
-# Each business keeps one icon and one colour everywhere it appears.
-$brandIcon = @{ hometomoved = 'truck'; hometoclean = 'sparkle'; junktoclear = 'bin'; skillstofix = 'wrench'; relocado = 'plane' }
-$brandHue  = @{ hometomoved = 'moving'; hometoclean = 'new-home'; junktoclear = 'declutter-and-dispose'; skillstofix = 'repairs-and-upkeep'; relocado = 'moving' }
+# Each family site keeps one icon and one colour everywhere it appears.
+$brandIcon = @{
+    hometomoved = 'truck'; hometoclean = 'sparkle'; junktoclear = 'bin'; pesttoclear = 'bug'
+    aircontocool = 'snowflake'; brokentofixed = 'wrench'; swyftclear = 'key'; relocado = 'plane'
+}
+$brandHue = @{
+    hometomoved = 'moving'; hometoclean = 'new-home'; junktoclear = 'declutter-and-dispose'; pesttoclear = 'ending-a-tenancy'
+    aircontocool = 'moving'; brokentofixed = 'repairs-and-upkeep'; swyftclear = 'declutter-and-dispose'; relocado = 'new-home'
+}
+# The family sites OurKampung fronts as their mother site ("sister" in
+# data/brands.json), in footer order. Links to them from the footer, the
+# homepage and /our-sites/ carry rel="nofollow" -- they're for readers, not
+# rankings -- and never noreferrer, so each site's GA4 still credits the visit.
+$sisters = @($brands | Where-Object { $_.PSObject.Properties['sister'] -and $_.sister } | Sort-Object { [int]$_.sister.order })
 
 $gaSnippet = @"
 <!-- Google tag (gtag.js) -->
@@ -293,11 +305,12 @@ function Build-Header([string]$active) {
     <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
   </div>
 </header>
-<div class="mobile-menu" id="mobile-menu">$($mob -join '')<a href="/tools/moving-planner/">Moving planner</a><a href="/about/">About OurKampung</a></div>
+<div class="mobile-menu" id="mobile-menu">$($mob -join '')<a href="/tools/moving-planner/">Moving planner</a><a href="/our-sites/">Our sites</a><a href="/about/">About OurKampung</a></div>
 "@
 }
 
 $hubLinks = ($hubs | ForEach-Object { "<li><a href=""/$($_.slug)/"">$(Esc $_.name)</a></li>" }) -join ''
+$sisterLinks = ($sisters | ForEach-Object { "<li><a href=""$($_.url)"" rel=""nofollow"">$(Esc $_.name)</a></li>" }) -join ''
 $year = (Get-Date).Year
 $footer = @"
 <footer class="footer"><div class="wrap">
@@ -307,9 +320,10 @@ $footer = @"
       <p>$(Esc $site.tagline).</p>
     </div>
     <div><h2 class="fh">Guides</h2><ul>$hubLinks</ul></div>
-    <div><h2 class="fh">OurKampung</h2><ul><li><a href="/about/">About &amp; how we work</a></li><li><a href="/tools/moving-planner/">Moving planner</a></li><li><a href="/contact/">Contact the editors</a></li></ul></div>
+    <div><h2 class="fh">Sister sites</h2><ul>$sisterLinks</ul></div>
+    <div><h2 class="fh">OurKampung</h2><ul><li><a href="/our-sites/">Our sites</a></li><li><a href="/about/">About &amp; how we work</a></li><li><a href="/tools/moving-planner/">Moving planner</a></li><li><a href="/contact/">Contact the editors</a></li></ul></div>
   </div>
-  <p class="footer-disclose">OurKampung is written by the team behind Junk to Clear, HomeToClean, HomeToMoved and SkillsToFix. We link to them only where a guide covers something they do. <a href="/about/">How we work</a>.</p>
+  <p class="footer-disclose">OurKampung and its sister sites are run by one team, the team behind Junk to Clear. Inside the guides, we link a sister site only at the step it helps with. <a href="/our-sites/">About our sites</a>.</p>
   <div class="footer-bottom"><p>&copy; $year OurKampung &middot; ourkampung.com</p></div>
 </div></footer>
 "@
@@ -447,6 +461,14 @@ function Brand-Icon([string]$id) {
     return "<span class=""gh-icon"">$ic</span>"
 }
 function Brand-Hue([string]$id) { if ($brandHue.ContainsKey($id)) { return "hub-$($brandHue[$id])" } return '' }
+function Sister-Tiles([string]$kind) {
+    # One linked tile per family site: what it is, and when to use it.
+    $list = if ($kind) { @($sisters | Where-Object { $_.sister.kind -eq $kind }) } else { $sisters }
+    $kindLabel = @{ service = 'Service site'; guide = 'Guide' }
+    return ($list | ForEach-Object {
+        "<li class=""sister-tile $(Brand-Hue $_.id)""><a href=""$($_.url)"" rel=""nofollow"">$(Brand-Icon $_.id)<span class=""st-kind"">$($kindLabel[$_.sister.kind])</span><strong>$(Esc $_.name)</strong><span class=""st-when"">$(Esc $_.sister.when)</span></a></li>"
+    }) -join ''
+}
 function Glance-Html($g) {
     # "At a glance" tiles for the short answer. Every item restates something
     # the guide's own short answer says -- never a new claim.
@@ -662,9 +684,6 @@ $toolHtml
 # ------------------------------------------------------- static pages ---
 $allGuideCards = ($guides | ForEach-Object { Guide-Card $_ $true }) -join ''
 $hubCards = ($hubs | ForEach-Object { Hub-Card $_ }) -join ''
-$brandTiles = ($brands | Where-Object { $_.PSObject.Properties['core'] -and $_.core } | ForEach-Object {
-    "<li class=""brand-tile $(Brand-Hue $_.id)"">$(Brand-Icon $_.id)<strong>$(Esc $_.name)</strong><span>$(Esc $_.does)</span></li>"
-}) -join ''
 $siteLastmod = ($guides | ForEach-Object { Get-Modified $_ } | Sort-Object -Descending | Select-Object -First 1)
 
 foreach ($p in $pages) {
@@ -673,7 +692,8 @@ foreach ($p in $pages) {
     $html = ReadText $p.file
     $html = Take-OwnerNotes $html "Page: $($p.title)" $path
     $html = Resolve-Tokens $html $p.file
-    $html = $html.Replace('<!--HUBS-->', $hubCards).Replace('<!--ALLGUIDES-->', $allGuideCards).Replace('<!--BRANDS-->', $brandTiles)
+    $html = $html.Replace('<!--HUBS-->', $hubCards).Replace('<!--ALLGUIDES-->', $allGuideCards)
+    $html = $html.Replace('<!--SISTERS-->', (Sister-Tiles '')).Replace('<!--SISTERS:service-->', (Sister-Tiles 'service')).Replace('<!--SISTERS:guide-->', (Sister-Tiles 'guide'))
     if ($p.PSObject.Properties['featured']) {
         $feat = ($p.featured | ForEach-Object {
             if (-not $guideBySlug.ContainsKey($_)) { throw "Page '$($p.id)' features unknown guide '$_'." }
@@ -749,6 +769,8 @@ foreach ($rel in $script:written) {
     $txt = [IO.File]::ReadAllText((Join-Path $repo $rel), [Text.Encoding]::UTF8)
     if ($txt -notmatch [regex]::Escape("gtag/js?id=$expectedGA")) { $fail += "$rel is missing the GA4 tag" }
     if ($txt -match '\{\{[A-Za-z]') { $fail += "$rel still contains an unreplaced {{token}}" }
+    # noreferrer hides the visit's source from the sister site's GA4.
+    if ($txt -match 'noreferrer') { $fail += "$rel uses rel=noreferrer" }
 }
 $homeHtml = [IO.File]::ReadAllText((Join-Path $repo 'index.html'), [Text.Encoding]::UTF8)
 if ($homeHtml -notmatch [regex]::Escape($expectedGSV)) { $fail += 'index.html is missing the Search Console verification tag' }

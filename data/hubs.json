@@ -11,10 +11,6 @@
     "blurb": "What to book, and when, so the day goes smoothly.",
     "guides": ["moving-house-checklist-singapore", "condo-hdb-move-day-rules"],
     "tools": ["moving-planner"],
-    "furtherReading": [
-      { "brand": "junktoclear", "article": "hiring-movers" },
-      { "brand": "junktoclear", "article": "declutter-moving" }
-    ],
     "getHelp": [
       { "brand": "hometomoved", "link": "hdb" },
       { "brand": "hometomoved", "link": "condo" },

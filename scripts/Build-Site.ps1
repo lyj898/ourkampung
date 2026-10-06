@@ -323,7 +323,7 @@ $footer = @"
     <div><h2 class="fh">Sister sites</h2><ul>$sisterLinks</ul></div>
     <div><h2 class="fh">OurKampung</h2><ul><li><a href="/our-sites/">Our sites</a></li><li><a href="/about/">About &amp; how we work</a></li><li><a href="/tools/moving-planner/">Moving planner</a></li><li><a href="/contact/">Contact the editors</a></li></ul></div>
   </div>
-  <p class="footer-disclose">OurKampung and its sister sites are run by one team, the team behind Junk to Clear. Inside the guides, we link a sister site only at the step it helps with. <a href="/our-sites/">About our sites</a>.</p>
+  <p class="footer-disclose">OurKampung and its sister sites are run by one team, the OurKampung team. Inside the guides, we link a sister site only at the step it helps with. <a href="/our-sites/">About our sites</a>.</p>
   <div class="footer-bottom"><p>&copy; $year OurKampung &middot; ourkampung.com</p></div>
 </div></footer>
 "@
@@ -481,6 +481,23 @@ function Glance-Html($g) {
     }
     return "<$tag class=""glance glance-$($gl.type)"">$($lis -join '')</$tag>"
 }
+function Join-Names($names) {
+    $n = @($names)
+    if ($n.Count -le 1) { return ($n -join '') }
+    return (($n[0..($n.Count - 2)] -join ', ') + ' and ' + $n[-1])
+}
+function Relation-Note($brandIds) {
+    # Says how each linked business relates to OurKampung. Family sites are run
+    # by the same team; a partner ("partner" in data/brands.json, i.e. Junk to
+    # Clear) is a separate company we refer jobs to -- never "same team".
+    $ids = @($brandIds | Select-Object -Unique)
+    $fam = @($ids | Where-Object { -not $brandById[$_].PSObject.Properties['partner'] } | ForEach-Object { $brandById[$_].name })
+    $par = @($ids | Where-Object { $brandById[$_].PSObject.Properties['partner'] } | ForEach-Object { $brandById[$_] })
+    $parts = @()
+    if ($fam.Count) { $parts += "$(Esc (Join-Names $fam)) $(if ($fam.Count -eq 1) { 'is' } else { 'are' }) run by the same team that writes OurKampung." }
+    foreach ($b in $par) { $parts += "$(Esc $b.name) is $(Esc $b.partner)." }
+    return ($parts -join ' ')
+}
 function GetHelp-Html($items) {
     $items = @($items | Where-Object { $_ })
     if ($items.Count -eq 0) { return '' }
@@ -493,7 +510,7 @@ function GetHelp-Html($items) {
     return @"
 <aside class="gethelp" aria-labelledby="gethelp-h">
   <h2 id="gethelp-h">Need a hand with this?</h2>
-  <p class="disclose">These businesses are run by the same team that writes OurKampung. <a href="/about/">Here&rsquo;s how that works</a>.</p>
+  <p class="disclose">$(Relation-Note ($items | ForEach-Object { $_.brand })) <a href="/about/">Here&rsquo;s how that works</a>.</p>
   <ul>$($lis -join '')</ul>
 </aside>
 "@
@@ -508,8 +525,8 @@ function Further-Html($items) {
     }
     return @"
 <section class="further" aria-labelledby="further-h">
-  <h2 id="further-h">Already covered by our sister sites</h2>
-  <p class="disclose">Rather than repeat them here, these guides live on a site run by the same team.</p>
+  <h2 id="further-h">Further reading</h2>
+  <p class="disclose">Rather than repeat them here, we link these guides. $(Relation-Note ($items | ForEach-Object { $_.brand }))</p>
   <ul>$($lis -join '')</ul>
 </section>
 "@

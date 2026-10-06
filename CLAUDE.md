@@ -3,7 +3,9 @@
 ourkampung.com is a **guide-only** site about running a Singapore home: moving, moving into a new
 home, ending a tenancy, decluttering and disposal, repairs and upkeep. Since the 5 Oct 2026 family
 revamp (`../jtc-family/briefs/family-revamp.md`) it is also the **mother site** of the family: the front
-door to its sister sites, all run by the team behind Junk to Clear. It takes no bookings and gives no
+door to its sister sites, all run by **the OurKampung team** (no company is named). Since 6 Oct 2026 the
+family is independent: Junk to Clear is a separate company we refer disposal, clearance and renovation jobs
+to, with no referral fees (`../jtc-family/briefs/independence.md`). It takes no bookings and gives no
 quotes; its form is "Contact the editors" and sends GA4 `editor_message`, never `generate_lead`.
 
 Shared rules for the whole JTC family of sites (lanes, link rules, brand facts, shared facts). They win
@@ -39,7 +41,7 @@ powershell -ExecutionPolicy Bypass -File scripts/Build-Site.ps1
 |---|---|
 | `data/site.json` | site settings, GA4 ID, verification token, form endpoint |
 | `data/organization.json` | the OurKampung `Organization` node — single source of truth |
-| `data/brands.json` | Junk to Clear and the sister sites (`"sister"`: footer order, service or guide, when to use it), and every deep link to them |
+| `data/brands.json` | the sister sites (`"sister"`: footer order, service or guide, when to use it), Junk to Clear as a partner (`"partner"`: how we describe it), and every deep link to them |
 | `data/sources.json` | official sources guides cite (HDB, ICA, NEA, SP, CEA, ALBA) |
 | `data/hubs.json` | the five life-event hubs |
 | `data/guides.json` | guide metadata, FAQs, related guides, "get help" links |
@@ -107,7 +109,7 @@ hub, and short copy on every page except the guides themselves.
 |---|---|
 | Moving within Singapore | HomeToMoved |
 | Cleaning | HomeToClean |
-| Disposal / clearing | Junk to Clear |
+| Disposal, clearance or renovation works | Junk to Clear, an outside partner (see below) |
 | Pest control | PestToClear |
 | Aircon | AirconToCool |
 | Handyman jobs | BrokenToFixed |
@@ -124,11 +126,13 @@ aircon and handyman sites instead (5 Oct 2026). PORTFOLIO.md's link table wins i
   `data/brands.json`. They use the site name as link text and `rel="nofollow"` — they're for readers,
   not rankings. Never `noreferrer` anywhere: it hides the visit from the sister site's GA4, and the
   build fails on it.
-- **Always disclose** that OurKampung is run by the same team. Never publish "best of" lists or
-  rank our own businesses against competitors.
-- **Don't compete with Junk to Clear's blog.** It already covers bulky-item disposal, decluttering
-  before a move, hiring movers and choosing a disposal company. Link those as `furtherReading`
-  on a hub rather than writing rival guides.
+- **Junk to Clear is a partner, not a family site.** Introduce it as "a disposal company we refer
+  jobs to" (for renovation, "a renovation and disposal company we refer jobs to"). Never "our",
+  "sister" or "same team" for it, and never imply we're unconnected to it. Link it only where
+  disposal, clearance or renovation is the reader's next step, with plain links (no `sponsored`:
+  there are no fees). The help boxes and further-reading lists word this from `"partner"`.
+- **Always disclose** that OurKampung and its sister sites are run by the same team. Never publish
+  "best of" lists or rank our own sites or partners against competitors.
 - **No permutation pages** — no page per town, per theme, or per service × area. The site was
   de-indexed in August 2026 for exactly that (see **History**). Local detail belongs as a
   section inside a guide.

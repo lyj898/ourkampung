@@ -3,7 +3,7 @@
   "@id": "https://ourkampung.com/#organization",
   "name": "OurKampung",
   "url": "https://ourkampung.com/",
-  "description": "A practical guide to moving, cleaning, clearing and fixing a home in Singapore, written by the team behind Junk to Clear and its sister sites.",
+  "description": "A practical guide to moving, cleaning, clearing and fixing a home in Singapore, written by the OurKampung team.",
   "logo": {
     "@type": "ImageObject",
     "url": "https://ourkampung.com/assets/logo.png",

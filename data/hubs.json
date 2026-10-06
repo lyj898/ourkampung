@@ -62,11 +62,6 @@
     "description": "Decluttering and disposal in Singapore: where e-waste, batteries and old appliances go, how to wipe your data first, and where to dispose of bulky items.",
     "blurb": "What goes where, and what never goes down the chute.",
     "guides": ["e-waste-singapore"],
-    "furtherReading": [
-      { "brand": "junktoclear", "article": "bulky-items" },
-      { "brand": "junktoclear", "article": "declutter-moving" },
-      { "brand": "junktoclear", "article": "choose-disposal" }
-    ],
     "getHelp": [
       { "brand": "junktoclear", "link": "residential" },
       { "brand": "hometomoved", "link": "move-and-dispose" }
